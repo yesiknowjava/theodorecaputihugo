@@ -14,7 +14,7 @@ role: Economics & Health Researcher
 
 # Organizations/Affiliations
 organizations:
-- name: Stanford University
+- name: MIT Economics
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
@@ -45,9 +45,10 @@ links_theo:
 - icon: "fa fa-fw fa-map-marker"
   text: "Cambridge, Mass."
   link: ""
-- icon: "fa fa-fw fa-map-marker"
-  text: "MIT/University of York"
-  link: ""
+
+# - icon: "fa fa-fw fa-map-marker"
+#   text: "MIT/University of York"
+#   link: ""
 
 - icon: "fa fa-fw fa-envelope-square"
   text: "Email"
@@ -112,4 +113,4 @@ I graduated _summa cum laude_ from the [University of Pennsylvania’s Wharton S
 
 My primary research interest is behavioral public health. I use tools from economics, epidemiology, data science, and related fields to understand the social, economic, and industry factors influencing individuals’ health behaviors and decisions (e.g., substance use, suicidal ideation, and violence). I am also interested in health care policy and health innovation.
 
-I have published over 30 studies and commentaries in peer-reviewed journals. Most of these papers are available free-of-charge on [this site](/publication). My work has been featured in journals such as _Journal of the American Medical Association (JAMA)_, _JAMA Internal Medicine_, _JAMA Pediatrics_, _Health Affairs_, _Addiction_, _American Journal of Preventive Medicine_, _American Journal of Public Health_, and _Tobacco Control_ and in news outlets such as _The New York Times_, _the LA Times_ and _CNN_.
+I have published over 30 studies and commentaries in peer-reviewed journals. Most of these papers are available free-of-charge on [this site](/publications). My work has been featured in journals such as _Journal of the American Medical Association (JAMA)_, _JAMA Internal Medicine_, _JAMA Pediatrics_, _Health Affairs_, _Addiction_, _American Journal of Preventive Medicine_, _American Journal of Public Health_, and _Tobacco Control_ and in news outlets such as _The New York Times_, _the LA Times_ and _CNN_.
