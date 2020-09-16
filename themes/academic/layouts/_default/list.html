@@ -1,0 +1,49 @@
+{{- define "main" -}}
+
+{{ partial "page_header.html" . }}
+
+<div class="universal-wrapper">
+  {{ with .Content }}
+  <div class="article-style">{{ . }}</div>
+  {{ end }}
+
+  {{ $paginator := .Paginate .Data.Pages }}
+  {{ range $paginator.Pages }}
+    {{ $link := .RelPermalink }}
+    {{ $target := "" }}
+    {{ with .Params.external_link }}
+      {{ $link = . }}
+      {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+    {{ end }}
+    <div>
+      <div class="media stream-item">
+        <div class="mr-3">
+          {{ $resource := (.Resources.ByType "image").GetMatch "*featured*" }}
+          {{ with $resource }}
+          {{ $image := .Resize "150x" }}
+          <a href="{{$link}}" {{ $target | safeHTMLAttr }}>
+            <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}">
+          </a>
+          {{end}}
+        </div>
+        <div class="media-body">
+          <span><a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ .Title }}</a><span>
+          <div class="article-style">
+            {{ if .Params.summary }}
+              {{ .Params.summary | plainify | emojify }}
+            {{ else if .Params.abstract }}
+              {{ .Params.abstract | plainify | emojify | truncate 250 }}
+            {{ else if .Summary }}
+              {{ .Summary | plainify | emojify }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  {{ end }}
+
+  {{ partial "pagination" . }}
+</div>
+
+{{- end -}}

@@ -1,0 +1,604 @@
+%------------------------------------
+% Dario Taraborelli
+% Typesetting your academic CV in LaTeX
+%
+% URL: http://nitens.org/taraborelli/cvtex
+% DISCLAIMER: This template is provided for free and without any guarantee
+% that it will correctly compile on your system if you have a non-standard
+% configuration.
+% Some rights reserved: http://creativecommons.org/licenses/by-sa/3.0/
+%------------------------------------
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+
+
+\documentclass[11pt, letterpaper]{article}
+\usepackage{fontspec}
+\usepackage{calc}
+
+% \usepackage{showframe}
+
+% DOCUMENT LAYOUT
+\usepackage{geometry}
+\geometry{letterpaper, textwidth=6.2in, textheight=9in, marginparsep=3mm, marginparwidth=0.7in % 0.4in
+}
+%, hoffset=0.2in %0.2in
+%, paperwidth=8.5in}
+
+%\geometry{letterpaper, textwidth=6.2in, textheight=9in, marginparsep=3mm, % 7pt,
+%marginparwidth=0.4in,
+%%oddsidemargin=0in,
+%hoffset=0.2in,paperwidth=8.5in}
+
+
+
+\newcommand*{\img}[1]{%
+    \raisebox{-.3\baselineskip}{%
+        \includegraphics[
+        height=\baselineskip,
+        width=\baselineskip,
+        keepaspectratio,
+        ]{#1}%
+    }%
+}
+
+
+\setlength{\hoffset}{-0.1in} %}
+\setlength{\oddsidemargin}{0.2in} %}
+\setlength\parindent{0in}
+\usepackage{enumitem}% http://ctan.org/pkg/enumitem
+\setbox1=\hbox{$\bullet$}
+\setlist{noitemsep, topsep=5pt, parsep=0pt, partopsep=0pt, leftmargin=1.8cm, labelindent=1.2cm, labelwidth=\wd1, itemindent=*, labelsep=\dimexpr0.6cm-\wd1}
+
+
+% FONTS
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text}
+%\setromanfont [Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Linux Libertine O}
+%\setmonofont[Scale=0.8]{Monaco}
+%%% modified by Karol Kozioł for ShareLaTeX use
+\setmainfont[
+  Ligatures={Common}, Numbers={OldStyle}, Variant=01,
+  BoldFont=LinLibertine_RB.otf,
+  ItalicFont=LinLibertine_RI.otf,
+  BoldItalicFont=LinLibertine_RBI.otf
+]{LinLibertine_R.otf}
+\setmonofont[Scale=0.9]{DejaVuSansMono.ttf}
+
+% ---- CUSTOM COMMANDS
+\chardef\&="E050
+\newcommand{\html}[1]{\href{#1}{\scriptsize\textsc{[html]}}}
+\newcommand{\pdf}[1]{\href{#1}{\scriptsize\textsc{[pdf]}}}
+\newcommand{\doi}[1]{\href{#1}{\scriptsize\textsc{[doi]}}}
+
+
+\usepackage{tabularx}
+
+% ---- MARGIN YEARS
+\usepackage{marginnote}
+\newcommand{\amper{}}{\chardef\amper="E0BD }
+\newcommand{\years}[1]{\marginnote{\normalsize #1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{12pt}
+\reversemarginpar
+
+% HEADINGS
+\usepackage{sectsty}
+\usepackage[normalem]{ulem}
+\sectionfont{\mdseries\upshape\LARGE}
+\subsectionfont{\mdseries\scshape\Large}
+\subsubsectionfont{\mdseries\upshape\Large}
+
+\usepackage{graphicx,calc}
+\newlength\myheight
+\newlength\mydepth
+\settototalheight\myheight{Xygp}
+\settodepth\mydepth{Xygp}
+\setlength\fboxsep{0pt}
+
+\usepackage{academicons}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+\usepackage[%dvipdfm,
+bookmarks, colorlinks, breaklinks,
+% ---- FILL IN HERE THE TITLE AND AUTHOR
+	pdftitle={TheodoreCaputiCV},
+	pdfauthor={Theodore L. Caputi},
+	pdfproducer={http://nitens.org/taraborelli/cvtex}
+]{hyperref}
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue}
+
+% DOCUMENT
+\begin{document}
+\large
+{\huge Theodore L. Caputi}\\[.55cm]
+%
+% \begin{left}
+% \begin{tabular}{c @{\extracolsep{\fill} c}}{
+%   \shortstack{Department of Economics\\
+%   Faculty of Arts \& Sciences \\
+%   Harvard University
+%   } & & \shortstack{National Bureau of Economic Research\\
+%    1050 Massachusetts Ave.\\
+%    Cambridge, Mass. 02138 \\
+% }
+%   }
+%
+% \end{tabular}
+% \end{left}
+
+\noindent{\tabcolsep}\begin{minipage}{0.6\linewidth}
+The Morris and Sophie Chang Building (E52-300)\\
+50 Memorial Drive\\
+Cambridge, Mass. 02139 % \\[.2cm]
+% National Bureau of Economic Research\\
+% 1050 Massachusetts Ave.\\
+% Cambridge, Mass. 02138 % \\[.2cm]
+% Department of Economics\\
+% Faculty of Arts \& Sciences \\
+% Harvard University\\[.2cm]
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+% \img{./png/cellphone.png}
+\texttt{+1 (267) 312 - 8471}\\
+% \img{./png/email.png}
+% \\
+% \\[.2cm]
+\href{http://www.TheodoreCaputi.com}{www.TheodoreCaputi.com}\\
+\href{mailto:tcaputi@mit.edu}{tcaputi [at] mit.edu}
+% \href{https://orcid.org/0000-0003-3498-9032}{\textcolor{orcidlogocol}{\aiOrcid} orcid.org/0000-0003-3498-9032}\\
+% \href{https://publons.com/researcher/2952802}{\textcolor{orcidlogocol}{\aiPublons} publons.com/researcher/2952802}
+
+% \href{http://goo.gl/fVRxR4}{Google Scholar Profile}\\
+% \href{}{Updated CV}
+\end{minipage}\\[.2cm]
+%
+% \noindent{\tabcolsep}\begin{minipage}{0.5\linewidth}
+% Department of Economics\\
+% Faculty of Arts \& Sciences \\
+% Harvard University
+% \end{minipage}
+% \begin{minipage}{0.5\linewidth}
+% % \img{./png/website.png}
+% \href{http://www.TheodoreCaputi.com}{Personal Website}\\
+% % \img{./png/user.png}
+% \href{http://goo.gl/fVRxR4}{Google Scholar Profile}\\
+% % \img{./png/resume.png}
+% % \href{https://www.theodorecaputi.com/files/TheodoreCaputiCV.pdf}{Up-To-Date CV}
+% \end{minipage}\\[.2cm]
+ % Department of Economics\\
+ % Faculty of Arts \& Sciences \\
+ % Harvard University\\[0.2cm]
+ %School of Public Health\\ College of Medicine and Health
+ %%The Wharton School
+ %%| College of Arts \& Sciences
+ %\\
+ %%University of Pennsylvania
+ %University College Cork\\[0.1cm]
+ %Department of Epidemiology \& Public Health\\
+
+ %Fourth floor, Adjoining Campus\\
+ %Western Gateway Building, Western Road\\
+ %Cork, Republic of Ireland\\[.2cm]
+
+ % Irish Cell: \texttt{+353 (083) 419 0911}\\
+ % Google Voice: \texttt{+1 (267) 666 - 0257}
+ %\texttt{95}\\
+ %\texttt{3730} Walnut Street \\
+%Philadelphia, PA \texttt{19104}
+%U.S.A.\\[.2cm]
+%Cell: \texttt{267.312.8471}\\
+% \\[.2cm]
+%\textsc{url}: \href{http://www.TheodoreCaputi.com}{http://www.TheodoreCaputi.com}\\
+%Up-to-date CV: \href{}{Click here.}
+% Websites: \\[.2cm]
+%\vfill
+\href{https://orcid.org/0000-0003-3498-9032}{\textcolor{orcidlogocol}{\aiOrcid} \hspace{2mm}ORCID: \texttt{0000-0003-3498-9032}}\\
+\href{https://publons.com/researcher/2952802}{\aiPublons \hspace{2mm} Publons: \texttt{2952802}}\\[.2cm]
+Born:  August \texttt{25}, \texttt{1994}---Princeton, New Jersey, U.S.A.\\
+Citizenship:  United States of America
+%%\hrule
+\section*{Education}
+\years{2019-2025}Candidate for Ph.D. in Economics, Massachusetts Institute of Technology\\
+\years{2019-2020}Candidate for M.Sc. by Research in Health Sciences, University of York\\
+\years{2017-2019}M.P.H. in Advanced Epidemiology, University College Cork\\
+% Honors: \href{http://www2.us-irelandalliance.org/content/657/en/}{George J. Mitchell Scholarship}, First Class Honours, MPH Class Representative\\[.1cm]
+% \emph{School of Public Health, College of Medicine and Health, University College Cork}\\
+% Cork, Republic of Ireland\\[.1cm]
+% \textbf{Marks:} First Class Honours in Every Module, Highest Overall Marks in the MPH\\[0.3cm]
+\years{2013-2017}B.S. \emph{summa cum laude} in Economics, University of Pennsylvania\\
+\years{2009-2013}High school diploma, Council Rock High School North
+% [0.2cm]
+% Honors: Phi Beta Kappa, Beta Gamma Sigma, \textit{summa cum laude}\\[.1cm]
+% \emph{The Wharton School, University of Pennsylvania}\\
+% Philadelphia, Pennsylvania, U.S.A.\\[.1cm]
+%\years{2013-2017}\textbf{Bachelor of Arts in Mathematics}\\
+%\emph{College of Arts \& Sciences, University of Pennsylvania}\\
+%Philadelphia, Pennsylvania, U.S.A.\\[.2cm]
+% \\[.1cm]
+% \textbf{Undergraduate GPA:} 3.98 / 4.00\footnote{Includes \texttt{11} A+'s}\\
+% \years{Aug. 2018}\href{https://www.theodorecaputi.com/files/TheodoreCaputiGRE.pdf}{GRE Score:} 169/170 Verbal, 170/170 Quantitative, 6.0/6.0 Writing
+% \\
+% \textbf{\href{https://www.theodorecaputi.com/files/TheodoreCaputiRelevantCoursework.pdf}{Relevant Coursework}:} Single Variable (A+) and Multi-Variable Calculus (A+), Linear Algebra \& Differential Equations (A), Graduate-Level Abstract Algebra I (A) \& II (A), Social Science Statistics (A+), Data Analysis \& Statistical Computing (A), Partial Differential Equations (A), Mathematical Probability (A), Intermediate Micro (A) \& Macro (A) Economics, Advanced Biostatistics (1st), Survival Analysis (1st), Linear Algebra \& Real Analysis (In Progress)
+%
+% %%\hrule
+% \section*{Research areas}
+% Health economics | Behavioral public health | Substance use disorders \& addiction
+%
+% %%\hrule
+% \section*{Software proficiency}
+%  R (preferred); Stata; Python; \LaTeX; SAS; SPSS; Git; Microsoft Office
+
+%%\hrule
+%\section*{Test scores}
+% \textbf{SAT}: 2340 (800 M 760 R 780 W)\\[.2cm]
+% \textbf{SAT Subject Tests}: Math Level II, 790; Biology E, 780; World History, 780\\
+
+%%\hrule
+\section*{Appointments \& employment}
+
+\noindent
+\years{2017-}Part-Time Research Assistant, Harvard Medical School Health Equity Research Lab\\
+\years{2015-}Policy Fellow, University of Florida Drug Policy Institute\\
+\years{2017-2020}Part-Time Research Assistant, UCSD Center for Data-Driven Population Medicine\\
+% \years{2012-2017}Research Assistant, Treatment Research Institute\\
+\years{2018-2019}Full-time Research Assistant for Prof. Amanda Pallais, Harvard Economics/NBER\\
+\years{2017-2019}Part-Time Research Assistant, Penn Center for Health Incentives and Behavioral Economics \\
+\years{2017-2018}Part-Time Research Assistant for Prof. Francis Diebold, Penn Economics\\
+\years{2017}Part-Time Research Assistant for Prof. Mark Dredze, Johns Hopkins Computer Science\\
+\years{2016}Fall Semester Research Assistant, White House Office of National Drug Control Policy\\
+% \years{2016}Research Assistant, Penn Leonard Davis Institute for Health Economics \\
+% \years{2015-2016}Research Assistant for Prof. Tom Robertson, The Wharton School\\
+% \years{2014, 2017}Summer Program for Undergraduate Research, The Wharton School\\
+% \years{2014}Research Assistant for Prof. Katherine Milkman, The Wharton School\\
+% \years{2013}Research Assistant for Prof. Erik Gilje, The Wharton School\\
+
+\section*{Honors \& awards}
+\noindent
+% \begin{description}
+    \years{2019-2024}NSF Graduate Research Fellow\\
+    \years{2019-2024}MIT Graduate Fellow\\
+    \years{2019-2020}Marshall Scholar\\ % -- One of
+    % \years{2019}\href{http://www.ox.ac.uk/clarendon}{Clarendon Scholarship} (full scholarship DPhil at Oxford)\\
+    \years{2018} Annual Cameron Lecture, University College Cork\\
+    \years{2017-2018} Mitchell Scholar\\
+    \years{2017} Clarendon Scholarship, University of Oxford (Declined)\\
+    \years{2017} Phi Beta Kappa, University of Pennsylvania\\
+    \years{2016} Beta Gamma Sigma, University of Pennsylvania\\
+    \years{2015} Leonard Davis Institute Undergraduate Research Prize, University of Pennsylvania\\
+    % \years{2015} College Alumni Society Research Grant\\
+    % \years{2014, 2017} Summer Program for Undergraduate Research\\
+    % \years{2013} Benjamin Franklin Scholars Program\\
+    % \years{2013} Joseph Wharton Scholars Program\\
+    % \years{2013} \href{http://www.buckscountycouriertimes.com/tabs/emergingleaders/theodore-caputi-intern/article_0a50522d-be50-5393-9367-fa1c1f3fe788.html}{Bucks County 40 Under 40} (youngest recipient)\\
+    % \years{2013} Princeton University Prize for Race Relations\\
+    % \years{2013} Council of Southeastern Pennsylvania Prevention Advocate Award\\
+    % \years{2012} Boy Scouts of America: Eagle Scout, Bucks County Youth of the Year\\
+
+
+
+\section*{Publications \& presentations\footnote{Most of my publications are available free of charge at \href{https://www.theodorecaputi.com/publications}{https://www.theodorecaputi.com/publications}. My Google Scholar profile is accessible at \href{http://goo.gl/fVRxR4}{http://goo.gl/fVRxR4}.}}
+
+\subsection*{First Authored Publications}
+\noindent
+\years{2020}\textbf{Caputi TL}, Ayers JW, Dredze M, Suplina N, Burd-Sharps S. \href{https://dx.doi.org/10.2196/19369}{Collateral crises of gun preparation and the COVID-19 pandemic: An infodemiology study.} \textit{JMIR Public Health and Surveillance}. Forthcoming. DOI: 10.2196/19369.\\[.2cm]
+\years{2020}\textbf{Caputi TL}, Shover CL, Watson RJ. \href{https://dx.doi.org/10.1001/jamapediatrics.2019.6291}{Physical and sexual violence among U.S. Gay, Lesbian, Bisexual, and Questioning adolescents.} \textit{JAMA Pediatrics}. Forthcoming. DOI: 10.1001/jamapediatrics.2019.6291.\\[.2cm]
+\years{2018}\textbf{Caputi TL}, Nobles A, Ayers JW. \href{https://dx.doi.org/10.1001/jamainternmed.2018.5094}{Internet searches for sexual harassment and assault, reporting, and training following \#MeToo}. \textit{JAMA Internal Medicine.} 2019 Feb 1;179(2):258-9. DOI: 10.1001/jamainternmed.2018.5094.\\[.2cm]
+\years{2018}\textbf{Caputi TL}, Smith L, Strathdee S, Ayers JW. \href{http://dx.doi.org/10.2105/AJPH.2018.304446}{Substance use among Gay, Lesbian, Bisexual, and Questioning adolescents in the United States, 2015.} \textit{American Journal of Public Health}. 2018 Aug;108(8):1031-4. DOI: 10.2105/AJPH.2018.304446.\\[.2cm]
+\years{2018}\textbf{Caputi TL}, Humphreys K. \href{http://dx.doi.org/10.1097/ADM.0000000000000405}{Medical marijuana users are more likely to use and misuse prescription drugs}.  \textit{Journal of Addiction Medicine}. 2018 July/August;12(4):295-299. \\
+DOI: 10.1097/ADM.0000000000000405.
+    \begin{description}
+    \item[$\bullet$] Editor's Choice
+    \end{description}
+\years{2018}\textbf{Caputi TL}, Leas EC, Dredze M, Ayers JW.
+\href{http://dx.doi.org/10.1016/j.amepre.2018.01.032}{Online sales of marijuana: An unrecognized public health dilemma}. \textit{American Journal of Preventive Medicine}. 2018 May 1;54(5):719-21. DOI: 10.1016/j.amepre.2018.01.032.\\[.2cm]
+\years{2018}\textbf{Caputi TL}. \href{https://doi.org/10.1016/j.drugalcdep.2018.01.012
+}{Sex and orientation identity matter in the substance use behaviors of sexual minority adolescents in the United States}. \emph{Drug \& Alcohol Dependence}. 2018 Jun 1;187:142-8. DOI: 10.1016/j.drugalcdep.2018.01.012.
+\\[.2cm]
+% \clearpage
+\years{2017}\textbf{Caputi TL}, Smith D, Ayers JW.
+\href{http://dx.doi.org/10.1001/jama.2017.16908}{Suicide risk behaviors among sexual minority adolescents in the United States, 2015.} \emph{JAMA: Journal of the American Medical Association}.  2017 Dec 19;318(23):2349-51. DOI: 10.1001/jama.2017.16908.\\[.2cm]
+% \clearpage
+\years{2017}\textbf{Caputi TL}, Dredze M, Cohen J, Ayers JW. \href{http://dx.doi.org/10.1371/journal.pone.0185735}{They’re heating up: Search query data reveals significant public interest in heat-not-burn tobacco products}. \emph{PLoS ONE}. 12(10): e0185735. DOI: 10.1371/journal.pone.0185735.\\[.2cm]
+% \clearpage
+\years{2017}\textbf{Caputi TL}.  \href{http://dx.doi.org/10.1093/ntr/ntx143}{Google searches for "cheap cigarettes" spike at tax increases: Evidence from an algorithm to detect spikes in time series data}. \emph{Nicotine \& Tobacco Research}. 2017 Jun 22;20(6):779-83. DOI: 10.1093/ntr/ntx143.\\[.2cm]
+\years{2017}\textbf{Caputi TL}, McLellan AT. \href{http://dx.doi.org/10.1080/09687637.2016.1208731}{Truth and D.A.R.E.: Is D.A.R.E.’s new Keepin’ it REAL curriculum suitable for American nationwide implementation?}  \textit{Drugs: Education, Prevention and Policy}. 2017 Jan 2;24(1):49-57. DOI: 10.1080/09687637.2016.1208731.
+    \begin{description}
+    \item[$\bullet$] Editor's Choice Award (Open Access)
+    \end{description}
+\years{2017}\textbf{Caputi TL}. \href{http://journalofleadershiped.org/attachments/article/479/0571_caputi.pdf}{Assessing the possibility of leadership education as psychosocial-based problem behavior prevention for adolescents: A review of the literature.} \textit{Journal of Leadership Education}. 2017 Jan 1;16(1): 115-132. DOI: 1012806/V16/I1/T2.\\[.2cm]
+\years{2016}\textbf{Caputi TL}. \href{http://dx.doi.org/10.1016/j.drugpo.2016.06.005}{The case for uniform controls in drug policy studies.}  \textit{International Journal of Drug Policy}. 2016 Jul 1;33:102-4. DOI: 10.1016/j.drugpo.2016.06.005.\\[.2cm]
+\years{2015}\textbf{Caputi TL}. \href{http://www.globaldrugpolicy.com}{Selling prevention: Using a business framework to analyze the state of prevention and overcome obstacles to expanding substance abuse prevention.} \textit{Journal of Global Drug Policy \& Practice}. Spring 2015;9(1):1-24. Available at http://www.globaldrugpolicy.com. \\[.2cm]
+
+\subsection*{Team Science}
+\noindent
+\years{2020}Liu M, \textbf{Caputi TL}, Dredze M, Kesselheim AS, Ayers JW. \href{https://dx.doi.org/10.1001/jamainternmed.2020.1764}{Internet Searches for Unproven and Potentially Hazardous COVID-19 Therapies in the United States}. \textit{JAMA Internal Medicine}. Forthcoming. DOI: 10.1001/jamainternmed.2020.1764. \\[.2cm]
+\years{2020}Nobles AL, Leas EC, \textbf{Caputi TL}, Zhu S, Strathdee S, Ayers JW. \href{https://dx.doi.org/10.1038/s41746-019-0215-9}{“Did I say something wrong?”: Responses to addiction help-seeking from Intelligent Virtual Assistants on Alexa, Siri, Google Assistant, Bixby, and Cortana.} \textit{npj Digital Medicine}. 2020 Jan 29;3(11). DOI: 10.1038/s41746-019-0215-9.\\[.2cm]
+\years{2019}Leas EC, Nobles AL, \textbf{Caputi TL}, Smith D, Dredze M, Ayers JW. \href{https://dx.doi.org/10.1001/jamanetworkopen.2019.13853}{Trends in internet searches for cannabidiol (CBD) in the United States}. \textit{JAMA Network Open}. Forthcoming. DOI: 10.1001/jamanetworkopen.2019.13853.\\[.2cm]
+\years{2018}Ayers JW, Dredze M, Leas EC, Allem J, \textbf{Caputi TL},  Cohen J. \href{https://dx.doi.org/10.1371/journal.pone.0205822}{Next generation media monitoring: Global coverage of electronic nicotine delivery systems (electronic cigarettes) on Bing, Google, and Twitter, 2013-2018}. \textit{PLoS ONE}. 2018 Nov 2;13(11):e0205822. DOI: 10.1371/journal.pone.0205822.\\[.2cm]
+\years{2018}Ayers JW, \textbf{Caputi TL}, Nebeker C, Dredze M. \href{https://dx.doi.org/10.1038/s41746-018-0036-2}{Don't quote me: Reverse identification of research participants in social media studies using Twitter.} \textit{npj Digital Medicine}. 2018 Aug 2;1(1):30. DOI: 10.1038/s41746-018-0036-2.\\[.2cm]
+\years{2017}Allem JP, Leas EC, \textbf{Caputi TL}, Dredze M, Althouse BM, Noar SM, Ayers JW. \href{http://dx.doi.org/10.1007/s11121-017-0792-2}{The Charlie Sheen effect on in-home rapid human immunodeficiency virus test sales}. \textit{Prevention Science}. 2017 Jul 1;18(5):541-4. DOI:  10.1007/s11121-017-0792-2.\\[.2cm]
+
+
+
+\subsection*{Commentaries}
+\years{2020}\textbf{Caputi TL}. \href{http://dx.doi.org/10.2105/AJPH.2019.305477}{The medical marijuana industry and the use of ``research as marketing''}. \emph{American Journal of Public Health}. 2020 Feb;110(2):174-175. DOI: 10.2105/AJPH.2019.305477.\\[.2cm]
+\years{2020}\textbf{Caputi TL}. \href{http://dx.doi.org/10.1111/add.14748}{Medical marijuana laws, substance use treatment admissions, and the ecological fallacy}. [Letter]. \textit{Addiction}. Forthcoming. DOI: 10.1111/add.14748.\\[.2cm]
+\years{2019}Ayers JW, \textbf{Caputi TL}, Leas EC. \href{http://dx.doi.org/10.1001/jama.2019.4432}{The need for federal regulation of marijuana marketing}. \textit{JAMA: Journal of the American Medical Association}. Published online May 16, 2019. DOI: 10.1001/jama.2019.4432.\\[.2cm]
+\years{2019}\textbf{Caputi TL}. \href{http://dx.doi.org/10.1377/hlthaff.2019.00198}{Medical cannabis use}. [Letter]. \emph{Health Affairs}. 2019 May 1;38(5):874-.\\DOI: 10.1377/hlthaff.2019.00198.\\[.2cm]
+\years{2019}\textbf{Caputi TL}. \href{http://dx.doi.org/10.1111/add.14580}{Medical marijuana, not miracle marijuana: Some well-publicized studies about medical marijuana don't pass a reality check}. [Letter]. \emph{Addiction}. 2019 June; 114(6):1128-1129. DOI: 10.1111/add.14580.\\[.2cm]
+% \clearpage
+\years{2018}\textbf{Caputi TL}, Sabet KA. \href{http://dx.doi.org/10.2105/AJPH.2017.304253}{Population-level analyses cannot tell us anything about individual-level marijuana-opioid substitution patterns}.  [Letter]. \emph{American Journal of Public Health}. 2018 Mar; 108(3):e12. DOI: 10.2105/AJPH.2017.304253.\\[.2cm]
+% \clearpage
+\years{2017}\textbf{Caputi TL}, McLellan AT.  \href{http://dx.doi.org/10.1080/09687637.2017.1288681}{Response to Comment by Hecht \& Miller-Day on “Truth and D.A.R.E.: Is D.A.R.E.’s new Keepin’ it REAL curriculum suitable for American nationwide implementation?”}. \textit{Drugs: Education, Prevention and Policy}. 2017 Mar 4;24(2):226-. DOI: 10.1080/09687637.2017.1288681.\\[.2cm]
+\years{2016}\textbf{Caputi TL}.  \href{http://dx.doi.org/10.1111/dar.12494}{Whether medical marijuana is ever substituted for other substances is not the full story.} [Letter]. \textit{Drug and Alcohol Review}. 2017 Jul;36(4):E3-4. DOI: 10.1111/dar.12494.\\[.2cm]
+% \clearpage
+% \clearpage
+\years{2016}\textbf{Caputi TL}.  \href{http://dx.doi.org/10.1136/tobaccocontrol-2016-053264}{Heat-not-burn tobacco products are about to reach their boiling point.} \textit{Tobacco Control}. 2016 August 24;2016(26):609-610. DOI: 10.1136/tobaccocontrol-2016-053264.\\[.2cm]
+\years{2016}\textbf{Caputi TL}, Humphreys K. \href{http://dx.doi.org/10.1377/hlthaff.2016.1108}{Medicare recipients’ use of medical marijuana.} [Letter]. \textit{Health Affairs.} 2016 Oct 1;35(10):1936-. DOI: 10.1377/hlthaff.2016.1108.\\[.2cm]
+\years{2016}\textbf{Caputi TL}, Sabet KA. \href{http://dx.doi.org/10.1080/02791072.2016.1197989}{Where is the ‘reality’ in ‘reality-based’ drug prevention?.} [Letter]. \textit{Journal of Psychoactive Drugs}. 2016 May 26;48(3):227-9. DOI: 10.1080/02791072.2016.1197989.\\[.2cm]
+
+
+\subsection*{Other Academic Works}
+\noindent
+\years{2020}Acknowledged contribution to: Mas A, Pallais A. \href{https://www.nber.org/papers/w26605.pdf}{Alternative work arrangements}. NBER Working Paper 26605. \emph{NBER}.\\[.2cm]
+\years{2017}\textbf{Caputi TL}. Heed the author’s warning to interpret results cautiously: a response to Shi. \emph{Published by the University of Florida Drug Policy Institute.}\\[.2cm]
+% \clearpage
+\years{2015}Gitlow S, Richter K, Levy S, Harris SK, Zinsmeister J, \textbf{Caputi TL}, Titelbaum S, Samuels H, Atkinson D.  \href{https://www.academia.edu/16576576/The_International_Centre_for_Science_in_Drug_Policy_ICSDP_Publishes_Misleading_Report_on_Marijuana}{The International Center for Science in Drug Policy (ICSDP) publishes misleading report on marijuana.} \textit{Published by the University of Florida Drug Policy Institute}.\\ [.2cm]
+% \clearpage
+\years{2015}\textbf{Caputi TL}. \href{http://www.writing.upenn.edu/critical/opportunities/3808/pdf/3808_fall_2015.pdf#page=13}{Improving admissions and impacting society: The case for social-emotional intelligence as an undergraduate admissions criterion.} \textit{3808: Journal of Critical Writing}. 9(1):13-17. Available at
+http://www.writing.upenn.edu.\\[.2cm]
+% \clearpage
+\years{2014}\href{https://web.archive.org/web/20170622171723/https://www.asam.org/docs/default-source/2015-conference-epk/asam-impact_cce-4-02-14.pdf?sfvrsn=4}{The clinical and cost effectiveness of three FDA-approved addiction medications.} [Policy Brief]. \textit{Published by the American Society for Addiction Medicine and the Treatment Research institute}. \\[.2cm]
+\years{2014}Acknowledged contribution (see back cover) to: \href{https://issuu.com/tri_solutions/docs/tri_report_singlepages_highres}{Paving the way to change: Advancing quality interventions for adolescents who use, abuse, or are dependent upon alcohol and other drugs.} \textit{Published by the Treatment Research Institute}. \\[.2cm]
+
+
+\subsection*{Works-in-Progress}
+\noindent
+% \textbf{Caputi TL}, Humphreys K. Stimulant overdose deaths in the United States, 1999-2017. (Submitted for initial review).\\[.2cm]
+% \clearpage
+% \clearpage
+\textbf{Caputi TL}, Hart KL, Uchitel J, Smith LM, Perlis RH. The persistence of all-male authorship teams in top medical journals. (Revise \& resubmit at \emph{Academic Medicine}).\\[.2cm]
+Creedon T, \textbf{Caputi TL}, Yang K, Cook B. Trends in access to mental health care and barriers to treatment in the United States, 2011-2017. (Revise \& resubmit at \emph{Health Services Research}).\\[.2cm]
+Acevedo A, Progovac A, McWilliams JM, \textbf{Caputi TL}, Cook B. The impact of Medicare Shared Savings Plan ACOs on mental health care access and quality and disparities in care. (Revise \& resubmit).\\[.2cm]
+Leas EC, Nobles A, \textbf{Caputi TL}, Dredze M, Zhu S, Cohen JE, Ayers JW. News coverage of the vaping-induced pulmonary disease outbreak and Internet searches for vaping cessation. (Revise \& resubmit).\\[.2cm]
+\textbf{Caputi TL}, Vallone D. Circumventing Tobacco 21: Evidence from Google Search Behavior. (Submitted for initial review).\\[.2cm]
+Johnson DC, Leas EC, Nobles AL, \textbf{Caputi TL}, Ayers JW, Borquez A. Help-seeking for substance use treatment on Internet search engines: Alcohol, cannabis, cocaine, methamphetamine and opioids. (Submitted for initial review).\\[.2cm]
+\textbf{Caputi TL}, Ayers JW, Dredze M, Suplina N, Burd-Sharps S. Collateral Crises: Gun Preparation Amid the COVID-19 Pandemic.\\[.2cm]
+\textbf{Caputi TL}, Adams L, Cook B. Trends in the race/ethnicity of high-impact medical journal authors, 2005-2018.\\[.2cm]
+
+% \textbf{Caputi TL}, Smith LM. The authorship gender gap in high-impact, generalist medical journals.\\[.2cm]
+% \clearpage
+% \textbf{Caputi TL}, Clancy L, Fitzgerald A, Greiner B, Kabir Z. The impact of the 2004 Irish Workplace Smoking Ban on lung cancer incidence and mortality.\\[.2cm]
+% \textbf{Caputi TL}, Ayers JW, Dredze M, Cohen J. What tobacco news trends on social media? A content analysis of 30,215 news reports and 7,519,431 Facebook Shares.\\[.2cm]
+% \textbf{Caputi TL}, Dredze M, Ayers JW. Combining big data with traditional survey data to improve population surveillance: Which U.S. states have more smokers trying to quit? (Revised \& resubmitted at \textit{Preventive Medicine}).\\[.2cm]
+% Ayers JW, \textbf{Caputi TL}.
+% Rapid assessment for obesity prevention using web searches: Which states have more residents trying to lose weight?
+ %(Submitted for Initial Review).
+% \\[.2cm]
+% Ayers JW, Althouse BM, Leas EC, Allem J, \textbf{Caputi TL}. Google Trends for tobacco control: Assessing the validity of search query surveillance. % (Submitted for Initial Review).
+% \\[.2cm]
+% \textbf{Caputi, T. L.} Click here to verify your age: Do popular e-cigarette brands use age restrictions on their Facebook, Twitter, and brand websites?\\[.2cm]
+% \textbf{Caputi, T. L.} Do tobacco free pharmacy Laws Reduce Smoking Rates? Evidence from an interrupted time series analysis of San Francisco panel data. \\[.2cm]
+\subsection*{Presentations}
+\noindent
+\years{2019}Oral Presentation, \textbf{Society for Social Medicine and Population Health and International Epidemiology Association European Congress Joint Annual Scientific Meeting 2019}\\[.2cm]
+\years{2019}Panel Moderator, \textbf{Smart Approaches to Marijuana Education Summit}\\[.2cm]
+\years{2018}\href{https://drive.google.com/file/d/1t0WEEZVxbCJ2b0cb7nQfw1UkgY1zRUxW/view?usp=sharing}{Invited Speaker} \& \href{https://www.theodorecaputi.com/files/thesis_poster.pdf}{Poster Presentation}, \textbf{University College Cork Cameron Lecture}
+    \begin{description}
+      \item[$\bullet$] Best Poster
+    \end{description}
+\years{2018}\href{https://www.theodorecaputi.com/files/thesis_poster.pdf}{Poster Presentation}, \textbf{New Horizon Research Conference 2018}\\[.2cm]
+\years{2018}\href{https://youtu.be/HR8w3NKGaYo}{Webinar Panelist}, \textbf{UCSD Connected and Open Research Ethics Project}\\[.2cm]
+\years{2018}\href{https://www.youtube.com/watch?v=HPMjUeRia1E&index=2&list=PL3aiRMvHlsN8cAL5xNyO55k2ziclj3yuh&t=25s}{Invited Seminar Presentation}, \textbf{University College Cork School of Public Health}\\[.2cm]
+\years{2018}Poster Presentation, \textbf{American Society for Addiction Medicine 49th Annual Conference in San Diego}\\[.2cm]
+\years{2018}Featured Poster Presentation, \textbf{39th Annual Meeting and Scientific Sessions of the Society for Behavioral Medicine in New Orleans}\\[.2cm]
+\years{2017}Poster Presentation, \textbf{38th Annual Meeting and Scientific Sessions of the Society for Behavioral Medicine in San Diego}\\[.2cm]
+\years{2016}Invited Speaker, \textbf{Unmasking the Ivy League: College Mental Health Conference}\\[.2cm]
+\years{2015}Invited Plenary Speaker (with stipend), \textbf{Western States Marijuana Summit in San Diego}\\[.2cm]
+\years{2015}Presenter, \textbf{Center for Undergraduate Research Fellowships Research Expo}\\[.2cm]
+\years{2015}Invited Presenter, \textbf{Wharton Undergraduate Research Symposium}\\[.2cm]
+\years{2015}Invited Speaker, \textbf{Harvard Symposium on Alcohol}\\[.2cm]
+\years{2015}Invited Panelist, \textbf{Fox Rothschild Conference on Juvenile Justice}\\[.2cm]
+\years{2014}Invited Speaker, \textbf{Wharton Undergraduate Research Symposium}\\[.2cm]
+\years{2013}Invited Speaker, \textbf{Science Talk at Treatment Research Institute}\\[.2cm]
+
+
+%     \item[$\bullet$]	 (Class of 2018) % -- One of the three most selective international fellowships for Americans
+%     % \item[$\bullet$] Rhodes Scholarship Finalist (2016)
+%     % \item[$\bullet$] Marshall Scholarship Finalist (2016)
+%  %% \item[$\bullet$]	Penn Nominee for the Rhodes, Marshall, and Mitchell Scholarships (2016)
+%     % \item[$\bullet$]	Truman Scholarship Pennsylvania Finalist (2016) -- 5 selected in PA
+%     \item[$\bullet$]	\href{https://www.pbk.org/WEB/PBK_Member/About_PBK/PBK_Member/About____.aspx?hkey=7b14c826-1a07-4148-a627-2c1a6b1ed3a6}{Phi Beta Kappa}
+%     \item[$\bullet$]	\href{https://www.betagammasigma.org/}{Beta Gamma Sigma}
+%     \item[$\bullet$]	Leonard Davis Institute of Health Economics Undergraduate Research Prize (2015)
+%     \item[$\bullet$]	College Alumni Society Research Grant
+%     \item[$\bullet$] Summer Program for Undergraduate Research Grant (2014, 2017)
+%     \item[$\bullet$]	Benjamin Franklin Scholars Honors Program
+%     \item[$\bullet$]	Joseph Wharton Scholars Honors Program
+%     \item[$\bullet$]	\href{http://www.buckscountycouriertimes.com/tabs/emergingleaders/theodore-caputi-intern/article_0a50522d-be50-5393-9367-fa1c1f3fe788.html}{Bucks County 40 Under 40} (youngest recipient)
+%     \item[$\bullet$]	University of Pennsylvania Dean’s List (2013-2017)
+%     % \item[$\bullet$]	Essay published in 3808: Journal of Critical Writing (15 of 2,000 Penn students selected)
+% %    \item[$\bullet$]	Selected as Penn Writing Center Tutor
+%     \item[$\bullet$]	Boy Scouts of America: Eagle Scout, Bucks County Youth of the Year
+%     \item[$\bullet$]	Princeton University Prize for Race Relations
+%     \item[$\bullet$]	Prevention Advocate Award, Council of Southeastern Pennsylvania\\[.2cm]
+% \end{description}
+% \clearpage
+\section*{Teaching experience}
+\years{F 2015} Teaching Assistant, MATH \texttt{104}: Single Variable Calculus (Penn)\\
+\years{F 2015} Teaching Assistant, FNCE \texttt{101}: Macroeconomics \& the Monetary Economy (Penn)\\
+\years{S 2015} Teaching Assistant, STAT \texttt{102}: Second-Semester Business Statistics (Penn)\\
+\years{F 2014} Teaching Assistant, FNCE \texttt{711}: Financial Derivatives (Penn)\\
+\years{2012, 2014} Instructor, English as a Second Language (Nationalities Services Center)\\
+
+
+\section*{Software}
+
+\href{https://www.github.com/tlcaputi/gtrendspy}{gtrendspy} and \href{https://www.github.com/tlcaputi/gtrendR}{gtrendR}: Complementary Python and R packages for pulling, analyzing, and visualizing data from the Google Trends for Health API\\[.2cm]
+\href{https://www.github.com/tlcaputi/cdcwonderpy}{cdcwonderpy} and \href{https://www.github.com/tlcaputi/wondeR}{wondeR}: Complementary Python and R packages for pulling, analyzing, and visualizing data from the CDC WONDER Multiple Cause of Death Online Form\\[.2cm]
+
+%
+% %\hrule
+% \section*{Community leadership}
+% \noindent
+% \years{2014-2017}\textbf{President and Founder}\\
+% \textit{Penn Leadership Training Institute}
+% \begin{description}
+%     \item[$\bullet$] Federally-registered 501(c)(3) non-profit organization that provides leadership education courses serving 13 Philadelphia middle and high schools
+%     \item[$\bullet$] Recruit and train over 100 volunteers from PLTI chapters at four Philadelphia colleges (U. Penn, Temple, U. Sciences, and Community College of Philadelphia)
+%     \\[.2cm]
+% \end{description}
+% \clearpage
+% \years{2014-2017}\textbf{President and Founder}\\
+% \textit{Penn Drug \& Alcohol Peer Advisors (PennDAPA)}
+% \begin{description}
+%     \item[$\bullet$] Only student group focusing on reducing the harm associated with drugs and alcohol on campus
+%     \item[$\bullet$] Grew membership from single-digits to 50+
+%     \item[$\bullet$] Developed strategic plan, recruited comprehensive leadership team, began partnerships with campus organizations (e.g. Counseling and Psychological Services, Student Health Services, Alcohol and Other Drug Initiatives, Office of Student Affairs)
+%     \\[.2cm]
+% \end{description}
+%
+% \years{2011-2017}\textbf{Board Member}\\
+% \textit{Bucks County Drug \& Alcohol Commission, Inc.}
+% \begin{description}
+%     \item[$\bullet$] Board allocates millions of state, federal, and county dollars to drug and alcohol prevention, intervention, and treatment providers across the county, serving mostly lower-income residents who lack health insurance coverage for substance use disorders
+%     \item[$\bullet$] Leadership Positions: Board Vice Chair (2013-2015), Board Treasurer (2012-2013), Strategic Planning Chair (2014), Program Services Chair (2015), Strategic Prevention Team Lead (2014-)
+%     \\[.2cm]
+% \end{description}
+%
+%
+%
+% \years{2015-2016}\textbf{Intern}\\
+% \textit{Office of U.S. Senator Patrick Toomey (R-PA)}
+% \begin{description}
+%     \item[$\bullet$] Recruited to perform research on substance abuse policy issues for the Senator
+%     \item[$\bullet$] Address constituent concerns, respond to calls, stay current on the Senator’s legislative positions
+%     \\[.2cm]
+% \end{description}
+%
+% \years{2014-2016}\textbf{Chair}\\
+% \textit{Penn Task Force on Alcohol and Other Drugs}
+% \begin{description}
+%     \item[$\bullet$] Appointed by Penn’s student government to serve on task force, further appointed to serve as Task Force Chair
+%     \\[.2cm]
+% \end{description}
+
+%\hrule
+\section*{Professional activities}
+% \subsection*{Board Memberships \& Affiliations}
+\years{2019-}       Member, American Economic Association\\
+\years{2018-}       Student Member, American Society for Addiction Medicine\\
+% \years{2018-}       \textbf{Substance Abuse Treatment, Prevention, and Policy}, Ad Hoc Reviewer\\[.2cm]
+% \years{2018-}       \textbf{American Journal of Public Health}, Ad Hoc Reviewer\\[.2cm]
+% \years{2018-}       \textbf{Addictive Behaviors}, Ad Hoc Reviewer\\[.2cm]
+% \years{2017-}       \textbf{American Journal of Preventive Medicine}, Ad Hoc Reviewer\\[.2cm]
+% \years{2017-}       \textbf{Tobacco Control}, Ad Hoc Reviewer\\[.2cm]
+% \years{2015-}       \textbf{Drugs: Education, Prevention, and Policy}, Ad Hoc Reviewer\\[.2cm]
+\years{2015-}       Advisory Board Member, Drug Free America Foundation\\
+\years{2016-2017}   Board Member, Pennsylvania Commonwealth Prevention Alliance\\
+\years{2015-2017}   Student Advisory Board Member, Netter Center for Community Partnerships\\
+\years{2015-2017}   Board Member, Jed-Penn Mental Health Advisory Committee\\
+\years{2012-2017}   Institutional Review Board Member, Treatment Research Institute\\
+
+\section*{Service to the field}
+\textbf{Ad Hoc Reviewer}: Addiction; Addictive Behaviors; American Journal of Preventive Medicine; American Journal of Public Health; Asia Pacific Journal of Public Health; Drugs: Education, Prevention, and Policy; Injury Prevention; International Journal of Drug Policy; JAMA: Journal of the American Medical Association; JAMA Network Open; Journal of Studies on Alcohol and Drugs; Substance Use and Misuse; Tobacco Control
+
+%
+% \subsection*{Ad Hoc Reviewer}
+% Substance Abuse Treatment, Prevention, and Policy; American Journal of Public Health; Addictive Behaviors; American Journal of Preventive Medicine; Tobacco Control; Drugs: Education, Prevention, and Policy; Asia Pacific Journal of Public Health; Tobacco Prevention \& Cessation
+
+%
+% \section*{Selected media mentions \& features}
+% %\href{}{}. \emph{}.\\[.2cm]
+% \href{https://penntoday.upenn.edu/news/marshall-scholarship-penn-0}{A Marshall Scholarship for Penn}. \emph{Penn News Today}.\\[.2cm]
+% \href{http://protomag.com/articles/cannabis-cure-opioid-crisis}{Is cannabis a cure for the opioid epidemic?}. \emph{Proto Magazine}.\\[.2cm]
+% \href{https://news.upenn.edu/news/lgbq-adolescents-much-greater-risk-suicide-heterosexual-counterparts}{LGBQ adolescents at much greater risk of suicide than heterosexual counterparts}. \emph{Penn News}.\\[.2cm]
+% \href{http://www.cnn.com/2017/12/19/health/lgbq-teens-suicide-risk-study/index.html}{LGBQ teens face serious suicide risk, Study Finds}. \emph{CNN}.\\[.2cm]
+% \href{http://www.dailymail.co.uk/health/article-5195087/Gay-teens-63-percent-risk-suicide.html#ixzz53bjORYm5}{Gay teens are 63\% more likely to consider suicide than heterosexuals in America, study reveals} \emph{The Daily Mail}.\\[.2cm]
+% \href{https://www.reuters.com/article/us-health-teens-lgbq-suicide/one-in-four-gay-lesbian-bisexual-teens-attempt-suicide-idUSKBN1ED2LS}{One in Four Gay, Lesbian, Bisexual teens attempt suicide}. \emph{Reuters}.\\[.2cm]
+% \href{http://www.dailymail.co.uk/health/article-4972816/New-healthier-way-smoke-set-overtake-vaping.html}{New ‘healthier’ way to smoke tobacco set to explode in popularity, experts claim - and it's not e-cigarettes}. \emph{Daily Mail}.\\[.2cm]
+% % \href{http://www.philly.com/philly/health/topics/HealthDay727399_20171011__Heat-Not-Burn_Cigarettes__Aiming_for_U_S__Market.html}{'Heat-Not-Burn Cigarettes' Aiming for U.S. Market}. \emph{The Philadelphia Inquirer (Philly.com)}.\\[.2cm]
+% \href{https://health.usnews.com/health-care/articles/2017-10-11/heat-not-burn-cigarettes-aiming-for-us-market}{'Heat-Not-Burn Cigarettes' aiming for U.S. market}. \emph{U.S. News \& World Report.} \\[.2cm]
+% \href{http://www.philly.com/philly/health/topics/HealthDay722712_20170518_Charlie_Sheen_s_2015_HIV_Disclosure_Spiked_Use_of_Home_Test_Kits.html}{Charlie Sheen's 2015 HIV disclosure spiked use of home test kits}. \emph{Philly.com}.\\[.2cm]
+% \href{http://www.businessinsider.com/charlie-sheen-effect-hiv-test-home-2017-5}{They're calling it 'The Sheen Effect'}. \emph{Business Insider}.\\[.2cm]
+% \href{http://www.newsweek.com/charlie-sheens-hiv-disclosure-inspired-record-numbers-americans-get-tested-611756}{Charlie Sheen's HIV disclosure inspired record numbers of Americans to get tested}. \emph{Newsweek}.\\[.2cm]
+% \href{http://nymag.com/scienceofus/2017/05/more-evidence-charlie-sheens-hiv-announcement-saved-lives.html}{More evidence that Charlie Sheen’s 2015 HIV announcement saved lives}. \emph{New York Magazine}.\\[.2cm]
+% \href{http://www.cnn.com/2017/05/18/health/celebrity-health-charlie-sheen-study/}{How celebrities' "golden glow" shines on public health}. \emph{CNN}.\\[.2cm]
+% \href{https://www.svt.se/nyheter/vetenskap/charlie-sheen-kan-ha-bidragit-till-battre-folkhalsa}{Charlie Sheen kan ha bidragit till bättre folkhälsa}. \emph{SVT}.\\[.2cm]
+% \href{https://oglobo.globo.com/sociedade/saude/revelacao-de-que-charlie-sheen-soropositivo-fez-saltar-procura-por-testes-de-hiv-21353810}{Revelação de que Charlie Sheen é soropositivo fez saltar procura por testes de HIV}. \emph{O Globo}.\\[.2cm]
+% \href{http://globalnews.ca/news/3459155/charlie-sheen-effect-record-levels-of-std-testing-followed-actors-hiv-positive-confession/}{Charlie Sheen effect? ‘Record levels’ of STD testing followed actor’s HIV confession}. \emph{Global News}.\\[.2cm]
+% \href{https://tonic.vice.com/en_us/article/the-charlie-sheen-effect-on-hiv-testing-was-equivalent-to-7-world-aids-days}{The Charlie Sheen Effect on HIV Testing Was Equivalent to 7 World Aids Days}. \emph{Vice News}.\\[.2cm]
+% \href{http://www.thedp.com/article/2016/12/theodore-caputi-named-george-mitchell-scholar}{{Senior Theodore Caputi becomes Mitchell Scholar for his work with substance abuse prevention}}. \emph{The Daily Pennsylvanian}.\\[.2cm]
+% \href{https://news.upenn.edu/news/penn-senior-theodore-caputi-named-george-j-mitchell-scholar}{{Penn Senior Theodore Caputi Named George J. Mitchell Scholar}}. \emph{Penn News Today}.\\[.2cm]
+% \href{http://www.buckscountycouriertimes.com/news/local/council-rock-north-graduate-wins-scholarship-to-study-in-ireland/article_2b6a2a76-b338-11e6-933a-e78ecfb6ab7a.html}{{Council Rock North graduate wins scholarship to study in Ireland}}. \emph{Bucks County Courier Times}.\\[.2cm]
+% \href{https://news.upenn.edu/news/penn-rising-senior-works-prevent-substance-abuse-through-leadership-training}{{Penn Rising Senior Works to Prevent Substance Abuse Through Leadership Training}}. \emph{Penn News}.\\[.2cm]
+% \href{http://www.vapingpost.com/2016/11/09/what-you-need-to-know-about-heat-not-burn-cigarettes-hnb/}{{What you need to know about Heat-not-Burn (HNB) cigarettes}}. \emph{Vaping Post}.\\[.2cm]
+% \href{http://otru.org/wp-content/uploads/2016/11/update_nov2016.pdf}{{Heat-Not-Burn Tobacco Products: Claims and Science}}. \emph{The Ontario Tobacco Research Unit}.\\[.2cm]
+% \href{https://studybreaks.com/2017/04/07/theo-caputi/}{{When it comes to stigmatizing substance abuse, Theo Caputi just says no}}. \emph{Study Breaks}.\\[.2cm]
+% \href{http://www.cosmopolitan.com/politics/news/a35832/will-cracking-down-on-drinking-prevent-sexual-assault/}{{Will Cracking Down on Drinking Prevent Sexual Assault on Campuses?}}. \emph{Cosmopolitan Magazine}.\\[.2cm]
+% \href{http://www.poppot.org/2014/09/11/marijuana-activisim-attracts-children-teens/}{{The pot piper leads, children, teens follow}}. \emph{Parents Opposed to Pot}.\\[.2cm]
+% \href{http://www.thedp.com/article/2014/11/penn-drug-and-alcohol-peer-advisors}{Getting Penn to play safer}. \emph{The Daily Pennsylvanian}.\\[.2cm]
+% \href{http://www.thedp.com/article/2015/01/new-alcohol-policies-at-brown-leave-penn-community-critical}{Brown revamps alcohol policies in wake of sexual assaults, but Penn community remains critical}. \emph{The Daily Pennsylvanian}. \\[.2cm]
+% \href{http://www.thedp.com/article/2015/02/dani-blum-back-out-black-outs}{Back out of black outs}. \emph{The Daily Pennsylvanian}. \\[.2cm]
+%
+% \section*{Other experience}
+% \years{2016}\textbf{JP Morgan Investment Banking Division}, New York, NY\\
+% Financial Institutions Group Summer Analyst\\[.2cm]
+% \years{2015}\textbf{Annaly Capital Management}, New York, NY\\
+% Agencies Research and Strategy Analyst\\[.2cm]
+% \years{2013-2014}\textbf{Penn Wharton Public Policy Initiative Student Association}, Philadelphia, PA\\
+% Paid Member, Web Content Committee\\[.2cm]
+%
+% \section*{Personal information}
+% \textbf{Marital Status}: Single\\[.2cm]
+% \textbf{Interests/Hobbies}: Collecting fountain pens, politics and policy, writing and performing poetry, constitutional law\\[.2cm]
+% %\textbf{References}: Available upon request
+%
+% \section*{References}
+% % Available upon request\\[.2cm]
+% \textbf{Prof. Francis X. Diebold}\\
+% Department of Economics\\
+% University of Pennsylvania\\
+% fdiebold [at] sas.upenn.edu\\[0.2cm]
+%
+% \textbf{Prof. Mark Dredze}\\
+% Department of Computer Science\\
+% Johns Hopkins University\\
+% mdredze [at] cs.jhu.edu\\[0.2cm]
+%
+% \textbf{Prof. Keith Humphreys}\\
+% School of Medicine\\
+% Stanford University\\
+% knh [at] stanford.edu\\[0.2cm]
+%
+%
+% % \clearpage
+% \textbf{Prof. John W. Ayers}\\
+% School of Medicine\\
+% University of California, San Diego\\
+% ayers.john.w [at] gmail.com\\[0.2cm]
+%
+
+
+
+%\vspace{1cm}
+\vfill{}
+%\hrulefill
+
+\begin{center}
+{\scriptsize  Last updated: \today \\
+\href{https://www.TheodoreCaputi.com/files/TheodoreCaputiShortCV.pdf}{https://www.TheodoreCaputi.com/files/TheodoreCaputiShortCV.pdf}}
+}
+
+
+% ---- FILL IN THE FULL URL TO YOUR CV HERE
+\end{center}
+
+\end{document}

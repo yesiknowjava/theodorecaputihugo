@@ -1,0 +1,362 @@
+
+\documentclass[12pt]{article}
+
+
+
+\usepackage[blankBeforeHeading, html, fencedCode,
+            inlineFootnotes, citations, definitionLists,
+            hashEnumerators, smartEllipses, hybrid, pipeTables]{markdown}
+
+
+
+\usepackage{setspace}
+\usepackage{sectsty}
+\usepackage[para,online,flushleft]{threeparttable}
+% \usepackage[utf8]{inputenc}
+% \usepackage{fourier}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage{longtable}
+\usepackage{threeparttablex}
+\usepackage{multirow}
+\usepackage{enumitem}
+
+% \usepackage{graphicx}
+
+% \usepackage{amsmath}
+\usepackage{amsmath,amssymb}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\usepackage{grffile}
+\usepackage{lscape}
+\usepackage{caption}
+\usepackage{natbib}
+% \usepackage{multirow}
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+}
+\subtitle{\href{https://www.TheodoreCaputi.com/files/peerQuality.pdf}{Click here for the latest version.}}
+
+
+\usepackage{booktabs}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\singlespacing\small}
+
+% \usepackage[final]{graphicx} %Loading the package
+% \graphicspath{{"C:/Users/tcapu/Google Drive/PublicHealthStudies/moving-docs/analyze/output/"}} %Setting the graphicspath
+
+
+\newcommand{\mc}{\textrm{,}}
+\newcommand{\ROOTPATH}[]{C:/Users/tcapu/Google Drive/PublicHealthStudies/moving-docs/analyze/output}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,bm}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\newcommand{\mc}{\textrm{,}}
+
+
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\title{The Role of Peers in General Practice Quality Improvement: An Overview of Systematic Reviews\footnote{These results are preliminary.}}
+\author{Theodore Caputi}
+\date{\today}
+\doublespacing
+
+
+\begin{document}
+\maketitle
+
+
+\section{Purpose}
+
+The purpose of this overview is to provide a qualitiative synthesis of the evidence of efficacy for different types of peer-based interventions targeting health care quality improvement. There are several types of peer-based interventions targetting health care quality that may act through similar behavior change channels, and this Overview is intended to merge the research from these different types of interventions. The research question, then, is: ``What evidence of efficacy exists for peer-based interventions to improve healthcare quality in the General Practice setting?''.
+
+
+\section{Methods}
+
+The Methods of this overview are intended to follow Cochrane Symposium guidance for Overviews of Reviews \citep{huntIntroductionOverviewsReviews2018}, with minimal semantic differences to improve clarity.
+
+\subsection{Criteria for Considering Reviews for Inclusion}
+\label{sec:Criteria}
+
+
+\subsubsection{Types of Interventions}
+Reviews published in peer-reviewed journals that describe the efficacy of a peer-based intervention(s) to improve health care quality will be included, so long as the intervention(s) of focus meet the following criteria:
+
+\begin{itemize}
+  \item The stated purpose of the intervention or outcome of interest is to improve at least one structure, process, or clinical outcome indicator or a class of indicators.
+  \item The intervention targets physicians, with a preference for interventions targetting general practitioners.
+  \item The predominant vehicle of the intervention is through peer interaction.
+  \item The intervention should be personal in nature (e.g., not mass messages sent from a governing body that happens to include general practice physicians as signatories), preferably including face-to-face contact.
+\end{itemize}
+
+Systematic reviews of quality improvement interventions can generally be divided into those that focus on the effect of a particular type of intervention on general quality (one intervention on many outcomes; e.g., ``Paying for performance to improve the delivery of health interventions in low- and middle- income countries''), or the set of interventions used to improve a specific metric of quality (many interventions on one outcome; e.g., ``Interventions to optimise prescribing for older people in care homes''). Some other systematic reviews focus on the evidence of one type of intervention on one outcome. Because the purpose of this Overview is to synthesize evidence of the efficacy for different types of peer-based intervention, only reviews that focus on peer-based interventions are included. That is, reviews that, on the whole, do not aim to assess the efficacy of a specific type of peer-based intervention will be excluded, even if some of the primary studies in the review focus on peer-based interventions.
+
+
+\subsubsection{Types of Designs}
+
+Peer-based interventions can be studied using several experimental and quasi-experimental methods, and it is likely that a given review will include primary studies with a mix of methodologies. In these cases, the Overview will ``include'' the entire review but focus on results from the following study designs: randomised controlled trial; non-randomised trial; difference-in-difference studies; interrupted time series analysis (ITSA), including both one-sample ITSA and two-sample ITSA. Because these study designs vary in their robustness, different inclusion criteria were applied to each (see Table \ref{tab:DesignInclusionCriteria}). Importantly, both experimental studies (where the investigators impose an intervention they designed) and quasi-experimental studies (where the investigators use observational data surrounding an event) will be considered.
+
+
+\begin{table}
+  \caption{Study Designs and Inclusion Criteria}
+  \begin{center}
+      \begin{threeparttable}
+        \small
+        \begin{tabularx}{\textwidth}{|p{3cm}|X|}
+        \hline
+        \textbf{Study Design} & \textbf{Inclusion Criteria} \\ \hline
+        Randomised controlled trial &
+        \begin{itemize}[noitemsep,topsep=0pt]
+          \item True, reliable randomisation procedure at the individual or block level
+          \item If block-randomised, at least four blocks
+        \end{itemize}
+          \\ \hline
+        Non-randomised trial &
+        \begin{itemize}[noitemsep,topsep=0pt]
+          \item Authors provide adequate explanation for why trial could not feasibly be randomised (i.e., decision driven by circumstance rather than investigator choice)
+          \item Contains control group
+          \item If trial is organised by blocks, at least two control groups and two intervention groups
+        \end{itemize}
+          \\ \hline
+        Two-sample interrupted time series\tnote{1} &
+        \begin{itemize}[noitemsep,topsep=0pt]
+          \item Adequately robust description of parallel pre-trends between the control and treatment group
+          \item Preferably using longitudinal data but, if not, it is reasonable to assume that the underlying samples are the same at different time points
+          \item Control group adequately similar to treatment group
+          \item Adjusted for relevant confounders
+          \item No known external event occurring at around the same time as the intervention
+        \end{itemize}
+          \\ \hline
+        One-sample Interrupted time series &
+        \begin{itemize}[noitemsep,topsep=0pt]
+          \item Adequately precise, linear pre-trend
+          \item Preferably using longitudinal data but, if not, it is reasonable to assume that the underlying samples are the same at different time points
+          \item Separate estimates for immediate and slope effect or mean overall effect
+          \item No known external event occurring at around the same time as the intervention
+          \item Adjusted for relevant confounders
+        \end{itemize}
+          \\ \hline
+        Difference-in-difference\tnote{1} &
+        \begin{itemize}[noitemsep,topsep=0pt]
+          \item Groups adequately similar at baseline
+          \item Preferably using longitudinal data but, if not, it is reasonable to assume that the underlying samples are the same at different time points
+          \item No external event occuring between pre- and post-period
+          \item Adjusted for relevant confounders
+        \end{itemize}
+        \\ \hline
+        % \hline
+      \end{tabularx}
+      \begin{tablenotes}
+        \footnotesize
+        \textbf{NOTE}: These design-specific inclusion criteria were chosen based upon the assumptions of the underlying models. Adequacy will be determined by the author, who will err on the side of caution in including studies.
+        \item[1] There is no restriction on the number of pre- or post-periods for two-sample ITSA because a two-period, two-sample ITSA is equivalent to a difference-in-difference design study.
+      \end{tablenotes}
+    \end{threeparttable}
+  \end{center}
+\label{tab:DesignInclusionCriteria}
+\end{table}
+
+
+\subsection{Types of Participants}
+
+Reviews of interventions that target general practitioners or specialist physicians will be included in the Overview. Those that target other healthcare providers (e.g., nurses) will be excluded.
+
+The primary studies within the reviews may vary in their level of analysis. Some primary studies (e.g., those that focus on structure and process outcomes) may use physician, practice, ward, or region-level outcomes, while other primary studies (e.g., those that focus on clinical outcomes) may use patient-level outcomes. Both types of primary studies will be considered in the Overview.
+
+
+\subsection{Types of Outcomes}
+
+Reviews that focus on the intervention's effects on overall quality or on changes in structure, process, or clinical outcomes are considered. Ideally, studies should choose these measures \emph{a priori} to their analyses, limiting the risk of investigator-induced bias \citep{ioannidisWhyMostPublished2005}.
+
+Main outcomes from these systematic reviews may include the following:
+
+\begin{itemize}
+  \item Physician professional behavior (e.g., adherence to clinical guidelines, referral rates, or prescribing rates)
+  \item Healthcare organisation efficiency and efficacy, such as waiting list time or achievement on preset quality measures
+  \item Patient-level outcomes, such as patient morbidity and/or mortality and patient satisfaction
+\end{itemize}
+
+Secondary outcomes from these systematic reviews may include the following:
+
+\begin{itemize}
+  \item Adverse events
+  \item Economic and cost-effectiveness analyses
+\end{itemize}
+
+
+\subsection{Other Inclusion/Exclusion Criteria}
+
+Some additional inclusion and exclusion criteria were applied to the studies.
+
+\noindent \textbf{Inclusion Criteria}
+\begin{itemize}
+  \item Published in peer-reviewed journal
+  \item Systematic review (including systematically performed scoping reviews but excluding non-systematic or narrative reviews)
+  \item When systematic reviews have been updated over time, all previous iterations will be considered (though the latest review will be noted)
+\end{itemize}
+
+\noindent \textbf{Exclusion Criteria}
+\begin{itemize}
+  \item Systematic reviews with inadequate search strategies, defined as searching less than two DARE sources
+  \item Studies not published in English (due to limitations of the Overview author)
+\end{itemize}
+
+
+\subsection{Search Methods}
+
+I systemtatically search databases for published, peer-reviewed systematic reviews that assess the efficacy of peer-based interventions in improving healthcare quality. Specifically, I screened all studies resulting from a search that contains at least one term from list A, at least one term from list B, and at least one term from list C (Table \ref{tab:SearchTerms}). This search strategy was initially implemented in the PubMed database, using the RISmed package for R version 3.6.1.
+
+
+\begin{table}
+  \centering
+  \caption{Terms for Search Strategy}
+  \begin{center}
+  \begin{threeparttable}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{List A: Quality Improvement} & \textbf{List B: Physician Targets} \\
+  79,711 Matching Articles & 773,406 Matching Articles\\
+  \hline
+  ``quality improvement" & ``physician(s)'' \\
+  ``healthcare quality'' & ``clinician(s)'' \\
+  ``health care quality'' & ``doctor(s)'' \\
+  ``professional practice'' & \\
+  & \\
+  \hline
+  \textbf{List C: Peer-Based} & \\
+  450,761 Matching Articles & \\
+  \hline
+  ``peer'' & \\
+  ``opinion leader'' & \\
+  ``influential physician'' & \\
+  ``educationally influential'' & \\
+  ``social network'' & \\
+  ``audit'' & \\
+  ``feedback & \\
+  & \\
+   \hline
+\end{tabular}
+\begin{tablenotes}
+  \footnotesize
+\textbf{NOTE}: These search terms were selected based upon related past reviews and iterative searching by the author on PubMed. Quotes indicate that some portion of the article must match the entire term. Parentheses with an asterisk indicate that the term may take on a suffix in the article. For example, the search term (audit*) would include all articles that use the terms ``audits'', ``auditors'', and ``auditing''. Article counts by list are accurate for PubMed as of 2 December 2019.
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\label{tab:SearchTerms}
+\end{table}
+
+
+\subsection{Searching Other Resources}
+
+After the initial selection of reviews, studies in the bibliographies of initially included articles were also considered for inclusion.
+
+\section{Data Extraction and Analysis}
+\subsection{Selection of Studies}
+
+For each review emerging from the initial search, the title, year, journal, and abstract is exported to a spreadsheet in Microsoft Excel. The first screen uses only the review title and the abstract. If, based upon the review's title and/or abstract, it is clear the review fit the inclusion criteria, then the review is coded as ``Eligible''. If, based upon the title and/or abstract, the review is clearly outside of the scope of the overview, it is coded as ``Ineligible''. Remaining reviews are coded as ``Unclear if Eligible''.
+
+The full text of reviews coded as either ``Eligible'' or ``Unclear if Eligible'' are downloaded and reviewed. The full text is used to make a final decision on whether the review meets or fails to meet the inclusion/exclusion criteria from Section \ref{sec:Criteria}. Those that meet inclusion/exclusion criteria are included in the review. Those that fail to meet the inclusion/exclusion criteria are coded for which criteria they most clearly failed to meet. After the first round of reviews are included, those initial reviews' bibliographies are screened for other relevant reviews. In cases where the review's full text could not be downloaded (via University of York or partner university databases), the omission is noted.
+
+The results of this process are reported in a PRISMA diagram.
+
+\subsection{Data Extraction and Management}
+
+A data collection tool was created based upon \citep{flodgrenOverviewReviewsEvaluating2011}. This data extraction tool was piloted on one inclusion criteria and then modified to capture relevant information. Ultimately, details of the stated aim, search strategy, number of included primary studies, number of participants, primary study designs, primary study intervention type, primary study comparison group, primary study country of focus, primary study healthcare setting focus, and reviewer interpretation were captured for each included review. When available, information on the possibility of publication bias (e.g., Egger's Test \citep{sterneFunnelPlotsDetecting2001}) is also recorded.
+
+\subsection{Quality of Included Reviews}
+
+Along with the information collected for each review in the data collection tool, the quality of each included review will be assessed through the AMSTAR 2, a validated critical appraisal tool intended to evaluate the quality of systematic reviews that, themselves, include ranodmised and non-randomised studies of healthcare interventions \citep{sheaAMSTARCriticalAppraisal2017}.
+
+\subsection{Assessment of Risk of Bias in Included Studies}
+
+Quality of primary studies is reported from each systematic review's quality assessment. In cases where a review's quality assessment is inadequate, quality of the underlying primary studies is assessed in terms of the inclusion criteria presented in Table \ref{tab:DesignInclusionCriteria}. For example, a one-sample ITSA is assessed for adequately precise, linear pre-trends; measuring the same sample in different time points; adjustment for relevant confounders; and presence of an external event.
+
+\subsection{Synthesis}
+
+Because the aims of included reviews are highly varied, a quantitative meta-analysis would be largely uninformative. For example, reviews may seek to assess the efficacy of a peer-based intervention in terms of improving patient waiting times while another assesses the efficacy of a peer-based intervention in terms of adherence to clinical guidelines for treating cardiovascular problems. These two outcomes cannot reasonably be compared, and neither should the reviews. Instead, the papers will be summarised, categorised, and synthesised. The qualitative review attempts to (A) document which types of peer-based interventions have been assessed in systematic review, (B) describe the available evidence of efficacy for each of these types of peer-based interventions, and (C) highlight common threads emerging from the research on several types of peer-based interventions.
+
+If a review provides some quantiative estimate of effect, this will be included, in its original form, along with the review's summary. However, effect sizes will not be directly compared against one another. If possible, when a review does not contain a quantitative effect estimate, the direction of the effect (e.g., improves quality, does not improve quality, mixed results) will be reported.
+
+\subsection{Limitations}
+
+This design for an Overview of systematic reviews has several limitations. Only indexed, peer-reviewed literature is considered in the Overview. While this provides a useful quality screen for included reviews, it is possible that high-quality literature that would otherwise fit the inclusion criteria are available. Due to the constraints of the author, only reviews written in English are included. Consequently, there may be relevant reviews published in other languages. Because the review focuses different types of intervention that could each be applied to several outcomes rather than a specific intervention and specific outcome, results are not quantiatively comparable. This presents several limitations. For example, it is not possible to estimate the average effect of peer-based treatments, generally. Further, sensitivity or subgroup analyses cannot be conducted.
+
+
+\section{Results}
+
+Four major types of peer-based interventions have been systematically reviewed in the literature: feedback, education, opinion leaders, and governance.
+
+\subsection{Feedback}
+The plurality (n=6) of the reviews focused on feedback-based interventions. Feedback is a mechanism whereby an individual is told how his or her practice measures against some standard or target \citep{iversAuditFeedbackEffects2012}. Feedback interventions are often necessarily paired with audit, which is the preliminary step where data on an individual's performance is collected and compared to a standard. Not all feedback mechanisms fit within the peer framework. For example, an audit and feedback mechanism may simply compare a GP's performance to a standard set by a governing committee. However, audit and feedback often involve peers; for example, a peer-based feedback mechanism may involve having a peer physician discuss the individual's audit results.
+
+The most current systematic review of feedback interventions was conducted as a full Cochrane Review by \citet{iversAuditFeedbackEffects2012}. Of the 140 studies included in the review, the person who provided the feedback was either unclear or the investigators in 112. Of the remaining 28, 13 used feedback from a supervisor or senior colleauge, and 15 used feedback from an impersonal professional standards organisation or representative of the employers. The authors conducted a meta-regression over all studies without high risk of bias to compute the expected adjusted risk difference (RD) between those that received feedback from different sources. The adjusted RD for feedback provided by a supervisor or senior colleague was 16.50, compared with 2.37 for a professional standards review organisation or the employer, 5.04 for the investigators, and 5.48 for unclear source of feedback (p<0.001), suggesting that receiving feedback from peers provided a significant advantage over receiving feedback from other sources. The authors conclude that feedback mechanisms are most successful when ``the person responsible for the audit and feedback is a supervisor or colleague'' \citep{iversAuditFeedbackEffects2012}, indicating that peer influence plays a key role in the effectiveness of feedback mechanisms. The same research team reached a similar conclusion in another analysis using the data from the Cochrane Review; \citet{iversGrowingLiteratureStagnant2014} found in a median-of-medians meta-regression (which included those primary studies with high risk of bias) that interventions that use feedback from a supervisor or respected colleague had a significantly greater effect than interventions that used feedback from other sources. The estimated adjusted RD among the 10 studies with feedback from a supervisor or respected colleague was 25.22, compared with 9.16 among the 3 studies using feedback from standards review organisations or employers, 15.19 among the 52 studies using feedback from the investigators, and 19.85 among the 33 studies where the source of feedback was not clear ($p$=0.006).
+
+Importantly, \citet{iversAuditFeedbackEffects2012} did not report the quality of primary studies individually, and so it is not possible to evaluate whether there was a difference in quality of the primary studies that used peer-based feedback versus other forms of feedback.
+However, this information is available in past reviews of the same subject. In a preceding Cochrane review from 2003 \citep{jamtvedtAuditFeedbackEffects2003a}, there were also 13 studies that used feedback from supervisors or senior colleagues; 3 (23\%) of these were assessed to have low quality, 6 (46\%) were assessed to have moderate quality, and 4 (31\%) to have high quality. Compared with other studies in the same review, those peer-based feedback appear to have higher quality than those without peer-based feedback (31\% high quality versus 8\% high quality).
+
+In the 2006 iteration of the Cochrane review, \citet{jamtvedtAuditFeedbackEffects2006} describe two specific studies that deal with feedback from peers \citep{jamtvedtDoesTellingPeople2006}. The first study \citep{homberghPracticeVisitsTool1999} used an RCT design to randomise 90 physicians in 68 practices to receive audit and feedback with a visit from a physician or audit and feedback with a visit from a non-physician observer. The authors found that, while both interventions were effective, the impact on performance relative to 208 performance indicators was better among the treatment group who had received outreach from a physician than those who had received outreach from a non-physician observer. The second study \citep{wardEducationalFeedbackManagement1996} compared the effect on diabetes management of audit and feedback with outreach from a physician versus audit and feedback wwith outreach from a nurse. The authors did not find a significant difference between the effect size of each treatment, as assessed through the Adequate Competent Care Score.
+
+A separate systematic review \citep{fergusonFactorsInfluencingEffectiveness2014} focused on feedback emerging from colleagues (including other physicians and non-medical co-workers), which the authors refer to as ``Multisource Feedback'', in preparation for the introduction of multisource feedback into the UK General Medical Council scheme for reviewing all medical doctors. The authors ultimately reviewed 16 studies, including 1 RCT, 7 cross-sectional survey studies, 2 mixed methods studies, and 6 qualitative studies. According to the reviewers, only the RCT identified a ``measured change in behaviour'' emerging from multisource feedback. Those physicians in the treatment group received a tailored coaching session and multisource feedback. Compared with the control group, the treatment group had a 35\% (95\%CI 11.0-58.0) increase in communicating effectively with the patient and family, a 30\% (95\%CI 7.9-53.0) increase in timeliness of completing tasks, and a 26\% (95\%CI 2.9-49.0) increase in demonstrating responsibility and accountability. The reviewers point out that it is not possible to disentangle the effect of the feedback from the tailored coaching session, as the control group did not receive the tailored coaching session, and that the sample size was small (n=36). Twelve of the remaining primary studies reviewed assessed changes in behavior through self-report. According to the reviewers, the most commonly reported change was an improvement in communication, with some studies also reporting improvements in patient follow-up, medical record maintenance, providing information to patients, and managing stress.
+
+Within this review \citep{fergusonFactorsInfluencingEffectiveness2014}, three primary studies investigated the characteristics of the raters on the impact of the feedback. According to the reviewers, these primary studies collectively suggested that feedback was viewed as more acceptable and more effective when the recipipent viewed the rater as familiar with the work. The review contained six primary studies in which feedback was facilitated by a colleague (i.e., appraiser, mentor, facilitator, supervisor, or coach) and eleven primary studies where feedback was not facilitated (i.e., provided in paper report). While a direct comparison between the forms of facilitation is not made, the reviewers state that facilitation was key to the physicians' acceptance of and response to the multisource feedback.
+
+Finally, one systmatic review examined the effectiveness of audit and feedback mechanisms in the context of a single disease. \citet{guldbergEffectFeedbackGeneral2009} conducted a systematic review of randomised controlled trials focused on the effect of feedback on quality of care for people with Type II diabetes in the general practice setting. Of the ten primary studies that met their inclusion criteria, two used an intervention that involved a significant peer component. The first study \citep{phillipsEndocrinologistSupportedInterventionAimed2005} randomised clinicians to either receive feedback sessions with an endocrinologist, receive computerised reminders, or both, but found that only the combination of the two interventions improved patient-level clinical outcomes (assessed through mean Hba1c). The second study RCT \citep{frijlingMultifacetedSupportImprove2002} randomised clinicians to receive feedback reports and outreach visits, finding mixed results; the intervention improved outcomes on two of seven dimensions (percentage of recommended foot examinations and eye examinations performed).
+
+
+\subsection{Local Opinion Leaders}
+One Cochrane Review, updated four times since 1999, concerns the effectiveness of local opinion leaders on healthcare quality. The most current iteration of this review \citep{flodgrenLocalOpinionLeaders2019} included 24 randomised controlled trials and assessed the effectiveness of opinion leader based interventions on several types of quality improvement outcomes. For example, in a meta-analysis of 71 dichotomous outcomes relating to adherence to evidence-based practice across 18 studies, the authors found moderate evidence that opinion leaders ``probably improve healthcare professionals' compliance with evidence-based practice'', with a median adjusted risk difference of 10.8\% (IQR: 3.5\% to 14.6\%). On the other hand, using the results from 8 primary studies, the reviewers found that the evidence that opinion leader based interventions improved patient outcomes was mixed. Some interventions found improvements in patient outcomes, such as a 45\% (95\%CI 9-71) decrease in the rate of women experiencing a >500 mL reduction in postpartum haemorrhage and a 0.25 mean decrease ($p$<0.05) in parent-reported emergency department visits for children with asthma. However, opinion leader based interventions failed to have an impact on several indicators within these primary studies; for example, opinion leader interventions failed to significantly affect pain scores for people with cancer (mean difference +0.86 scale steps; $p$=0.66), to affect local cancer reoccurrence (risk difference +0.1\%) in patients with colon cancer, or improve functional rating scores for people who had experienced whiplash (median difference -0.6, 95\%CI -7.8 to 6.6). Ultimately, the reviewers concluded that the certainty of evidence that opinion leader based interventions improve patient outcomes is very low. Among the 24 primary studies, the reviewers found that 11 were at low risk of bias, while 13 were at moderate or high risk of bias. However, they also found that the median effect size did not meaningfully vary between those studies at low risk for bias and those at moderate or high risk for bias.
+
+Several of the primary studies in the review investigated interventions that combined the opinion leaders with other interventions, and so the reviewers also decomposed their analysis based upon the treatment intervention (e.g., opinion leader alone or opinion leader with another intervention) and the comparison intervention (e.g., no intervention, another intervention, or the same other intervention as the treatment group). Among the 38 outcomes across five primary studies with the cleanest comparison, i.e., opinion leader alone versus no intervention, the authors found moderate-certainty evidence that opinion leader interventions ``probably improve healthcare professionals' compliance with evidence-based practice''. The median adjusted risk difference for these interventions was 9.15\% (95\%CI -0.3\% to 15\%).
+
+
+
+\subsection{Education}
+
+Two included reviews \citep{obrienEducationalOutreachVisits1997,obrienEducationalOutreachVisits2007} focused on educational interventions. The most current iteration \citep{obrienEducationalOutreachVisits2007} is a Cochrane Review of RCTs that investigate the effect of Educational Outreach Visits (EOV), which the authors define as a face-to-face visit by an external trained healthcare professional that occurs the target physician's workplace and is intended to improve quality of care. According to the authors, EOVs incorporate interventions that had previously been referred to as educational detailling, public interest detailing, academic detailing, and educational visiting. Reviewing 69 trials attempting to address prescribing behavior (n=29), increase preventive screening (n=11), and other problems in general practice (n=29), the authors found that EOVs have a small and variable effects on healthcare quality. For the 49 trials using dichotomous outcomes, the median adjusted risk difference for EOV interventions was 5.6\% (IQR: 3\% to 9\%), and quality improvement exceeded more than 20\% in half of the 20 trials that used continuous outcomes. Still, the authors note that quality improvements from EOVs were often well below the primary study authors' expectations. While the authors did not decompose these effects based upon what type of person delivered the EOV, most interventions included in the review (n=53) used physicians and could, consequently, be considered peer-based interventions.
+
+Just one primary study in the review (which was also included in the Cochrane Review on audit and feedback \citep{jamtvedtAuditFeedbackEffects2006}) specifically studied whether EOVs (combined with an audit and feedback intervention) were more effective in improving practice management when the presenter was a physician relative to a trained non-physician. As previously mentioned, \citet{homberghPracticeVisitsTool1999} found that, while both groups improved practice management, those with peer EOV presenters had greater improvements; those in the peer EOV group improved in dimensions of collaboration and practice organisation, while those in the non-physician EOV group improved in two outcomes related to maintaining patient records.
+
+
+
+\section{Discussion}
+
+The results of the Overview suggest that the effectiveness of peer-based interventions for quality improvement in healthcare are well documented. There is substantial evidence that peer-based feedback, local opinion leaders, and education interventions can improve health care quality. However, only these three types of peer-based interventions have been thoroughly investigated in systematic reviews. Other peer-based interventions
+
+% An early systematic review \citep{davisChangingPhysicianPerformance1995} took a broader perspective on educational interventions, including several peer-based quality improvement interventions, such as formal educational programs, outreach visits, local opinion leaders, and audit and feedback, and reminders. After reviewing 81 single-intervention trials, the authors found that outreach visits and opinion leader strategies were the most consistently effective in trials of single interventions. Audit and feedback based interventions had mixed effectiveness, whereas formal educational programs were generally ineffective. The authors also report, based upon 39 trials, that studies that pair multiple types of interventions tend to achieve positive effects when the interventions are independently effective and mixed effects when the interventions were not independently effective.
+
+
+
+
+
+\clearpage
+\bibliographystyle{aea}
+\bibliography{refs}
+
+
+
+\end{document}
+
+
+% https://link.springer.com/article/10.1007/s11606-014-3141-1

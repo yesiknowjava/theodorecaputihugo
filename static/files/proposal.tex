@@ -1,0 +1,176 @@
+
+\documentclass[12pt]{article}
+
+
+
+\usepackage[blankBeforeHeading, html, fencedCode,
+            inlineFootnotes, citations, definitionLists,
+            hashEnumerators, smartEllipses, hybrid, pipeTables]{markdown}
+
+
+\usepackage{setspace}
+\usepackage{sectsty}
+\usepackage[para,online,flushleft]{threeparttable}
+% \usepackage[utf8]{inputenc}
+% \usepackage{fourier}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage{longtable}
+\usepackage{threeparttablex}
+\usepackage{multirow}
+\usepackage{enumitem}
+
+% \usepackage{graphicx}
+
+% \usepackage{amsmath}
+\usepackage{amsmath,amssymb}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\usepackage{grffile}
+\usepackage{lscape}
+\usepackage{caption}
+\usepackage{natbib}
+% \usepackage{multirow}
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%build
+
+}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+}
+\subtitle{\href{https://www.TheodoreCaputi.com/files/proposal.pdf}{Click here for the latest version.}}
+
+\usepackage{booktabs}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\singlespacing\small}
+
+% \usepackage[final]{graphicx} %Loading the package
+% \graphicspath{{"C:/Users/tcapu/Google Drive/PublicHealthStudies/moving-docs/analyze/output/"}} %Setting the graphicspath
+
+
+\newcommand{\mc}{\textrm{,}}
+\newcommand{\ROOTPATH}[]{C:/Users/tcapu/Google Drive/PublicHealthStudies/moving-docs/analyze/output}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,bm}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\newcommand{\mc}{\textrm{,}}
+
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{nullhypothesis}{Null Hypothesis}
+
+
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\title{GP Movers Proposal\footnote{This proposal is preliminary, and this is a draft.}}
+\author{Theodore Caputi}
+\date{\today}
+\doublespacing
+
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+Improving quality has been a major priority for England's National Health Service (NHS) and for health systems worldwide for several decades. The process of improving quality involves two phases: (A) defining how quality improvement ought to be measured and (B) implementing interventions to improve quality on those metrics. The proposed project, which would examine how a General Practice's quality scores change in response to an entering general practitioner (i.e., a ``mover effect''), has the potential to answer meaningful questions in both of these domains.
+
+\section{Context: Quality and Outcomes Framework}
+
+The Quality and Outcomes (QOF) scheme, introduced in 2004, is England NHS's primary strategy for improving quality in general practice. Essentially, the QOF scheme functions by setting a series of performance indicators based upon the literature for best practices and compensating GP practices based upon their performance on those metrics. For example, the QOF scheme may include a target for the percentage of individuals with heart failure who are prescribed statins, and GP practices would be compensated for how close their performance lies to this target. The over 100 performance indicators in the QOF scheme span several dimensions of healthcare delivery (e.g., patient experience, organisational, clinical, and additional services), with most indicators tied to what is considered best practice for a given diagnosis or circumstance. More information on the implementation of the QOF scheme is available in the \href{https://www.TheodoreCaputi.com/files/qof.pdf}{Literature Review}.
+
+
+\section{Impact}
+
+
+\subsection{Intervention Opportunities}
+
+It is now well accepted that merely identifying what constitutes best medical practice or setting quality standards is insufficient to improve the quality of health care delivery, and that for a strategy to successfully improve healthcare quality, it should incorporate lessons learned from the vast literature on behavior change \citep{rubensteinUnderstandingHealthCare2000,mittmanImplementingClinicalPractice1992}. Over several decades, psychologists, sociologists, economists, and marketers have identified peer effects -- the social influence that individuals place on their proximate peers -- as one of the strongest forces for behavior change. For example, studies have demonstrated that peer effects influence adolescent's health behaviors \citep{gaviriaSchoolBasedPeerEffects2001,lundborgHavingWrongFriends2006,aliEstimatingPeerEffects2011}, college students' academic achievement \citep{sacerdotePeerEffectsRandom2001}, the diffusion of technology \citep{bollingerPeerEffectsDiffusion2012}, paternity leave participation \citep{dahlPeerEffectsProgram2014}, consumer decisions \citep{morettiSocialLearningPeer2011}, financial decisions \citep{bursztynUnderstandingMechanismsUnderlying2014}, and labor productivity \citep{herbstPeerEffectsWorker2015}.
+It is unsurprising, then, that many health services researchers have endorsed peer effects as a possible method for improving healthcare quality \citep{goodpastorMotivatingPhysicianBehaviour1996}. These scholars theorised that social influence, operationalised in such forms as role models \citep{kennyRoleModelingPhysicians2003}, opinion leaders \citep{locockUnderstandingRoleOpinion2001}, socially central individuals \citep{meltzerExploringUseSocial2010}, and peer feedback \citep{pronovostImprovingHealthcareQuality2012}, could be a powerful mechanism to encourage physicians to implement evidence-based policies \citep{phelpsVariationsMedicalPractice1993}.
+
+Indeed, there is some empirical evidence that quality improvement interventions are more successful when they incorporate a component of social influence. For example, \citet{iversAuditFeedbackEffects2012} systematically reviewed the literature on audit and feedback interventions (i.e., quality interventions where a physician is informed of their performance relative to a set standard or the average) and found that feedback and audit interventions are more than three time as as effective when the source of the feedback is a supervisor or colleague (i.e., a peer) (adjusted risk difference [ARD]: 16.50) as opposed to a standards review board or employer (ARD: 2.37) or study investigators (ARD: 5.04). Evidence from several qualitative studies have affirmed that the use of peers in quality improvement interventions increases physicians' receptiveness to change \citep{fergusonFactorsInfluencingEffectiveness2014}. Aside from audit and feedback interventions, a Cochrane Rewiew conducted by \citet{flodgrenLocalOpinionLeaders2019} found that, compared with no intervention, local opinion leader based interventions improved adjusted median compliance with evidence-based practice by 10.8\%. Further, quality interventions involving opinion leaders improved adjusted median compliance with evidence-based practice by 7.1\% to 13.7\% relative to other types of quality improvement interventions. Even medical education appears to be more effective when interacted with an element of social influence. An early study found that a quality improvement intervention which paired educational outreach visits with feedback had a greater effect on physician's future performance when the outreach was conducted by a peer physician rather than a trained practice assistant \citep{vandenhomberghPracticeVisitsTool1999}.
+
+Still, despite the theoretical enthusiasm for using peer effects in health care quality improvement and positive results within a few peer-based quality improvement interventions, several possible implementations of peer-based interventions have not been thoroughly explored. For example, a 2012 scoping review of social network based interventions to improve healthcare quality \citep{cunninghamHealthProfessionalNetworks2012} found only one published study that attempted to leverage social networks in a healthcare quality improvement program, even though that study concluded that social network analysis could be an effective method for introducing behavior change in medical settings \citep{andersonDiffusionComputerApplications1990}.
+
+Using movers to identify peer influences is a relatively new strategy \citep{fernandezDoesCultureMatter2010}, and to my knowledge, no studies have considered the impact of physician movement on quality improvement. Only a few studies have considered the clinical relevance of entering or exiting physician movers, at all. One study of primary physicians in Norway found that a physician's ``practice style'' was stable even after he or she moved to a different practice in a different location, suggesting that physicians' preferences play a meaningful role in medical practice variation apart from differences in clientelle \citep{gryttenPracticeVariationPhysicianspecific2003}. This same method was used by \citet{epsteinFormationEvolutionPhysician2009}, who investigated whether individual obstetricians changed their rate of Caesarean-section (C-section) procedures in response to moving to a new peer group. While the authors found some evidence of peer influence, the effect size was exceptionally small; a 2.4 percentage point increase in a physician's peer group's C-section rate driven by moving physicians was associated with a 0.16 percentage point change in the physician's C-section rate. A similar study of cardiologists who moved between two geographic regions in the United States Medicare system found that these physicians adapted to physician behavior in their target region; indeed, the cardiologists adapted their practice, on average, by 0.6 to 0.8 percentage points for every percent point difference between their origin and target region \citep{molitorEvolutionPhysicianPractice2018}.
+
+A related method involves studying individual physicians who concurrently work in two different clinical settings. Using this method, within-physician but across-setting heterogeneity in clinical practice suggests that physicians may be influenced by the social norms of their proximate peers in each setting. The earliest example comes from \citet{griffithsVariationHospitalStay1979}, who studied physicians who performed elective repair of inguinal hernia in multiple hospital settings within the NHS. They found that physicians who performed the procedure at more than one hospital significantly varied the patient's length of postoperative stay among the hospitals, while physicians who performed the procedure at just one hospital were relatively consistent. \citet{westertVariationDurationHospital1993} applied modern statistical approaches in a similar setting in the Netherlands and found similar results; physicians who performed similar procedures across similar patients at more than one hospital varied their patients' length-of-stay to match each hospital. Subsequently, \citet{jongVariationHospitalLength2006} found a similar pattern for length-of-stay among multi-hospital physicians practicing in the United States. Research on a ``mover effect'' could serve to further this literature and provide field-based, quasiexperimental evidence of peer influence among general practitioners (GPs).
+
+Considering quality improvement from the perspective of peer effects and social influence may also lay the foundation for designing and testing new types of quality improvement interventions. For example, incentivised physician moves has been proposed \citep{liRetainingRuralDoctors2014} and utilised \citep{yongRuralIncentivesPayments2018a} to attract healthcare professionals to underserved areas \citep{doleaEvaluatedStrategiesIncrease2010}. This intervention, which effectively provides a shock to a practice's peer group and social norms, may be extended to attract physicians from areas with high quality social norms to areas with low quality social norms. Similarly, rotational programs that have traditionally been used to expose training physicians to different areas of medicine \citep{bell-dzideEffectLongtermCare2014} could be modified to expose low-performing practices to physicians from high-performing practices with the intention of improving quality. From the individual practice's perspective, hiring managers may consider the potential peer-based impact that a new physician may have on a practice. Such a hiring practice may wish to find ways to intensify the social influence of a physician moving from higher quality social norms or mitigate the social influence of a physician moving from a lower quality practice.
+
+
+
+\subsection{Validity of Quality Measures}
+
+In addition to the potential for this analysis to inform future quality improvement interventions, investigation of a ``mover effect'' could also serve to inform theoretical approaches to quality improvement and/or validate the QOF performance indicators.
+
+The dominant framework for improving quality in general practice in England's NHS is the ``Hierarchy and Targets'' theoretical model \citep{bevanModelsGovernancePublic2013}. This model, in which physicians are rewarded based upon the practice's achievement relative to preset performance indicators, is predicated on the notion that physicians have some agency over the practice's achievement on those performance indicators. That is, if a practice's performance on a set of indicators is entirely (or heavily) dependent upon factors outside of a physician's control, then offering incentives to the physician will not improve the practice's performance. Indeed, in this case, incentives may even reduce healthcare equity, as the most fortunate practices -- those practices with the best external conditions -- will disproportionatley reap the incentives.
+
+Physicians point to this possibility when criticising the current ``Hierarchy and Targets'' theoretical model  \citep{oliverCanFinancialIncentives2009}, and although targets are currently well-ingrained in the NHS's scheme for quality improvement, it is not the only model that has been proposed or implemented throughout the history of the NHS. Other models of quality improvement account for this possibility. For example, the ``Altruism'' theoretical model, which assumes that performance is entirely dictated by outside forces, implies that quality can be improved by allocating resources to the worst performing practices in hopes that the additional resources will improve the circumstances and performance of those practices \citep{bevanModelsGovernancePublic2013}.
+
+Consequently, in order to determine whether the capacity for the current targets-based model to achieve its goal of improving healthcare quality, it is necessary to evaluate whether (and the extent that) GPs have meaningful agency over their practice's performance on the QOF indicators. Given the complexity of the health production function, however, it can be challenging to disentangle the effects of physicians from those of external factors, such as the health of the population, community health priorities, and practice-level resources. Focusing on movers into practices, then, presents an opportunity to plausibly observe the effect of physicians rather than other context variables. That is, if a physician moves into a new practice, it is unlikely that the context variables for that practice would meaningfully or systematically change -- for example, the patient population, community priorities, and practice-level resources should be constant. If this assumption is met, a change in the practice's performance after an entering GP can reasonably be ascribed to the physician, including her medical practice choices and social influence.
+
+The direction of a ``mover effect'' can then be used to help resolve which model is most appropriate for quality improvement. Under the ``Hierarchy and Targets'' model, physicians are generally capable of improving their performance given adequate motivation. However, under the ``Altruism'' theoretical model, physicians generally act to the best of their ability given the information and resources available to them. While a mover is unlikely to meaningfully change the practice's tangible resources, she may bring new information to the practice. In this case, given that physicians are well aware of the quality metrics, it is possible that if a new physician with better information enters the practice, that information may be shared, and the other physicians in the practice may begin incorporating the new information to improve the quality of their care. On the other hand, under the ``Altruism'' model, when a physician who enters the practice from a worse performing practice, only the entering GP will adapt her practices to the new information available at the new practice; there should, at least theoretically, be no effect of the entering GP, who now has access to the target practice's information and resources, on the quality of the practice. Indeed, the addition of any new physician, even one from a worse performing practice, should relieve the patient burden of the other physicians in the practice and, in turn, improve the practice's quality. Consequently, if GPs entering from better practices positively impact the quality of their incoming practices and GPs entering from worse practices negatively impact the quality of their incoming practices,\footnote{It is at least hypothetically possible that physicians moving from better or worse practices move the target practice's quality in an unexpected direction. For example, it is possible that physicians may resent a high-performing newcomer and resist adopting her practices. This finding would still suggest that physicians adjust their quality of care in reaction to social influences, but the implications for interventions would be different. In that instance, it might be worthwhile to consider exposing high-quality practices to low-quality GPs through incentivised moves or rotational programs.}, this would contradict the tenets of the ``Altruism'' theoretical model. This finding would, instead, constitute evidence then the physician's actions -- beyond the resources or information available to the practice and the increased capacity from the new physician -- affect quality, thereby providing support to the ``Hierarchy and Targets'' model.
+
+
+
+\section{Research Questions}
+
+\begin{itemize}
+  \item Do GPs who move from one practice to another in England's NHS have an impact on their target practice's achievement on the QOF quality improvement scheme?
+  \item Are GP practice's performance on QOF performance metrics determined by the actions of GPs (as opposed to external forces outside of the physician's control)?
+  \item Do GPs respond to the social influence of their peer physicians when making quality relevant decisions?
+\end{itemize}
+
+
+
+\section{Hypotheses}
+
+The purpose of this analysis is to test the following hypotheses.
+
+\begin{itemize}
+  \item $H_{0}$: GP entrants will have no effect on a practice's quality
+  \item $H_{1}$: GP entrants will have an effect on a practice's quality
+  \item $H_{1\textrm{A}}$: GPs entering from higher quality practices will have a positive impact on the quality of their target practices.
+  \item $H_{1\textrm{B}}$: GPs entering from lower quality practices will have a negative impact on the quality of their target practices, relative to the effect of GPs entering from higher quality practices.
+\end{itemize}
+
+If I fail to reject the null hypothesis, I do not have sufficient evidence to form any conclusions. If I find evidence in support of $H_{1}$, that would constitute evidence that physicians play some role in the quality of care they provide. If I find evidence of $H_{1\textrm{A}}$, that would constitute evidence that physicians influence their practice, either through relieving the burden of other physicians, providing new information, or through social influence. If I find evidence of $H_{1\textrm{B}}$, that would constitute evidence that physicians influence their practice through social influence. It should be noted that, because quality is reported only at the practice level, it is also possible that the mover's own performance in the new practice could affect the new practice's quality scores as a whole.
+
+
+
+\section{Analysis Plan}
+
+The purpose of the analysis is to determine the effect of entering GPs on the quality of their new practices. The preferred method for testing this association will use of practice- and year- fixed effects in an Interrupted Time Series Analysis of annual, practice-level QOF scores between 1 April 2006 and 31 March 2012. Within each of the five QOF domains (total, patient experience, organisational, clinical, and additional services), the entrant of a new GP will serve as the interruption. The entrance will be interacted with whether the GP entered from a practice with a lower or higher QOF score within that domain, so that having a GP entering from a better practice is permitted to have a differential effect from a GP entering from a worse practice. By directly comparing practices that have a GP entering from a worse practice with those entering from a better practice, I compare practices that (A) had similar labor needs and (B) similarly resolved those needs by hiring a new GP, thereby reducing the risk of selection bias (e.g., practices that hire a new GP may be unobservably different from those that do not hire a new GP). Fixed intercept effects at the practice- and time-level are intended to account for time-invariant confounding at the practice level and practice-invariant confounding at the year level, respectively.
+
+Other empirical strategies will be implemented for robustness, such as models using fixed, random, and mixed intercept and slope effects (see \href{https://www.TheodoreCaputi.com/files/prelims.pdf}{Preliminary Results} for an example of empirical strategies).
+
+
+
+
+
+\clearpage
+\bibliographystyle{aea}
+\bibliography{refs}
+
+
+
+\end{document}
