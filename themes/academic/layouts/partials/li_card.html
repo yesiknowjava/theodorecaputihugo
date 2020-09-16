@@ -21,7 +21,7 @@
 
 <div class="card-simple">
 
-  {{ if eq $item.Type "talk" }}
+  <!-- {{ if eq $item.Type "talk" }}
   <div class="article-metadata">
     {{ if $item.Params.authors }}
     <div>
@@ -38,7 +38,7 @@
   </div>
   {{ else }}
     {{ partial "page_metadata" (dict "page" $item "is_list" 1) }}
-  {{ end }}
+  {{ end }} -->
 
   {{ $resource := ($item.Resources.ByType "image").GetMatch "*featured*" }}
   {{ $anchor := $item.Params.image.focal_point | default "Smart" }}
