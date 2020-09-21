@@ -63,7 +63,7 @@ Dr. Ayers and Mr. Caputi had full access to all the data in the study and take r
 summary: "Ayers JW, Caputi TL, Nebeker C, Dredze M. Don’t quote me: Reverse identification of research participants in social media studies. npj Digital Medicine. 2018 Aug 2;1(1):30."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

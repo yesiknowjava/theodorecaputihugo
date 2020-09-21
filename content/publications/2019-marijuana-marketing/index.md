@@ -28,7 +28,7 @@ abstract: "A national for-profit marijuana industry is expanding substantially i
 summary: "Ayers JW, Caputi TL, Leas EC. The need for federal regulation of marijuana marketing. JAMA. Published online May 16, 2019."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

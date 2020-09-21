@@ -28,7 +28,7 @@ Online cigarette dealers have lower prices than brick-and-mortar retailers and a
 summary: "Ayers JW, Dredze M, Leas EC, Caputi TL, Allem JP, Cohen JE. Next generation media monitoring: Global coverage of electronic nicotine delivery systems (electronic cigarettes) on Bing, Google and Twitter, 2013-2018. PloS ONE. 2018 Nov 2;13(11):e0205822."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

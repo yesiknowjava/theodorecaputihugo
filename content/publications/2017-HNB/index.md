@@ -26,7 +26,7 @@ abstract: "Heat-not-burn tobacco products (HNB), including Reynolds American’s
 summary: "Caputi TL. Heat-not-burn tobacco products are about to reach their boiling point. Tobacco Control. 2016 Aug 24:tobaccocontrol-2016."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

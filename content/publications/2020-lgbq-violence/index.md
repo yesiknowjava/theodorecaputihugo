@@ -29,7 +29,7 @@ abstract: "Physical and sexual violence are known public health hazards,1 imposi
 summary: "Caputi TL, Shover CL, Watson RJ. Physical and sexual violence among U.S. gay, lesbian, bisexual, and questioning adolescents. JAMA Pediatrics. Published online Mar 9, 2020."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

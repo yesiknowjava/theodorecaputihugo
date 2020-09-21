@@ -31,7 +31,7 @@ This attention is especially troublesome because chloroquine and hydroxychloroqu
 summary: "Liu M, Caputi TL, Dredze M, Kesselheim AS, Ayers JW. Internet searches for unproven COVID-19 therapies in the United States. JAMA Intern Med. Forthcoming."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

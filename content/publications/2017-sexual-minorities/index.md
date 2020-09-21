@@ -27,7 +27,7 @@ abstract: "Sexual minority (lesbian, gay, bisexual, or questioning) adolescents 
 "
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

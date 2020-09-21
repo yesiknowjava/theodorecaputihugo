@@ -29,7 +29,7 @@ abstract: "The study investigates the effectiveness and appropriateness of the D
 summary: "Caputi TL, McLellan AT. Truth and DARE: Is DARE’s new Keepin’ it REAL curriculum suitable for American nationwide implementation?. Drugs: Education, Prevention and Policy. 2017 Jan 2;24(1):49-57."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

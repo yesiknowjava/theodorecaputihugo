@@ -33,7 +33,7 @@ abstract: "We investigated how intelligent virtual assistants (IVA), including A
 summary: "Nobles AL, Leas EC, Caputi TL, Zhu S, Strathdee S, Ayers JW. “Did I say something wrong?”: Responses to addiction help-seeking from Intelligent Virtual Assistants on Alexa, Siri, Google Assistant, Bixby, and Cortana. npj Digital Medicine. 2020 Jan 29;3(11). DOI: 10.1038/s41746-019-0215-9."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

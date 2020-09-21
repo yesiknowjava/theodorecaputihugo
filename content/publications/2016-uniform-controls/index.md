@@ -26,7 +26,7 @@ abstract: "One of the greatest threats to the validity and reliability of drug p
 summary: "Caputi TL. The case for uniform controls in drug policy studies. International Journal of Drug Policy. 2016 Jul 1;33:102-4."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

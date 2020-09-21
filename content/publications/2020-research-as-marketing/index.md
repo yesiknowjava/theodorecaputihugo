@@ -29,7 +29,7 @@ sophisticated, so has its marketing; a recent commentary1 I coauthored in the Jo
 summary: "Caputi TL. The Medical Marijuana Industry and the Use of 'Research as Marketing'. American Journal of Public Health. 2020 Feb;110(2):174-175."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

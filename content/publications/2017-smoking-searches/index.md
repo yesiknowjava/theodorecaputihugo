@@ -26,7 +26,7 @@ Online cigarette dealers have lower prices than brick-and-mortar retailers and a
 summary: "Caputi TL. Google searches for “cheap cigarettes” spike at tax increases: Evidence from an algorithm to detect spikes in time series data. Nicotine and Tobacco Research. 2017 Jun 22;20(6):779-83."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

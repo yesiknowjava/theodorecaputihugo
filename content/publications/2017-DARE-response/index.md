@@ -36,7 +36,7 @@ current, local forecast."
 summary: "Caputi TL, McLellan AT. Response to Comment by Hecht & Miller-Day on “Truth and DARE: Is DARE’s new Keepin’ it REAL curriculum suitable for American nationwide implementation?”. Drugs: Education, Prevention and Policy. 2017 Mar 4;24(2):226-."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

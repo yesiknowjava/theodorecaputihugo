@@ -26,7 +26,7 @@ abstract: "Kevin Boehnke and coauthors (Feb 2019) describe the indications of li
 summary: "Caputi TL. Medical cannabis use [Letter]. Health Affairs. 2019 May 1;38(5):874-. doi: 10.1377/hlthaff.2019.00198."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

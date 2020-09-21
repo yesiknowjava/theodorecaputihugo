@@ -28,7 +28,7 @@ Online cigarette dealers have lower prices than brick-and-mortar retailers and a
 summary: "Caputi TL, Dredze M, Cohen J, Ayers JW. They’re heating up: Search query data reveals significant public interest in heat-not-burn tobacco products. PLoS ONE. 12(10): e0185735."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

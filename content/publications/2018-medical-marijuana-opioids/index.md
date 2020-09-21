@@ -28,7 +28,7 @@ marijuana reduces medical and nonmedical prescription drug use. This study evalu
 summary: "Caputi TL, Humphreys K. Medical marijuana users are more likely to use prescription drugs medically and nonmedically. Journal of Addiction Medicine. July/August 2018;12(4):295-299"
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

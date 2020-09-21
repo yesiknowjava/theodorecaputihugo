@@ -27,7 +27,7 @@ abstract: "For the past few years, one of the most popular topics in major journ
 summary: "Caputi TL. Medical marijuana, not miracle marijuana: Some well-publicized studies about medical marijuana don’t pass a reality check. Addiction. 2019 June; 114(6):1128-1129. doi:10.1111/add.14580"
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

@@ -30,7 +30,7 @@ abstract: "Cannabidiol (CBD) is widely promoted as a panacea. For example, the c
 summary: "Leas EC, Nobles AL, Caputi TL, Dredze M, Smith DM, Ayers JW. Trends in Internet Searches for Cannabidiol (CBD) in the United States. JAMA Network Open. Published online October 24, 2019."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

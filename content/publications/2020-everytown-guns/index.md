@@ -28,7 +28,7 @@ that people acquire guns, as well as the number of people who are removing guns 
 summary: "Caputi TL, Burd-Sharps S, Ayers JW, Dredze M, Suplina N. What search data shows about Americans and guns during the COVID-19 crisis. Everytown Research. 2020 April."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

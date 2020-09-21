@@ -28,7 +28,7 @@ Health sciences researchers are beginning to understand the differing experience
 summary: "Caputi TL. Sex and orientation identity matter in the substance use behaviors of sexual minority adolescents in the United States. Drug and Alcohol Dependence. 2018 Jun 1;187:142-8."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

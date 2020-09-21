@@ -34,7 +34,7 @@ Objective: The aim of this paper was to assess the extent to which interest in g
 summary: "Caputi TL, Ayers JW, Dredze M, Suplina N, Burd-Sharps S. Collateral crises of gun preparation and the COVID-19 pandemic: An infodemiology study. JMIR Public Health and Surveillance. Published online May 21, 2020."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: true
 
 links:

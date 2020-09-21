@@ -31,7 +31,7 @@ We analyzed individual-level data from the 2013 and 2014 National Survey on Drug
 summary: "Caputi TL, Humphreys K. Medicare recipients’ use of medical marijuana. Health Affairs. 2016 Oct 1;35(10):1936-."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

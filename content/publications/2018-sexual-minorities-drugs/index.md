@@ -31,7 +31,7 @@ Methods. The 2015 national Youth Risk Behavior Survey included questions for 19 
 summary: "Caputi TL, Smith LR, Strathdee SA, Ayers JW. Substance use among Lesbian, Gay, Bisexual, and Questioning adolescents in the United States, 2015. American Journal of Public Health. 2018 Aug;108(8):1031-4."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

@@ -26,7 +26,7 @@ abstract: "Livingston et al.1 studied the state-level correlation between opioid
 summary: "Caputi TL, Sabet KA.Population-level analyses cannot tell us anything about individual-level marijuana-opioid substitution. American Journal of Public Health. 2018 Mar;108(3):e12-."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

@@ -26,7 +26,7 @@ abstract: "Lucas et al. [1] recently stated that 87% of a sample (n = 473) of me
 summary: "Caputi TL. Whether medical marijuana is ever substituted for other substances is not the full story. Drug and Alcohol Review. 2017 Jul;36(4):E3-4."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:

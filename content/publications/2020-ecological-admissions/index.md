@@ -29,7 +29,7 @@ abstract: "Sir: Meinhofer et al. 1 analyzes administrative data from state medic
 summary: "Caputi TL. Medical Marijuana Laws, Substance Use Treatment Admissions and the Ecological Fallacy. Addiction. 2020 Jan;115(1):188-189."
 
 tags:
-- Source Themes
+# - Source Themes
 featured: false
 
 links:
