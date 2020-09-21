@@ -9,9 +9,9 @@
     {{- if gt $index 0 }}, {{ end -}}
     <span {{ if site.Params.highlight_superuser | and (eq $profile_page.Params.superuser true) }}class="font-weight-bold"{{end}}>
       {{- if and $profile_page $link_authors -}}
-        <a href="{{$profile_page.RelPermalink}}">{{$name}}</a>
+        <a href="{{$profile_page.RelPermalink}}">{{title $name}}</a>
       {{- else -}}
-        {{$name}}
+        {{title $name}}
       {{- end -}}
     </span>
     {{- if isset $.Params "author_notes" -}}
