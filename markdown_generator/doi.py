@@ -28,8 +28,13 @@ def doi2bib(doi):
 
 
 DOIS = [
-    ("10.1016/j.drugpo.2021.103133", "covid-cannabis", "IJDP-2021")
+    ("10.1016/j.drugpo.2021.103133", "covid-cannabis", "IJDP-2021"),
+    ("10.1136/tobaccocontrol-2021-056661", "pmi-evali", "TC-2021")
 ]
+
+import unicodedata
+def remove_control_characters(s):
+    return "".join(ch for ch in s if unicodedata.category(ch)[0]!="C")
 
 import sys
 articles = []
@@ -57,7 +62,8 @@ for doi, slug, paperurl in DOIS:
         'Accept': 'text/x-bibliography; style=elsevier-harvard',
     }
     citation = requests.get(f'https://doi.org/{doi}', headers=headers)
-
+    print(citation.text.replace("\n", ""))
+    
 
     # citation = pybtex.format_from_file(t.name, style = "plain", backend="html")    
     
@@ -75,7 +81,7 @@ for doi, slug, paperurl in DOIS:
         'title': entry['title'],
         'venue': entry['journal'],
         'authors': entry['author'].split(" and "),
-        'citation': citation.text.replace("\n", ""),
+        'citation': remove_control_characters(citation.text.replace("\n", "")),
         'url_slug': slug,
         'paper_url': f"https://www.theodorecaputi.com/files/{paperurl}.pdf",
         'excerpt': '',
@@ -119,22 +125,28 @@ for row, item in enumerate(articles):
     author_md = "\nauthors:\n{}".format('\n'.join(authors))
     author_md = author_md.replace("Theodore L. Caputi", "admin")
     author_md = author_md.replace("Theodore Caputi", "admin")
+    author_md = author_md.replace("Theodore L Caputi", "admin")
     md += author_md
 
     dt = datetime.datetime.strptime(item['pub_date'], "%Y-%m-%d")
-    md += "\ndate: '{}'".format(dt.strftime('%Y-%m-%dT00:00:002'))
-    md += "\ndoi: '{}'".format(item['doi'])
-    md += "\nvenue: '{}'".format(item['venue'])
-    md += "\npublishDate: '2010-01-01T00:00:002'"
-    md += "\npublication_types: ['2']"
-    md += "\nsummary: '{}'".format(item['citation'])
-    md += "\ntags: \nfeatured: false\nlinks:\n- name: Paper Link"
-    md += "\n  url: 'https://doi.org/{}'".format(item['doi'])
-    md += "\nurl_pdf: '/files/{}.pdf'".format(item['paperurlslug'])
-    md += "\nimage:"
-    md += "\n  focal_point: ''"
-    md += "\n  preview_only: false"
-    md += "\n---"
+    md += '\ndate: "{}"'.format(dt.strftime('%Y-%m-%dT00:00:00Z'))
+    md += '\naltemetric_id: {}'.format(10128625)
+    md += '\ndoi: "{}"'.format(item['doi'])
+    md += '\nvenue: "{}"'.format(item['venue'])
+    md += '\npublishDate: "2017-01-01T00:00:00Z"'
+    md += '\npublication_types: ["2"]'
+    md += '\nabstract: ""'
+    md += '\nsummary: "{}"'.format(item['citation'])
+    md += '\ntags: \nfeatured: false\nlinks:\n- name: Paper Link'
+    md += '\n  url: "https://doi.org/{}"'.format(item['doi'])
+    md += '\nurl_pdf: "/files/{}.pdf"'.format(item['paperurlslug'])
+    md += '\nimage:'
+    md += '\n  focal_point: ""'
+    md += '\n  preview_only: false'
+    md += '\n---'
+
+    md = md.replace("{", "")
+    md = md.replace("}", "")
 
     overwrite = True
 
