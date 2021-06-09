@@ -29,7 +29,7 @@ summary: "Caputi TL, Burd-Sharps S, Ayers JW, Dredze M, Suplina N. What search d
 
 tags:
 # - Source Themes
-featured: false
+featured: true
 
 links:
 - name: Paper Link
