@@ -1,28 +1,47 @@
+import os
 import requests
 import bibtexparser
 import tempfile
 from pprint import pprint
 from time import strptime
 import pybtex
-
 import pybtex.database.input.bibtex 
 import pybtex.plugin
-# import codecs
-# import latexcodec
 import biblib.bib
+import xml.etree.ElementTree as ET
+from bs4 import BeautifulSoup
+import re
+import frontmatter
+import unicodedata
+import random
+import sys
+import time
+from tqdm import tqdm
 
 style = pybtex.plugin.find_plugin('pybtex.style.formatting', 'plain')()
 backend = pybtex.plugin.find_plugin('pybtex.backends', 'plaintext')()
 
-import xml.etree.ElementTree as ET
-from bs4 import BeautifulSoup
+dirs = [x[0].split("/")[-1] for x in os.walk("../content/publications")]
+dirs = [x for x in dirs if x != "publications"]
+random.shuffle(dirs)
 
-DOIS = [
-    ("10.1016/j.drugpo.2021.103133", "covid-cannabis", "IJDP-2021"),
-    ("10.1136/tobaccocontrol-2021-056661", "pmi-evali", "TC-2021"),
-]
+# DOIS = [
+#     ("10.1016/j.drugpo.2021.103133", "covid-cannabis", "IJDP-2021"),
+#     ("10.1136/tobaccocontrol-2021-056661", "pmi-evali", "TC-2021"),
+# ]
 
-import re
+
+def get_frontmatter(fn):
+    post = frontmatter.load(fn)
+    return post
+
+
+# p = get_abstract("/home/theo/theodorecaputihugo/content/publications/2020-lgbq-violence/index.md")
+# print(p['abstract'])
+# print(p['links'][0]['url'])
+# print(os.path.basename(p['url_pdf']))
+
+# exit()
 
 def cleanhtml(raw_html):
 #   cleanr = re.compile('<.*?>')
@@ -49,73 +68,133 @@ def doi2bib(doi):
   """
 
   url = "http://dx.doi.org/" + doi
-
   headers = {"accept": "application/x-bibtex"}
   r = requests.get(url, headers = headers)
+  out = r.text
+  
+  print(doi)
+  print(out)
+  
+  return out
 
-  return r.text
-
-
-
-import unicodedata
 def remove_control_characters(s):
     return "".join(ch for ch in s if unicodedata.category(ch)[0]!="C")
 
-import sys
-articles = []
-for doi, slug, paperurl in DOIS:
-    t = tempfile.NamedTemporaryFile()
-    with open(t.name, "w") as bibtex_file:
-        bibtex_file.write(doi2bib(doi))
+def get_citation(doi):
+    headers = {
+        'Accept': 'text/x-bibliography; style=apa',
+        # 'Accept': 'text/x-bibliography; style=elsevier-harvard',
+    }
+    citation = requests.get(f'https://doi.org/{doi}', headers=headers)
+    out = remove_control_characters(citation.text.replace("\n", ""))
 
-    with open(t.name, "r") as bibtex_file:
+    print(doi)
+    print(out)
+    
+    return out
+
+# get_citation("10.1080/09687637.2017.1288681")
+# doi2bib("10.1080/09687637.2017.1288681")
+# exit()
+
+
+DOIS = []
+for dir in dirs:
+    p = frontmatter.load(f"../content/publications/{dir}/index.md")
+    doi = p.get('doi', None)
+    dir_no_date = "-".join(dir.split("-")[1:])
+    pdf_no_ext = str(os.path.basename(p['url_pdf'])).replace(".pdf", "")
+    abstract = p.get('abstract', None)
+    if not abstract:
+        if doi:
+            abstract = doi2abstract(doi)
+    url_pdf = p['links'][0]['url']
+    if not doi:
+        doi = ""
+    if not abstract:
+        abstract = ""
+    out = (doi, dir_no_date, pdf_no_ext, abstract, url_pdf)
+    DOIS.append(out)
+
+
+
+# doi2bib("10.1080/09687637.2017.1288681")
+doi2bib("10.1093/ntr/ntx143")
+get_citation("10.1093/ntr/ntx143")
+print()
+print()
+# exit()
+
+SLEEP_TIME = 5
+
+articles = []
+for doi, slug, paperurl, abstract, url_pdf in tqdm(DOIS):
+
+    if doi != "":
+
+        time.sleep(SLEEP_TIME + random.random())
+        citation = get_citation(doi) 
+
+        time.sleep(SLEEP_TIME + random.random())
+        d = doi2bib(doi)
+
+        t = tempfile.NamedTemporaryFile()
+        with open(t.name, "w") as bibtex_file:
+            bibtex_file.write(d)
+
+        with open(t.name, "r") as bibtex_file:
             bibtex = bibtex_file.read()
 
-    with open(t.name, "r") as bibtex_file:
-        bib_database = bibtexparser.load(bibtex_file)
-    
-    with open(t.name, "r") as bibtex_file:
-        db = biblib.bib.Parser().parse(bibtex_file).get_entries()
+        t = tempfile.NamedTemporaryFile()
+        with open(t.name, "w") as bibtex_file:
+            bibtex_file.write(d)
+
+        with open(t.name, "r") as bibtex_file:
+            bib_database = bibtexparser.load(bibtex_file)
+            if len(bib_database.entries) == 0:
+                print(bibtex_file.read())
+        
+        # with open(t.name, "r") as bibtex_file:
+        #     db = biblib.bib.Parser().parse(bibtex_file).get_entries()
+
         # print(db)
         # for ent in db.values():
         #     print("here")
         #     print(ent.to_bib())
         #     citation = ent.to_bib()
 
-    headers = {
-        # 'Accept': 'text/x-bibliography; style=apa',
-        'Accept': 'text/x-bibliography; style=elsevier-harvard',
-    }
-    citation = requests.get(f'https://doi.org/{doi}', headers=headers)
-    print(citation.text.replace("\n", ""))
-    
+        # citation = pybtex.format_from_file(t.name, style = "plain", backend="html")    
+        
+        entry = bib_database.entries[0]
+        # pprint(entry)
 
-    # citation = pybtex.format_from_file(t.name, style = "plain", backend="html")    
-    
-    entry = bib_database.entries[0]
-    # pprint(entry)
+        month = strptime(entry['month'],'%b').tm_mon
+        month = str(month)
+        if len(month) == 1:
+            month = "0" + month
 
-    month = strptime(entry['month'],'%b').tm_mon
-    month = str(month)
-    if len(month) == 1:
-        month = "0" + month
+        out = {
+            'doi': doi,
+            'pub_date': f"{entry['year']}-{month}-01",
+            'title': entry['title'],
+            'venue': entry['journal'],
+            'authors': entry['author'].split(" and "),
+            'citation': citation,
+            'url_slug': slug,
+            'paper_url': f"https://www.theodorecaputi.com/files/{paperurl}.pdf",
+            'excerpt': '',
+            'paperurlslug': paperurl,
+            'bibtex': bibtex,
+            # 'abstract': doi2abstract(doi),
+            'url_pdf': url_pdf,
+            'abstract': abstract
+        }
 
-    out = {
-        'doi': doi,
-        'pub_date': f"{entry['year']}-{month}-01",
-        'title': entry['title'],
-        'venue': entry['journal'],
-        'authors': entry['author'].split(" and "),
-        'citation': remove_control_characters(citation.text.replace("\n", "")),
-        'url_slug': slug,
-        'paper_url': f"https://www.theodorecaputi.com/files/{paperurl}.pdf",
-        'excerpt': '',
-        'paperurlslug': paperurl,
-        'bibtex': bibtex,
-        'abstract': doi2abstract(doi)
-    }
+        articles.append(out)
 
-    articles.append(out)
+
+# pprint(articles)
+exit()
 
 # pprint(articles)
 # import pandas as pd
@@ -164,7 +243,7 @@ for row, item in enumerate(articles):
     md += '\nabstract: "{}"'.format(item['abstract'])
     md += '\nsummary: "{}"'.format(item['citation'])
     md += '\ntags: \nfeatured: false\nlinks:\n- name: Paper Link'
-    md += '\n  url: "https://doi.org/{}"'.format(item['doi'])
+    md += '\n  url: "{}"'.format(item['url_pdf'])
     md += '\nurl_pdf: "/files/{}.pdf"'.format(item['paperurlslug'])
     md += '\nimage:'
     md += '\n  focal_point: ""'
