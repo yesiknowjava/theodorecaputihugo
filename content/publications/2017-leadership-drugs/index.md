@@ -1,5 +1,5 @@
 ---
-title: "Assessing the Possibility of Leadership Education as Psychosocial-Based Problem Behavior Prevention for Adolescents: A Review of the Literature"
+title: "Assessing the possibility of leadership education as psychosocial-based problem behavior prevention for adolescents: A review of the literature."
 
 authors:
 - "admin"
@@ -26,7 +26,7 @@ education and problem behavior prevention seems to exist, the author recommends 
 research to determine if leadership education is an effective and efficient vehicle for problem
 behavior prevention. The paper will conclude with recommendations for leadership education
 practitioners, as well as other key stakeholders."
-summary: "Caputi, T. L. (2017). Assessing the Possibility of Leadership Education as Psychosocial-Based Problem Behavior Prevention for Adolescents: A Review of the Literature. Journal of Leadership Education, 16(1), 115'132. doi:10.12806/v16/i1/t2"
+summary: "Caputi, T. L. (2017). Assessing the Possibility of Leadership Education as Psychosocial-Based Problem Behavior Prevention for Adolescents: A Review of the Literature. Journal of Leadership Education, 16(1), 115132. doi:10.12806/v16/i1/t2"
 tags: 
 featured: false
 links:

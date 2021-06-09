@@ -15,11 +15,11 @@ Methods
 The lifetime and/or past 30-day alcohol, tobacco, cigarette, e-cigarette, marijuana, prescription drug, and illicit drug use of sexual minority and heterosexual adolescents was analyzed using data from the 2015 National Youth Risk Behavior Survey. Controlling for confounders, separate logistic regression models were fit for each substance use outcome. A simulation-based strategy was employed to report adjusted risk ratios for each substance use outcome for each sexual minority subgroup.
 
 Results
-Sexual minority females, particularly bisexual females, were at an elevated risk for substance use. For example, compared to heterosexual females, sexual minority females were 1.35 (95%CI 1.16ï¿½1.56) times more likely to have used a substance in the past 30?days, and bisexual females had an even further elevated risk ratio (RR: 1.48, 95%CI 1.28ï¿½1.69).
+Sexual minority females, particularly bisexual females, were at an elevated risk for substance use. For example, compared to heterosexual females, sexual minority females were 1.35 (95%CI 1.16–1.56) times more likely to have used a substance in the past 30 days, and bisexual females had an even further elevated risk ratio (RR: 1.48, 95%CI 1.28–1.69).
 
 Conclusions
 Studying the variance among sexual minority subgroups will help practitioners, advocates, and policymakers identify high risk subgroups. In the case of substance use, this study suggests sexual minority females, particularly bisexual females, should become a target population for prevention and other interventions. The study conducts post-hoc analyses on secondary data, and so these results should be verified in more targeted studies."
-summary: "Caputi, T. L. (2018). Sex and orientation identity matter in the substance use behaviors of sexual minority adolescents in the United States. Drug and Alcohol Dependence, 187, 142'148. doi:10.1016/j.drugalcdep.2018.01.012"
+summary: "Caputi, T. L. (2018). Sex and orientation identity matter in the substance use behaviors of sexual minority adolescents in the United States. Drug and Alcohol Dependence, 187, 142148. doi:10.1016/j.drugalcdep.2018.01.012"
 tags: 
 featured: false
 links:

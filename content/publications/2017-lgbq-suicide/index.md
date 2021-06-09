@@ -1,5 +1,5 @@
 ---
-title: "Suicide Risk Behaviors Among Sexual Minority Adolescents in the United States, 2015"
+title: "Suicide risk behaviors among sexual minority adolescents in the United States, 2015."
 
 authors:
 - "admin"

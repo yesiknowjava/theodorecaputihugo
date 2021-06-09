@@ -1,5 +1,5 @@
 ---
-title: "Suicide-Related Internet Searches During the Early Stages of the COVID-19 Pandemic in the US"
+title: "Suicide-related internet searches during the early stages of the COVID-19 pandemic"
 
 authors:
 - "John W. Ayers"

@@ -1,5 +1,5 @@
 ---
-title: "Collateral Crises of Gun Preparation and the COVID-19 Pandemic: Infodemiology Study"
+title: "Collateral crises of gun preparation and the COVID-19 pandemic: An infodemiology study."
 
 authors:
 - "admin"

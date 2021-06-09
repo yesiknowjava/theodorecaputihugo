@@ -1,5 +1,5 @@
 ---
-title: "Impact of the Medicare Shared Savings Program on utilization of mental health and substance use services by eligibility and race/ethnicity"
+title: "The Impact of Medicare Shared Savings Plan ACOs on Behavioral Health Service Utilization and Disparities in Care."
 
 authors:
 - "Andrea Acevedo"
@@ -26,7 +26,7 @@ Data collection/extraction methods
 Not applicable.
 
 Principal findings
-MSSP ACOs were associated with small reductions in outpatient mental health (Coeff: ?0.012, P < .001) and substance use (Coeff: ?0.001, P < .01) visits in the disability population, and in adequate care for depression for both the disability- and age-eligible populations (Coeff: ?0.028, P < .001; Coeff: ?0.012, P < .001, respectively). MSSP ACOï¿½s were also associated with increases in psychotropic medications (Coeff: 0.007 and Coeff: 0.0213, for disability- and age-eligible populations, respectively, both P < .001) and reductions in inpatient mental health stays (Coeff:-0.004, P < .001, and Coeff:-0.0002, P < .01 for disability- and age-eligible populations, respectively) and substance use-related stays for disability-eligible populations (Coeff:-0.0005, P<.05). The MSSP effect on disparities varied depending on type of service.
+MSSP ACOs were associated with small reductions in outpatient mental health (Coeff: −0.012, P < .001) and substance use (Coeff: −0.001, P < .01) visits in the disability population, and in adequate care for depression for both the disability- and age-eligible populations (Coeff: −0.028, P < .001; Coeff: −0.012, P < .001, respectively). MSSP ACO’s were also associated with increases in psychotropic medications (Coeff: 0.007 and Coeff: 0.0213, for disability- and age-eligible populations, respectively, both P < .001) and reductions in inpatient mental health stays (Coeff:-0.004, P < .001, and Coeff:-0.0002, P < .01 for disability- and age-eligible populations, respectively) and substance use-related stays for disability-eligible populations (Coeff:-0.0005, P<.05). The MSSP effect on disparities varied depending on type of service.
 
 Conclusions
 We found small reductions in outpatient and inpatient stays and in rates of adequate care for depression associated with MSSP ACOs. As MSSP ACOs are placed at more financial risk for population-based treatment, it will be important to include more robust behavioral health quality measures in their contracts and to monitor disparities in care."

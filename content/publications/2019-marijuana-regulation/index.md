@@ -1,5 +1,5 @@
 ---
-title: "The Need for Federal Regulation of Marijuana Marketing"
+title: "The need for federal regulation of marijuana marketing"
 
 authors:
 - "John W. Ayers"

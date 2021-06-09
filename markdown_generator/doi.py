@@ -84,14 +84,14 @@ def doi2bib(doi):
 
 def remove_control_characters(s):
     # return "".join(ch for ch in s if unicodedata.category(ch)[0]!="C")
-    s = s.replace("â", "'")
-    s = s.replace("\\textquotedblleft", "'").replace("\\textquotedblright", "'")
-    s = s.replace("\\&", "&").replace("\\#", "#")
-    s = s.replace("", "")
+    # s = s.replace("â", "'")
+    # s = s.replace("\\textquotedblleft", "'").replace("\\textquotedblright", "'")
+    # s = s.replace("\\&", "&").replace("\\#", "#")
+    # s = s.replace("", "")
     return s
 
-def remove_control_characters2(s):
-    return "".join(ch for ch in s if unicodedata.category(ch)[0]!="C")
+# def remove_control_characters2(s):
+#     return "".join(ch for ch in s if unicodedata.category(ch)[0]!="C")
     # return s.replace("â", "'").replace("\\textquotedblleft", "'").replace("\\textquotedblright", "'").replace("\\&", "&").replace("\\#", "#")
 
 
@@ -151,7 +151,9 @@ def get_citation(doi):
 
 
 import pandas as pd
-df = pd.read_csv("publications.csv", sep="\t", encoding='cp1252')
+df = pd.read_csv("publications.csv", encoding='utf8')
+# df = pd.read_csv("publications.csv", sep="\t", encoding='utf-8-sig')
+# df = pd.read_csv("publications.csv", sep="\t", encoding='cp1252')
 df = df[df.title.notnull()]
 print(df.head())
 print(df.tail())
@@ -199,8 +201,8 @@ for i, r in tqdm(df.iterrows()):
         out = {
             'doi': r['doi'],
             'pub_date': f"{str(entry['year'])}-{month}-01",
-            'title': entry['title'],
-            'venue': entry['journal'],
+            'title': r['title'].replace('"', '\\"'),
+            'venue': entry['journal'].replace("\\&", "&"),
             'authors': entry['author'].split(" and "),
             'citation': remove_non_ascii(remove_control_characters(citation)),
             'url_slug': r['slug'],

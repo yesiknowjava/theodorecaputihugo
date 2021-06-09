@@ -1,5 +1,5 @@
 ---
-title: "Internet Searches for Unproven COVID-19 Therapies in the United States"
+title: "Internet Searches for Unproven and Potentially Hazardous COVID-19 Therapies in the United States"
 
 authors:
 - "Michael Liu"

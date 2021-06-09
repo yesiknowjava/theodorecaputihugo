@@ -1,5 +1,5 @@
 ---
-title: "Trends in Internet Searches for Cannabidiol (CBD) in the United States"
+title: "Trends in internet searches for cannabidiol (CBD) in the United States"
 
 authors:
 - "Eric C. Leas"

@@ -1,5 +1,5 @@
 ---
-title: "Physical and Sexual Violence Among Gay, Lesbian, Bisexual, and Questioning Adolescents"
+title: "Physical and sexual violence among U.S. Gay, Lesbian, Bisexual, and Questioning adolescents."
 
 authors:
 - "admin"

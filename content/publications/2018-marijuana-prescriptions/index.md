@@ -1,5 +1,5 @@
 ---
-title: "Medical Marijuana Users are More Likely to Use Prescription Drugs Medically and Nonmedically"
+title: "Medical marijuana users are more likely to use and misuse prescription drugs"
 
 authors:
 - "admin"
@@ -16,11 +16,11 @@ Methods:
 Simulations based upon logistic regression analyses of data from the 2015 National Survey on Drug Use and Health were used to compute associations between medical marijuana use, and medical and nonmedical prescription drug use. Adjusted risk ratios (RRs) were computed with controls added for age, sex, race, health status, family income, and living in a state with legalized medical marijuana.
 
 Results: 
-Medical marijuana users were significantly more likely (RR 1.62, 95% confidence interval [CI] 1.50ï¿½1.74) to report medical use of prescription drugs in the past 12 months. Individuals who used medical marijuana were also significantly more likely to report nonmedical use in the past 12 months of any prescription drug (RR 2.12, 95% CI 1.67ï¿½2.62), with elevated risks for pain relievers (RR 1.95, 95% CI 1.41ï¿½2.62), stimulants (RR 1.86, 95% CI 1.09ï¿½3.02), and tranquilizers (RR 2.18, 95% CI 1.45ï¿½3.16).
+Medical marijuana users were significantly more likely (RR 1.62, 95% confidence interval [CI] 1.50–1.74) to report medical use of prescription drugs in the past 12 months. Individuals who used medical marijuana were also significantly more likely to report nonmedical use in the past 12 months of any prescription drug (RR 2.12, 95% CI 1.67–2.62), with elevated risks for pain relievers (RR 1.95, 95% CI 1.41–2.62), stimulants (RR 1.86, 95% CI 1.09–3.02), and tranquilizers (RR 2.18, 95% CI 1.45–3.16).
 
 Conclusions: 
 Our findings disconfirm the hypothesis that a population-level negative correlation between medical marijuana use and prescription drug harms occurs because medical marijuana users are less likely to use prescription drugs, either medically or nonmedically. Medical marijuana users should be a target population in efforts to combat nonmedical prescription drug use."
-summary: "Caputi, T. L., & Humphreys, K. (2018). Medical Marijuana Users are More Likely to Use Prescription Drugs Medically and Nonmedically. Journal of Addiction Medicine, 12(4), 295'299. doi:10.1097/adm.0000000000000405"
+summary: "Caputi, T. L., & Humphreys, K. (2018). Medical Marijuana Users are More Likely to Use Prescription Drugs Medically and Nonmedically. Journal of Addiction Medicine, 12(4), 295299. doi:10.1097/adm.0000000000000405"
 tags: 
 featured: false
 links:
