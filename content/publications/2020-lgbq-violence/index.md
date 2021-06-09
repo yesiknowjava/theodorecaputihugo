@@ -6,7 +6,6 @@ authors:
 - "Chelsea L. Shover"
 - "Ryan J. Watson"
 date: "2020-08-01T00:00:00Z"
-altemetric_id: 
 doi: "10.1001/jamapediatrics.2019.6291"
 venue: "JAMA Pediatrics"
 publishDate: "2017-01-01T00:00:00Z"
@@ -17,7 +16,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "https://jamanetwork.com/journals/jamapediatrics/fullarticle/2762002"
+  url: "https://jamanetwork.com/journals/jamapediatrics/article-abstract/2762002?casa_token=cerMaAcgmvsAAAAA:bBjpZXhDbcPxuW8hrie1_QxaQ0baIfwq6aD2LWcqF__YgZ0yLDkdwCoSFjwAVPeU0Ydh2pnIcA"
 url_pdf: "/files/JPED-2020.pdf"
 image:
   focal_point: ""

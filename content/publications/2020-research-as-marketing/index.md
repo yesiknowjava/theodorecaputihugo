@@ -4,15 +4,16 @@ title: "The Medical Marijuana Industry and the Use of 'Research as Marketing'"
 authors:
 - "admin"
 date: "2020-02-01T00:00:00Z"
-altemetric_id: 
 doi: "10.2105/AJPH.2019.305477"
 venue: "American Journal of Public Health"
 publishDate: "2017-01-01T00:00:00Z"
 publication_types: ["2"]
-abstract: "Marijuana and marijuanabased medical products are now legally sold in 33 US states and most European Union countries. Widespread medical marijuana legalization has ushered in an unprecedented level of investment in marijuana, replacing small, independently owned storefronts with polished national and international corporations.As the industry has become more sophisticated, so has its marketing; a recent commentary1 I coauthored in the Journal of the American Medical Association surveys Big Marijuanas marketing strategy and summarizes how Big Marijuana companies convey poorly substantiated health claims to potential consumers."
+abstract: "Marijuana and marijuana-based medical products are now legally sold in 33 US states and most European Union countries. Widespread medical marijuana legalization has ushered in an unprecedented level of investment in marijuana, replacing small, independently owned storefronts with polished national and international corporations.1 As the industry has become more sophisticated, so has its marketing; a recent commentary1 I coauthored in the Journal of the American Medical Association surveys Big Marijuanaï¿½s marketing strategy and summarizes how Big Marijuana companies convey poorly substantiated health claims to potential consumers.
+
+This editorial is intended to highlight one particularly pernicious marketing technique commonly employed by Big Marijuana companiesï¿½a technique I call ï¿½research as marketing.ï¿½ Essentially, marketers realize that social media sites and the 24-hour news cycle effectively deliver health information to consumers and that consumers are less-discerning auditors of scientific rigor than are federal regulators. Therefore, rather than invest in the multitude of expensive, large-scale clinical trials required to make regulator-endorsed health claims, marijuana companies sponsor and publicize the results of less-robust studies."
 summary: "Caputi, T. L. (2020). The Medical Marijuana Industry and the Use of 'Research as Marketing.' American Journal of Public Health, 110(2), 174'175. doi:10.2105/ajph.2019.305477"
 tags: 
-featured: false
+featured: true
 links:
 - name: Paper Link
   url: "https://ajph.aphapublications.org/doi/10.2105/AJPH.2019.305477"

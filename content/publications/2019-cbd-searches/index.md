@@ -9,7 +9,6 @@ authors:
 - "Davey M. Smith"
 - "John W. Ayers"
 date: "2019-10-01T00:00:00Z"
-altemetric_id: 
 doi: "10.1001/jamanetworkopen.2019.13853"
 venue: "JAMA Network Open"
 publishDate: "2017-01-01T00:00:00Z"
@@ -20,7 +19,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2753393"
+  url: "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2753393#:~:text=Search%20volumes%20increased%20125.9%25%20during,on%20observed%20and%20forecasted%20volumes."
 url_pdf: "/files/JNOP-2019.pdf"
 image:
   focal_point: ""

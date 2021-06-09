@@ -77,8 +77,8 @@ def doi2bib(doi):
   r = requests.get(url, headers = headers)
   out = r.text
   
-  print(doi)
-  print(out)
+#   print(doi)
+#   print(out)
   
   return out
 
@@ -103,8 +103,8 @@ def get_citation(doi):
     citation = requests.get(f'https://doi.org/{doi}', headers=headers)
     out = citation.text.replace("\n", "")
 
-    print(doi)
-    print(out)
+    # print(doi)
+    # print(out)
     
     return out
 
@@ -113,63 +113,64 @@ def get_citation(doi):
 # exit()
 
 
-DOIS = []
-for dir in dirs:
+# DOIS = []
+# for dir in dirs:
 
-    print(dir)
+#     print(dir)
 
-    index_fn = f"../content/publications/{dir}/index.md"
+#     index_fn = f"../content/publications/{dir}/index.md"
 
-    with open(index_fn, "r") as f:
-        txt = f.read()
+#     with open(index_fn, "r") as f:
+#         txt = f.read()
 
-    with open(index_fn, "w") as f:
-        f.write(remove_non_ascii(txt))
+#     with open(index_fn, "w") as f:
+#         f.write(remove_non_ascii(txt))
 
-    p = frontmatter.load(index_fn)
+#     p = frontmatter.load(index_fn)
 
-    pprint(p)
+#     doi = p.get('doi', None)
+#     dir_no_date = "-".join(dir.split("-")[1:])
+#     pdf_no_ext = str(os.path.basename(p['url_pdf'])).replace(".pdf", "")
+#     abstract = p.get('abstract', None)
+#     if not abstract:
+#         if doi:
+#             abstract = doi2abstract(doi)
+#     url_pdf = p['links'][0]['url']
+#     if not doi:
+#         doi = ""
+#     if not abstract:
+#         abstract = ""
 
-    doi = p.get('doi', None)
-    dir_no_date = "-".join(dir.split("-")[1:])
-    pdf_no_ext = str(os.path.basename(p['url_pdf'])).replace(".pdf", "")
-    abstract = p.get('abstract', None)
-    if not abstract:
-        if doi:
-            abstract = doi2abstract(doi)
-    url_pdf = p['links'][0]['url']
-    if not doi:
-        doi = ""
-    if not abstract:
-        abstract = ""
+#     altmetric_id = p.get('altmetric_id', None)
+#     if not altmetric_id:
+#         altmetric_id = ''
 
-    altmetric_id = p.get('altmetric_id', None)
-    if not altmetric_id:
-        altmetric_id = ''
-
-    out = (doi, dir_no_date, pdf_no_ext, abstract, url_pdf, altmetric_id)
-    DOIS.append(out)
+#     out = (doi, dir_no_date, pdf_no_ext, abstract, url_pdf, altmetric_id)
+#     DOIS.append(out)
 
 
 
-# doi2bib("10.1080/09687637.2017.1288681")
-# doi2bib("10.1093/ntr/ntx143")
-# get_citation("10.1093/ntr/ntx143")
-# print()
-# print()
+import pandas as pd
+df = pd.read_csv("publications.csv", sep="\t", encoding='cp1252')
+df = df[df.title.notnull()]
+print(df.head())
+print(df.tail())
+
 # exit()
 
+DOIS = []
 SLEEP_TIME = 0
-
 articles = []
-for doi, slug, paperurl, abstract, url_pdf, altmetric_id in tqdm(DOIS):
+for i, r in tqdm(df.iterrows()):
+    
+    doi = r['doi']
+    
+    if not pd.isnull(r['doi']):
 
-    if doi != "":
-
-        time.sleep(SLEEP_TIME + random.random())
+        # time.sleep(SLEEP_TIME + random.random())
         citation = get_citation(doi) 
 
-        time.sleep(SLEEP_TIME + random.random())
+        # time.sleep(SLEEP_TIME + random.random())
         d = doi2bib(doi)
 
         t = tempfile.NamedTemporaryFile()
@@ -187,45 +188,143 @@ for doi, slug, paperurl, abstract, url_pdf, altmetric_id in tqdm(DOIS):
             bib_database = bibtexparser.load(bibtex_file)
             if len(bib_database.entries) == 0:
                 print(bibtex_file.read())
-        
-        # with open(t.name, "r") as bibtex_file:
-        #     db = biblib.bib.Parser().parse(bibtex_file).get_entries()
 
-        # print(db)
-        # for ent in db.values():
-        #     print("here")
-        #     print(ent.to_bib())
-        #     citation = ent.to_bib()
-
-        # citation = pybtex.format_from_file(t.name, style = "plain", backend="html")    
-        
         entry = bib_database.entries[0]
-        # pprint(entry)
-
-        month = strptime(entry['month'],'%b').tm_mon
+        
+        month = strptime(entry['month'], '%b').tm_mon
         month = str(month)
         if len(month) == 1:
             month = "0" + month
 
         out = {
-            'doi': doi,
-            'pub_date': f"{entry['year']}-{month}-01",
+            'doi': r['doi'],
+            'pub_date': f"{str(entry['year'])}-{month}-01",
             'title': entry['title'],
             'venue': entry['journal'],
             'authors': entry['author'].split(" and "),
             'citation': remove_non_ascii(remove_control_characters(citation)),
-            'url_slug': slug,
-            'paper_url': f"https://www.theodorecaputi.com/files/{paperurl}.pdf",
+            'url_slug': r['slug'],
+            'paper_url': f"https://www.theodorecaputi.com/files/{r['pdfurl']}.pdf",
             'excerpt': '',
-            'paperurlslug': paperurl,
+            'paperurlslug': r['pdfurl'],
             'bibtex': bibtex,
             # 'abstract': doi2abstract(doi),
-            'url_pdf': url_pdf,
-            'abstract': abstract,
-            'altmetric_id': altmetric_id
+            'url_pdf': r['paperurl'],
+            'abstract': r['abstract'],
+            'altmetric_id': '',
+            'type': r['type']
         }
 
-        articles.append(out)
+    else:
+
+        # month = strptime(r['month'], '%b').tm_mon
+        month = str(month)
+        if len(month) == 1:
+            month = "0" + month
+
+        pubdate = f"{str(int(r['year']))}-{month}-01"
+        
+        print(r['author'])
+        print(pubdate)
+
+        out = {
+            'doi': doi,
+            'pub_date': pubdate,
+            'title': r['title'],
+            'venue': r['journal'],
+            'authors': r['author'].split(" and "),
+            'citation': r['citation'],
+            'url_slug': r['slug'],
+            'paper_url': f"https://www.theodorecaputi.com/files/{r['pdfurl']}.pdf",
+            'excerpt': '',
+            'paperurlslug': r['pdfurl'],
+            'bibtex': bibtex,
+            # 'abstract': doi2abstract(doi),
+            'url_pdf': r['paperurl'],
+            'abstract': r['abstract'],
+            'altmetric_id': '',
+            'type': r['type']
+        }
+
+    articles.append(out)
+
+
+pprint(articles)
+
+
+# doi2bib("10.1080/09687637.2017.1288681")
+# doi2bib("10.1093/ntr/ntx143")
+# get_citation("10.1093/ntr/ntx143")
+# print()
+# print()
+# exit()
+
+# SLEEP_TIME = 0
+# articles = []
+# for doi, slug, paperurl, abstract, url_pdf, altmetric_id in tqdm(DOIS):
+
+#     if doi != "":
+
+#         time.sleep(SLEEP_TIME + random.random())
+#         citation = get_citation(doi) 
+
+#         time.sleep(SLEEP_TIME + random.random())
+#         d = doi2bib(doi)
+
+#         t = tempfile.NamedTemporaryFile()
+#         with open(t.name, "w") as bibtex_file:
+#             bibtex_file.write(d)
+
+#         with open(t.name, "r") as bibtex_file:
+#             bibtex = bibtex_file.read()
+
+#         t = tempfile.NamedTemporaryFile()
+#         with open(t.name, "w") as bibtex_file:
+#             bibtex_file.write(d)
+
+#         with open(t.name, "r") as bibtex_file:
+#             bib_database = bibtexparser.load(bibtex_file)
+#             if len(bib_database.entries) == 0:
+#                 print(bibtex_file.read())
+        
+#         # with open(t.name, "r") as bibtex_file:
+#         #     db = biblib.bib.Parser().parse(bibtex_file).get_entries()
+
+#         # print(db)
+#         # for ent in db.values():
+#         #     print("here")
+#         #     print(ent.to_bib())
+#         #     citation = ent.to_bib()
+
+#         # citation = pybtex.format_from_file(t.name, style = "plain", backend="html")    
+        
+#         entry = bib_database.entries[0]
+#         # pprint(entry)
+
+#         month = strptime(entry['month'],'%b').tm_mon
+#         month = str(month)
+#         if len(month) == 1:
+#             month = "0" + month
+
+#         out = {
+#             'doi': doi,
+#             'pub_date': f"{entry['year']}-{month}-01",
+#             'title': entry['title'],
+#             'venue': entry['journal'],
+#             'authors': entry['author'].split(" and "),
+#             'citation': remove_non_ascii(remove_control_characters(citation)),
+#             'url_slug': slug,
+#             'paper_url': f"https://www.theodorecaputi.com/files/{paperurl}.pdf",
+#             'excerpt': '',
+#             'paperurlslug': paperurl,
+#             'bibtex': bibtex,
+#             # 'abstract': doi2abstract(doi),
+#             'url_pdf': url_pdf,
+#             'abstract': abstract,
+#             'altmetric_id': altmetric_id
+#         }
+
+#         articles.append(out)
 
 
 # pprint(articles)
@@ -251,7 +350,7 @@ import os
 import datetime
 for row, item in enumerate(articles):
 
-    pprint(item)
+    # pprint(item)
     
     # md_filename = str(item.pub_date) + "-" + item.url_slug + ".md"
     # html_filename = str(item.pub_date) + "-" + item.url_slug
@@ -270,7 +369,6 @@ for row, item in enumerate(articles):
 
     dt = datetime.datetime.strptime(item['pub_date'], "%Y-%m-%d")
     md += '\ndate: "{}"'.format(dt.strftime('%Y-%m-%dT00:00:00Z'))
-    md += '\naltemetric_id: {}'.format(item['altmetric_id'])
     md += '\ndoi: "{}"'.format(item['doi'])
     md += '\nvenue: "{}"'.format(item['venue'])
     md += '\npublishDate: "2017-01-01T00:00:00Z"'

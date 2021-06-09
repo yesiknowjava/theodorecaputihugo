@@ -1,0 +1,28 @@
+---
+title: "The Charlie Sheen Effect on Rapid In-home Human Immunodeficiency Virus Test Sales"
+
+authors:
+- "Jon-Patrick Allem"
+- "Eric C. Leas"
+- "admin"
+- "Mark Dredze"
+- "Benjamin M. Althouse"
+- "Seth M. Noar"
+- "John W. Ayers"
+date: "2017-05-01T00:00:00Z"
+doi: "10.1007/s11121-017-0792-2"
+venue: "Prevention Science"
+publishDate: "2017-01-01T00:00:00Z"
+publication_types: ["2"]
+abstract: "One in eight of the 1.2 million Americans living with human immunodeficiency virus (HIV) are unaware of their positive status, and untested individuals are responsible for most new infections. As a result, testing is the most cost-effective HIV prevention strategy and must be accelerated when opportunities are presented. Web searches for HIV spiked around actor Charlie Sheenï¿½s HIV-positive disclosure. However, it is unknown whether Sheenï¿½s disclosure impacted offline behaviors like HIV testing. The goal of this study was to determine if Sheenï¿½s HIV disclosure was a record-setting HIV prevention event and determine if Web searches presage increases in testing allowing for rapid detection and reaction in the future. Sales of OraQuick rapid in-home HIV test kits in the USA were monitored weekly from April 12, 2014, to April 16, 2016, alongside Web searches including the terms ï¿½test,ï¿½ ï¿½tests,ï¿½ or ï¿½testingï¿½ and ï¿½HIVï¿½ as accessed from Google Trends. Changes in OraQuick sales around Sheenï¿½s disclosure and prediction models using Web searches were assessed. OraQuick sales rose 95% (95% CI, 75ï¿½117; p < 0.001) of the week of Sheenï¿½s disclosure and remained elevated for 4 more weeks (p < 0.05). In total, there were 8225 more sales than expected around Sheenï¿½s disclosure, surpassing World AIDS Day by a factor of about 7. Moreover, Web searches mirrored OraQuick sales trends (r = 0.79), demonstrating their ability to presage increases in testing. The ï¿½Charlie Sheen effectï¿½ represents an important opportunity for a public health response, and in the future, Web searches can be used to detect and act on more opportunities to foster prevention behaviors."
+summary: "Allem, J.-P., Leas, E. C., Caputi, T. L., Dredze, M., Althouse, B. M., Noar, S. M., & Ayers, J. W. (2017). The Charlie Sheen Effect on Rapid In-home Human Immunodeficiency Virus Test Sales. Prevention Science, 18(5), 541'544. doi:10.1007/s11121-017-0792-2"
+tags: 
+featured: false
+links:
+- name: Paper Link
+  url: "https://link.springer.com/article/10.1007/s11121-017-0792-2"
+url_pdf: "/files/PS-2017.pdf"
+image:
+  focal_point: ""
+  preview_only: false
+---
