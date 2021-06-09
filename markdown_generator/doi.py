@@ -14,6 +14,35 @@ import biblib.bib
 style = pybtex.plugin.find_plugin('pybtex.style.formatting', 'plain')()
 backend = pybtex.plugin.find_plugin('pybtex.backends', 'plaintext')()
 
+import xml.etree.ElementTree as ET
+from bs4 import BeautifulSoup
+
+DOIS = [
+    ("10.1016/j.drugpo.2021.103133", "covid-cannabis", "IJDP-2021"),
+    ("10.1136/tobaccocontrol-2021-056661", "pmi-evali", "TC-2021"),
+]
+
+import re
+
+def cleanhtml(raw_html):
+#   cleanr = re.compile('<.*?>')
+  cleanr = re.compile('<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});')
+  cleantext = re.sub(cleanr, '', raw_html)
+  return cleantext
+
+def doi2abstract(doi):
+    url = f"http://api.crossref.org/works/{doi}"
+    r = requests.get(url)
+    j = r.json()
+    if 'message' in j:
+        return cleanhtml(j['message'].get('abstract', ''))
+    else:
+        return ''
+    # root = ET.fromstring(r.text)
+    # for child in root[0][1][0][-1][0][0][-1][2]:
+    #     print(child.tag, child.attrib, child.text)
+
+
 def doi2bib(doi):
   """
   Return a bibTeX string of metadata for a given DOI.
@@ -27,10 +56,6 @@ def doi2bib(doi):
   return r.text
 
 
-DOIS = [
-    ("10.1016/j.drugpo.2021.103133", "covid-cannabis", "IJDP-2021"),
-    ("10.1136/tobaccocontrol-2021-056661", "pmi-evali", "TC-2021")
-]
 
 import unicodedata
 def remove_control_characters(s):
@@ -86,7 +111,8 @@ for doi, slug, paperurl in DOIS:
         'paper_url': f"https://www.theodorecaputi.com/files/{paperurl}.pdf",
         'excerpt': '',
         'paperurlslug': paperurl,
-        'bibtex': bibtex
+        'bibtex': bibtex,
+        'abstract': doi2abstract(doi)
     }
 
     articles.append(out)
@@ -135,7 +161,7 @@ for row, item in enumerate(articles):
     md += '\nvenue: "{}"'.format(item['venue'])
     md += '\npublishDate: "2017-01-01T00:00:00Z"'
     md += '\npublication_types: ["2"]'
-    md += '\nabstract: ""'
+    md += '\nabstract: "{}"'.format(item['abstract'])
     md += '\nsummary: "{}"'.format(item['citation'])
     md += '\ntags: \nfeatured: false\nlinks:\n- name: Paper Link'
     md += '\n  url: "https://doi.org/{}"'.format(item['doi'])

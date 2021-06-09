@@ -14,7 +14,7 @@ doi: "10.1136/tobaccocontrol-2021-056661"
 venue: "Tobacco Control"
 publishDate: "2017-01-01T00:00:00Z"
 publication_types: ["2"]
-abstract: ""
+abstract: "25 July 2021 will mark the second anniversary of the e-cigarette, or vaping, product use associated lung injury (EVALI) outbreak. The concerns raised and news media attention focused on EVALI created a fertile environment for the tobacco industry to promote their e-cigarette alternatives, but this has not been studied."
 summary: "Ayers, J.W., Leas, E.C., Dredze, M., Caputi, T.L., Zhu, S.-H., Cohen, J.E., 2021. Philip Morris International used the e-cigarette, or vaping, product use associated lung injury (EVALI) outbreak to market IQOS heated tobacco. Tobacco Control tobaccocontrolâ2021â056661."
 tags: 
 featured: false
