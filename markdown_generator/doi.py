@@ -115,7 +115,7 @@ for row, item in enumerate(articles):
     
     md = "---\ntitle: \""   + item['title'] + '"\n'
 
-    authors = [f'-"{x}"' for x in item['authors']]
+    authors = [f'- "{x}"' for x in item['authors']]
     author_md = "\nauthors:\n{}".format('\n'.join(authors))
     author_md = author_md.replace("Theodore L. Caputi", "admin")
     author_md = author_md.replace("Theodore Caputi", "admin")

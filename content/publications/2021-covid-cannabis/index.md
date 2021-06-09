@@ -2,7 +2,7 @@
 title: "What cannabis can learn from Covid: Hydroxychloroquine research suggests the next step for medical cannabis research"
 
 authors:
--"admin"
+- "admin"
 date: '2021-07-01T00:00:002'
 doi: '10.1016/j.drugpo.2021.103133'
 venue: 'International Journal of Drug Policy'
