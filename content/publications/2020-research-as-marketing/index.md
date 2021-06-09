@@ -20,10 +20,7 @@ publication_types: ["2"]
 #publication: In *Source Themes Conference*
 #publication_short: In *STC*
 
-abstract: "Marijuana and marijuanabased medical products are now legally sold in 33 US states and most European Union countries.
-Widespread medical marijuana legalization has ushered in an unprecedented level of investment in marijuana, replacing
-small, independently owned storefronts with polished national and international corporations.As the industry has become more
-sophisticated, so has its marketing; a recent commentary1 I coauthored in the Journal of the American Medical Association surveys Big Marijuana’s marketing strategy and summarizes how Big Marijuana companies convey poorly substantiated health claims to potential consumers."
+abstract: "Marijuana and marijuana based medical products are now legally sold in 33 US states and most European Union countries. Widespread medical marijuana legalization has ushered in an unprecedented level of investment in marijuana, replacing small, independently owned storefronts with polished national and international corporations.As the industry has become more sophisticated, so has its marketing; a recent commentary1 I coauthored in the Journal of the American Medical Association surveys Big Marijuana’s marketing strategy and summarizes how Big Marijuana companies convey poorly substantiated health claims to potential consumers."
 
 # Summary. An optional shortened abstract.
 summary: "Caputi TL. The Medical Marijuana Industry and the Use of 'Research as Marketing'. American Journal of Public Health. 2020 Feb;110(2):174-175."
