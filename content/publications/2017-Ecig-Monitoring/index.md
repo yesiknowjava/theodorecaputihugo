@@ -15,7 +15,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0185735"
+  url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205822"
 url_pdf: "/files/PLOS-2017.pdf"
 image:
   focal_point: ""

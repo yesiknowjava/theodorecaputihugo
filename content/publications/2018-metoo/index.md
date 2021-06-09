@@ -21,7 +21,7 @@ publication_types: ["2"]
 #publication: In *Source Themes Conference*
 #publication_short: In *STC*
 
-abstract: "On October 15, 2017, following the public accusations of sexual harassment and assault against film producer Harvey Weinstein, actress Alyssa Milano encouraged victims to bring the taboo topic out of the shadows by sharing their own stories on social media. #MeToo was tweeted 300 000 times the day after Milano’s post and generated widespread support with scores of accusations made against media, political, and business leaders, giving voice to previously unheard victims.1 However, the implications for the victims whose perpetrators are not public figures is unknown. To fill this knowledge gap, we examined how internet searches for sexual harassment and/or assault changed following #MeToo.2
+abstract: "On October 15, 2017, following the public accusations of sexual harassment and assault against film producer Harvey Weinstein, actress Alyssa Milano encouraged victims to bring the taboo topic out of the shadows by sharing their own stories on social media. #MeToo was tweeted 300000 times the day after Milanos post and generated widespread support with scores of accusations made against media, political, and business leaders, giving voice to previously unheard victims.1 However, the implications for the victims whose perpetrators are not public figures is unknown. To fill this knowledge gap, we examined how internet searches for sexual harassment and/or assault changed following #MeToo.2
 "
 
 # Summary. An optional shortened abstract.

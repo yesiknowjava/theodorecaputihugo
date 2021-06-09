@@ -2,13 +2,10 @@
 title: "What search data shows about Americans and guns during the COVID-19 crisis"
 authors:
 - admin
-- John W Ayers
-- Mark Dredze
-- Nicholas Suplina
-- Sarah Burd-Sharps
+- A. Thomas McLellan
 date: "2020-04-29T00:00:00Z"
 
-doi: ""
+doi: "10.1080/09687637.2017.1288681"
 venue: "Everytown Research"
 
 # Schedule page publish date (NOT publication's date). 

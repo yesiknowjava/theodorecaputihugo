@@ -28,7 +28,7 @@ Consumer-driven approaches such as the development and adoption of a standardize
 measure for effectiveness of in-school substance abuse prevention programs may expand
 the use and impact of substance abuse prevention. The field should extensively examine
 the current state of substance abuse prevention, through business tools such as the SWOT
-and Five C’s Analysis, before ultimately developing a strategy. The prevention field can
+and Five Cs Analysis, before ultimately developing a strategy. The prevention field can
 learn from business practices."
 
 # Summary. An optional shortened abstract.

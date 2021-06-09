@@ -21,7 +21,7 @@ publication_types: ["2"]
 #publication_short: In *STC*
 
 abstract: "Introduction
-Online cigarette dealers have lower prices than brick-and-mortar retailers and advertise tax-free status.1–8 Previous studies show smokers search out these online alternatives at the time of a cigarette tax increase.9,10 However, these studies rely upon researchers’ decision to consider a specific date and preclude the possibility that researchers focus on the wrong date. The purpose of this study is to introduce an unbiased methodology to the field of observing search patterns and to use this methodology to determine whether smokers search Google for “cheap cigarettes” at cigarette tax increases and, if so, whether the increased level of searches persists.
+Online cigarette dealers have lower prices than brick-and-mortar retailers and advertise tax-free status.18 Previous studies show smokers search out these online alternatives at the time of a cigarette tax increase.9,10 However, these studies rely upon researchers decision to consider a specific date and preclude the possibility that researchers focus on the wrong date. The purpose of this study is to introduce an unbiased methodology to the field of observing search patterns and to use this methodology to determine whether smokers search Google for cheap cigarettes at cigarette tax increases and, if so, whether the increased level of searches persists.
 "
 
 # Summary. An optional shortened abstract.

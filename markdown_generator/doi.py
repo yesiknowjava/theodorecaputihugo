@@ -18,12 +18,17 @@ import sys
 import time
 from tqdm import tqdm
 
+from unidecode import unidecode
+def remove_non_ascii(text):
+    new_string = text.encode('ascii',errors='ignore').decode()
+    return str(new_string)
+    # return unidecode(unicode(text, encoding = "utf-8"))
+
 style = pybtex.plugin.find_plugin('pybtex.style.formatting', 'plain')()
 backend = pybtex.plugin.find_plugin('pybtex.backends', 'plaintext')()
 
 dirs = [x[0].split("/")[-1] for x in os.walk("../content/publications")]
 dirs = [x for x in dirs if x != "publications"]
-random.shuffle(dirs)
 
 # DOIS = [
 #     ("10.1016/j.drugpo.2021.103133", "covid-cannabis", "IJDP-2021"),
@@ -78,7 +83,17 @@ def doi2bib(doi):
   return out
 
 def remove_control_characters(s):
+    # return "".join(ch for ch in s if unicodedata.category(ch)[0]!="C")
+    s = s.replace("â", "'")
+    s = s.replace("\\textquotedblleft", "'").replace("\\textquotedblright", "'")
+    s = s.replace("\\&", "&").replace("\\#", "#")
+    s = s.replace("", "")
+    return s
+
+def remove_control_characters2(s):
     return "".join(ch for ch in s if unicodedata.category(ch)[0]!="C")
+    # return s.replace("â", "'").replace("\\textquotedblleft", "'").replace("\\textquotedblright", "'").replace("\\&", "&").replace("\\#", "#")
+
 
 def get_citation(doi):
     headers = {
@@ -86,7 +101,7 @@ def get_citation(doi):
         # 'Accept': 'text/x-bibliography; style=elsevier-harvard',
     }
     citation = requests.get(f'https://doi.org/{doi}', headers=headers)
-    out = remove_control_characters(citation.text.replace("\n", ""))
+    out = citation.text.replace("\n", "")
 
     print(doi)
     print(out)
@@ -100,7 +115,21 @@ def get_citation(doi):
 
 DOIS = []
 for dir in dirs:
-    p = frontmatter.load(f"../content/publications/{dir}/index.md")
+
+    print(dir)
+
+    index_fn = f"../content/publications/{dir}/index.md"
+
+    with open(index_fn, "r") as f:
+        txt = f.read()
+
+    with open(index_fn, "w") as f:
+        f.write(remove_non_ascii(txt))
+
+    p = frontmatter.load(index_fn)
+
+    pprint(p)
+
     doi = p.get('doi', None)
     dir_no_date = "-".join(dir.split("-")[1:])
     pdf_no_ext = str(os.path.basename(p['url_pdf'])).replace(".pdf", "")
@@ -113,22 +142,27 @@ for dir in dirs:
         doi = ""
     if not abstract:
         abstract = ""
-    out = (doi, dir_no_date, pdf_no_ext, abstract, url_pdf)
+
+    altmetric_id = p.get('altmetric_id', None)
+    if not altmetric_id:
+        altmetric_id = ''
+
+    out = (doi, dir_no_date, pdf_no_ext, abstract, url_pdf, altmetric_id)
     DOIS.append(out)
 
 
 
 # doi2bib("10.1080/09687637.2017.1288681")
-doi2bib("10.1093/ntr/ntx143")
-get_citation("10.1093/ntr/ntx143")
-print()
-print()
+# doi2bib("10.1093/ntr/ntx143")
+# get_citation("10.1093/ntr/ntx143")
+# print()
+# print()
 # exit()
 
-SLEEP_TIME = 5
+SLEEP_TIME = 0
 
 articles = []
-for doi, slug, paperurl, abstract, url_pdf in tqdm(DOIS):
+for doi, slug, paperurl, abstract, url_pdf, altmetric_id in tqdm(DOIS):
 
     if doi != "":
 
@@ -179,7 +213,7 @@ for doi, slug, paperurl, abstract, url_pdf in tqdm(DOIS):
             'title': entry['title'],
             'venue': entry['journal'],
             'authors': entry['author'].split(" and "),
-            'citation': citation,
+            'citation': remove_non_ascii(remove_control_characters(citation)),
             'url_slug': slug,
             'paper_url': f"https://www.theodorecaputi.com/files/{paperurl}.pdf",
             'excerpt': '',
@@ -187,14 +221,15 @@ for doi, slug, paperurl, abstract, url_pdf in tqdm(DOIS):
             'bibtex': bibtex,
             # 'abstract': doi2abstract(doi),
             'url_pdf': url_pdf,
-            'abstract': abstract
+            'abstract': abstract,
+            'altmetric_id': altmetric_id
         }
 
         articles.append(out)
 
 
 # pprint(articles)
-exit()
+# exit()
 
 # pprint(articles)
 # import pandas as pd
@@ -235,7 +270,7 @@ for row, item in enumerate(articles):
 
     dt = datetime.datetime.strptime(item['pub_date'], "%Y-%m-%d")
     md += '\ndate: "{}"'.format(dt.strftime('%Y-%m-%dT00:00:00Z'))
-    md += '\naltemetric_id: {}'.format(10128625)
+    md += '\naltemetric_id: {}'.format(item['altmetric_id'])
     md += '\ndoi: "{}"'.format(item['doi'])
     md += '\nvenue: "{}"'.format(item['venue'])
     md += '\npublishDate: "2017-01-01T00:00:00Z"'
@@ -252,6 +287,9 @@ for row, item in enumerate(articles):
 
     md = md.replace("{", "")
     md = md.replace("}", "")
+    md = md.replace("'", "â")
+
+    md = remove_control_characters(md)
 
     overwrite = True
 
