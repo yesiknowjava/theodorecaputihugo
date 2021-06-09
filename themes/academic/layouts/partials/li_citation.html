@@ -11,11 +11,12 @@
       {{/* APA Style */}}
   {{ if eq (site.Params.publications.citation_style | default "apa") "apa" }}
 
-  <span class="article-metadata li-cite-author">
+  <!-- <span class="article-metadata li-cite-author">
     {{ partial "page_metadata_authors" . }}
   </span>
-  ({{- .Date.Format "2006" -}}).
-  <a href="{{ .RelPermalink }}">{{ .Title }}</a>. <i>{{ .Params.venue }}</i>.
+  ({{- .Date.Format "2006" -}}). -->
+  <!-- <a href="{{ .RelPermalink }}">{{ .Title }}</a>. <i>{{ .Params.venue }}</i>. -->
+  <a href="{{ .RelPermalink }}">{{ .Params.summary }}</a>.
   {{ if .Params.publication_short }}
   {{- .Params.publication_short | markdownify -}}.
   {{ else if .Params.publication }}
