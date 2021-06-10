@@ -154,7 +154,9 @@ def get_citation(doi):
 import pandas as pd
 df = pd.read_csv("publications.csv", encoding='utf8')
 df = df[df.title.notnull()]
-df['paperurl'] = [x.split("?|#")[0] for x in df['paperurl']]
+df['paperurl'] = [x.split("?")[0] for x in df['paperurl']]
+df['paperurl'] = [x.split("#")[0] for x in df['paperurl']]
+df.to_csv("publications.csv", encoding='utf8')
 
 print(df.head())
 print(df.tail())
@@ -311,11 +313,12 @@ with open("../static/files/pubs.tex", "w") as texfile, open("../static/files/pub
             if article['type'] != article_type:
                 continue
 
-            if 'ID' not in article:
-                continue
+            # if 'ID' not in article:
+            #     continue
 
             tex += latexmaker("years", article['year'])
-            tex += latexmaker("bibentry", article['ID'])
+            # tex += latexmaker("bibentry", article['ID'])
+            tex += article['citation'].replace("Caputi, T. L.", "\\textbf{Caputi, T. L.}")
             tex += " ["
             tex += latexmaker("href", article['url_pdf']) + "{Link}"
             tex += " | "
