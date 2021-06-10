@@ -17,6 +17,7 @@ import random
 import sys
 import time
 from tqdm import tqdm
+import string
 
 from unidecode import unidecode
 def remove_non_ascii(text):
@@ -152,9 +153,9 @@ def get_citation(doi):
 
 import pandas as pd
 df = pd.read_csv("publications.csv", encoding='utf8')
-# df = pd.read_csv("publications.csv", sep="\t", encoding='utf-8-sig')
-# df = pd.read_csv("publications.csv", sep="\t", encoding='cp1252')
 df = df[df.title.notnull()]
+df['paperurl'] = [x.split("?|#")[0] for x in df['paperurl']]
+
 print(df.head())
 print(df.tail())
 
@@ -192,24 +193,35 @@ for i, r in tqdm(df.iterrows()):
                 print(bibtex_file.read())
 
         entry = bib_database.entries[0]
+        authors = entry['author'].split(" and ")
+        
+        year = str(entry['year'])
         
         month = strptime(entry['month'], '%b').tm_mon
         month = str(month)
         if len(month) == 1:
             month = "0" + month
 
+        ID = authors[0].split()[-1] + month + year + ' '.join(r['title'].split()[:3])
+        ID = ID.title().replace(" ", "")
+        entry['ID'] = ID.translate(str.maketrans('', '', string.punctuation))
+        # pprint(entry)
+        # print(bibtexparser.dumps(entry))
+        
         out = {
             'doi': r['doi'],
-            'pub_date': f"{str(entry['year'])}-{month}-01",
+            'year': year,
+            'pub_date': f"{year}-{month}-01",
             'title': r['title'].replace('"', '\\"'),
             'venue': entry['journal'].replace("\\&", "&"),
-            'authors': entry['author'].split(" and "),
+            'authors': authors,
             'citation': remove_non_ascii(remove_control_characters(citation)),
             'url_slug': r['slug'],
             'paper_url': f"https://www.theodorecaputi.com/files/{r['pdfurl']}.pdf",
             'excerpt': '',
             'paperurlslug': r['pdfurl'],
-            'bibtex': bibtex,
+            'bibtex': bibtexparser.dumps(bib_database),
+            'ID': entry['ID'],
             # 'abstract': doi2abstract(doi),
             'url_pdf': r['paperurl'],
             'abstract': r['abstract'],
@@ -224,12 +236,14 @@ for i, r in tqdm(df.iterrows()):
         if len(month) == 1:
             month = "0" + month
 
-        pubdate = f"{str(int(r['year']))}-{month}-01"
+        year = str(int(r['year']))
+        pubdate = f"{year}-{month}-01"
         
-        print(r['author'])
-        print(pubdate)
+        # print(r['author'])
+        # print(pubdate)
 
         out = {
+            'year': year,
             'doi': doi,
             'pub_date': pubdate,
             'title': r['title'],
@@ -251,7 +265,74 @@ for i, r in tqdm(df.iterrows()):
     articles.append(out)
 
 
+articles = sorted(articles, key=lambda i: i['pub_date'])[::-1]
 pprint(articles)
+
+article_types = [
+    'Original Research',
+    'Uninvited Commentary',
+    'Invited Commentary',
+    'Team Science'
+]
+
+
+def latexmaker(tag, content):
+    out = "\\"
+    out += tag
+    out += "{"
+    out += content
+    out += "}"
+    return out
+
+# barticles = []
+# db = biblib.db_from_string("")
+# for barticle in articles:
+#     doi = barticle['doi']
+#     db.add_entry(entry)
+
+
+with open("../static/files/pubs.tex", "w") as texfile, open("../static/files/pubs.bib", "w") as bibfile:
+    tex = ""
+    bib = ""
+
+    # tex += latexmaker("nobibliography", "pubs")
+    # tex += "\n"
+    # tex += latexmaker("bibliographystyle", "apa")
+    # tex += "\n"
+
+    for article_type in tqdm(article_types):
+
+        tex += latexmaker("subsection*", article_type)
+        tex += "\\noindent"
+        tex += "\n"
+
+        for article in articles:
+
+            if article['type'] != article_type:
+                continue
+
+            if 'ID' not in article:
+                continue
+
+            tex += latexmaker("years", article['year'])
+            tex += latexmaker("bibentry", article['ID'])
+            tex += " ["
+            tex += latexmaker("href", article['url_pdf']) + "{Link}"
+            tex += " | "
+            tex += latexmaker("href", article['paper_url']) + "{PDF}"
+            tex += "] \\\\[.2cm]"
+            tex += "\n"
+
+            bib += article['bibtex']
+            bib += "\n\n"
+
+        tex += "\n"
+
+    texfile.write(tex)
+    bibfile.write(bib)
+
+
+exit()
 
 
 # doi2bib("10.1080/09687637.2017.1288681")
