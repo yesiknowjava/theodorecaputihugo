@@ -375,7 +375,7 @@ for row, item in enumerate(articles):
     md += '\nvenue: "{}"'.format(item['venue'])
     md += '\npublishDate: "2017-01-01T00:00:00Z"'
     md += '\npublication_types: ["2"]'
-    md += '\nabstract: "{}"'.format(item['abstract'])
+    md += '\nabstract: "{}"'.format(item['abstract'].replace("\n", "<br>"))
     md += '\nsummary: "{}"'.format(item['citation'])
     md += '\ntags: \nfeatured: false\nlinks:\n- name: Paper Link'
     md += '\n  url: "{}"'.format(item['url_pdf'])

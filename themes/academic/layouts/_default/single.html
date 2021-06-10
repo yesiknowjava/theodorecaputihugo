@@ -9,7 +9,7 @@
     <div class="article-style">
       {{ if eq .Page.Type "publications" }}
       <h3>Abstract</h3>
-      {{ .Params.Abstract }}
+      {{ .Params.Abstract | safeHTML }}
       {{ else }}
       {{ .Content }}
       {{ end }}
