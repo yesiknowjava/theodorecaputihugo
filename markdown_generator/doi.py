@@ -446,6 +446,8 @@ for row, item in enumerate(articles):
     
     ## YAML variables
     
+    featured = "true" if row == 0 else "false"
+
     md = "---\ntitle: \""   + item['title'] + '"\n'
 
     authors = [f'- "{x}"' for x in item['authors']]
@@ -463,7 +465,7 @@ for row, item in enumerate(articles):
     md += '\npublication_types: ["2"]'
     md += '\nabstract: "{}"'.format(item['abstract'].replace("\n", "<br>"))
     md += '\nsummary: "{}"'.format(item['citation'])
-    md += '\ntags: \nfeatured: false\nlinks:\n- name: Paper Link'
+    md += '\ntags: \nfeatured: {}\nlinks:\n- name: Paper Link'.format(featured)
     md += '\n  url: "{}"'.format(item['url_pdf'])
     md += '\nurl_pdf: "/files/{}.pdf"'.format(item['paperurlslug'])
     md += '\nimage:'
