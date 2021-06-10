@@ -18,7 +18,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "https://publichealth.jmir.org/2020/2/e19369/?utm_source=TrendMD&utm_medium=cpc&utm_campaign=JMIR_TrendMD_0"
+  url: "https://publichealth.jmir.org/2020/2/e19369/"
 url_pdf: "/files/JMIR-2020.pdf"
 image:
   focal_point: ""

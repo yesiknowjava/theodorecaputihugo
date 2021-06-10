@@ -16,7 +16,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "https://jamanetwork.com/journals/jamapediatrics/article-abstract/2762002?casa_token=cerMaAcgmvsAAAAA:bBjpZXhDbcPxuW8hrie1_QxaQ0baIfwq6aD2LWcqF__YgZ0yLDkdwCoSFjwAVPeU0Ydh2pnIcA"
+  url: "https://jamanetwork.com/journals/jamapediatrics/article-abstract/2762002"
 url_pdf: "/files/JPED-2020.pdf"
 image:
   focal_point: ""

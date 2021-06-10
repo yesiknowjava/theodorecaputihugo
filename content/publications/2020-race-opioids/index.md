@@ -14,7 +14,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "https://onlinelibrary.wiley.com/doi/10.1111/add.15339?af=R"
+  url: "https://onlinelibrary.wiley.com/doi/10.1111/add.15339"
 url_pdf: "/files/ADD-2020B.pdf"
 image:
   focal_point: ""

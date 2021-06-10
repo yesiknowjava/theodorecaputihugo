@@ -318,7 +318,11 @@ with open("../static/files/pubs.tex", "w") as texfile, open("../static/files/pub
 
             tex += latexmaker("years", article['year'])
             # tex += latexmaker("bibentry", article['ID'])
-            tex += article['citation'].replace("Caputi, T. L.", "\\textbf{Caputi, T. L.}")
+            latex_citation = article['citation']
+            latex_citation = latex_citation.replace("Caputi, T.", "\\textbf{Caputi, T. L.}")
+            latex_citation = latex_citation.replace("Caputi, T. L.", "\\textbf{Caputi, T. L.}")
+
+            tex += latex_citation
             tex += " ["
             tex += latexmaker("href", article['url_pdf']) + "{Link}"
             tex += " | "
@@ -334,8 +338,6 @@ with open("../static/files/pubs.tex", "w") as texfile, open("../static/files/pub
     texfile.write(tex)
     bibfile.write(bib)
 
-
-exit()
 
 
 # doi2bib("10.1080/09687637.2017.1288681")

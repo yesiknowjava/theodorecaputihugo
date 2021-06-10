@@ -17,7 +17,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "https://www.nature.com/articles/s41746-018-0036-2#:~:text=Twenty%2Dthree%20(21%25%3B%2095,consent%20to%20disclose%20identifying%20information."
+  url: "https://www.nature.com/articles/s41746-018-0036-2"
 url_pdf: "/files/NDM-2018.pdf"
 image:
   focal_point: ""

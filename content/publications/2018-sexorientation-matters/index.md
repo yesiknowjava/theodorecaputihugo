@@ -14,7 +14,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "https://www.sciencedirect.com/science/article/pii/S0376871618301170?casa_token=gAkp1r1UqpoAAAAA:cBfJILvj8M-R4rEGgACVmd4EkHechC3QKBWDElLG67Zw1IxVOxDELmN8jv4OvHvc8aFiSICfWw"
+  url: "https://www.sciencedirect.com/science/article/pii/S0376871618301170"
 url_pdf: "/files/DAD-2018.pdf"
 image:
   focal_point: ""

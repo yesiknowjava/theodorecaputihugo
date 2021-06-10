@@ -17,7 +17,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2018.304446?casa_token=gazDt1QfDWkAAAAA%3AvqFK2dBeFyJKWZAlJLjDJKW9SGzoAev19r14GkOsfKShQRPykojUseXbQcLBQrgipoJeXRe8rY1gnw"
+  url: "https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2018.304446"
 url_pdf: "/files/AJPH-2018.pdf"
 image:
   focal_point: ""

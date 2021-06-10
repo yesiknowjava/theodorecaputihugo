@@ -16,7 +16,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "https://jamanetwork.com/journals/jama/article-abstract/2734209?casa_token=Fh39eJ7kEQcAAAAA:uMpydQs9JSOm98QPUzBbtl97MGNQ5aeDU5rsyu-XQ4qX7eKtRW6_v72mK2Aoa7ghZhwik25mLg"
+  url: "https://jamanetwork.com/journals/jama/article-abstract/2734209"
 url_pdf: "/files/JAMA-2019.pdf"
 image:
   focal_point: ""

@@ -16,7 +16,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2719193?casa_token=QUORx2GsmB4AAAAA:55fjolu-bnNXJ56nmlzHcyZuNgaYfoqK4QNuzaETn1j4ZBtolAv8RaXmNEE1d4YeiNlRQeiN4A"
+  url: "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2719193"
 url_pdf: "/files/JINT-2018.pdf"
 image:
   focal_point: ""

@@ -19,7 +19,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2753393#:~:text=Search%20volumes%20increased%20125.9%25%20during,on%20observed%20and%20forecasted%20volumes."
+  url: "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2753393"
 url_pdf: "/files/JNOP-2019.pdf"
 image:
   focal_point: ""

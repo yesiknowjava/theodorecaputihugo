@@ -19,7 +19,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205822"
+  url: "https://journals.plos.org/plosone/article"
 url_pdf: "/files/PLOS-2018.pdf"
 image:
   focal_point: ""
