@@ -11,6 +11,7 @@ xelatex -interaction=nonstopmode TheodoreCaputiShortCV.tex
 cd ..
 cd ..
 
+sleep 10
 hugo
 
 rm public/assets/css/main.scss

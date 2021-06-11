@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.8.2)  10 JUN 2021 19:57
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.8.2)  10 JUN 2021 20:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -815,7 +815,7 @@ Package marginnote Info: right page because not two side mode on input line 3.
 Package marginnote Info: xpos seems to be 79.49632pt on input line 3.
 
 ! Misplaced alignment tab character &.
-l.3 ...textbf{Caputi, T. L.}} L., Shover, C. L., &
+l.3 ...textbf{Caputi, T. L.} L.}, Shover, C. L., &
                                                    Watson, R. J. (2020). Phy...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -829,7 +829,7 @@ Package marginnote Info: Margin note 1.25 is on absolute page 2 on input line 4
 Package marginnote Info: right page because not two side mode on input line 4.
 Package marginnote Info: xpos seems to be 79.49632pt on input line 4.
 ! Misplaced alignment tab character &.
-l.4 ...., Ayers, J. W., Dredze, M., Suplina, N., &
+l.4 ...}, Ayers, J. W., Dredze, M., Suplina, N., &
                                                    Burd-Sharps, S. (2020). C...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -843,7 +843,7 @@ Package marginnote Info: Margin note 1.26 is on absolute page 2 on input line 5
 Package marginnote Info: right page because not two side mode on input line 5.
 Package marginnote Info: xpos seems to be 79.49632pt on input line 5.
 ! Misplaced alignment tab character &.
-l.5 ...textbf{Caputi, T. L.}} L., Nobles, A. L., &
+l.5 ...textbf{Caputi, T. L.} L.}, Nobles, A. L., &
                                                    Ayers, J. W. (2019). Inte...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -865,7 +865,7 @@ Package marginnote Info: Margin note 1.27 is on absolute page 2 on input line 6
 Package marginnote Info: right page because not two side mode on input line 6.
 Package marginnote Info: xpos seems to be 79.49632pt on input line 6.
 ! Misplaced alignment tab character &.
-l.6 ... L.}} L., Smith, L. R., Strathdee, S. A., &
+l.6 ... L.} L.}, Smith, L. R., Strathdee, S. A., &
                                                    Ayers, J. W. (2018). Subs...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -879,7 +879,7 @@ Package marginnote Info: Margin note 1.28 is on absolute page 2 on input line 7
 Package marginnote Info: right page because not two side mode on input line 7.
 Package marginnote Info: xpos seems to be 79.49632pt on input line 7.
 ! Misplaced alignment tab character &.
-l.7 ...{2018}\textbf{\textbf{Caputi, T. L.}} L., &
+l.7 ...{2018}\textbf{\textbf{Caputi, T. L.} L.}, &
                                                    Humphreys, K. (2018). Med...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -897,7 +897,7 @@ Package marginnote Info: Margin note 1.30 is on absolute page 2 on input line 9
 Package marginnote Info: right page because not two side mode on input line 9.
 Package marginnote Info: xpos seems to be 79.49632pt on input line 9.
 ! Misplaced alignment tab character &.
-l.9 ...uti, T. L.}} L., Leas, E. C., Dredze, M., &
+l.9 ...uti, T. L.} L.}, Leas, E. C., Dredze, M., &
                                                    Ayers, J. W. (2018). Onli...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -912,7 +912,7 @@ Package marginnote Info: right page because not two side mode on input line 10.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 10.
 ! Misplaced alignment tab character &.
-l.10 ...f{\textbf{Caputi, T. L.}} L., Smith, D., &
+l.10 ...f{\textbf{Caputi, T. L.} L.}, Smith, D., &
                                                    Ayers, J. W. (2017). Suic...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -927,7 +927,7 @@ Package marginnote Info: right page because not two side mode on input line 11.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 11.
 ! Misplaced alignment tab character &.
-l.11 ... L., Leas, E., Dredze, M., Cohen, J. E., &
+l.11 ...L.}, Leas, E., Dredze, M., Cohen, J. E., &
                                                    Ayers, J. W. (2017). They...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -962,7 +962,7 @@ Package marginnote Info: right page because not two side mode on input line 14.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 14.
 ! Misplaced alignment tab character &.
-l.14 ...2016}\textbf{\textbf{Caputi, T. L.}} L., &
+l.14 ...2016}\textbf{\textbf{Caputi, T. L.} L.}, &
                                                    Thomas McLellan, A. (2016...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1012,7 +1012,7 @@ Package marginnote Info: right page because not two side mode on input line 21.
 Package marginnote Info: xpos seems to be 79.49632pt on input line 21.
 
 ! Misplaced alignment tab character &.
-l.21 ... W., \textbf{\textbf{Caputi, T. L.}} L., &
+l.21 ... W., \textbf{\textbf{Caputi, T. L.} L.}, &
                                                    Leas, E. C. (2019). The N...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1037,7 +1037,7 @@ Package marginnote Info: right page because not two side mode on input line 24.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 24.
 ! Misplaced alignment tab character &.
-l.24 ...2018}\textbf{\textbf{Caputi, T. L.}} L., &
+l.24 ...2018}\textbf{\textbf{Caputi, T. L.} L.}, &
                                                    Sabet, K. A. (2018). Popu...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1057,7 +1057,7 @@ Package marginnote Info: right page because not two side mode on input line 26.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 26.
 ! Misplaced alignment tab character &.
-l.26 ...2017}\textbf{\textbf{Caputi, T. L.}} L., &
+l.26 ...2017}\textbf{\textbf{Caputi, T. L.} L.}, &
                                                    McLellan, A. T. (2017). R...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1082,7 +1082,7 @@ Package marginnote Info: right page because not two side mode on input line 27.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 27.
 ! Misplaced alignment tab character &.
-l.27 ...2016}\textbf{\textbf{Caputi, T. L.}} L., &
+l.27 ...2016}\textbf{\textbf{Caputi, T. L.} L.}, &
                                                    Humphreys, K. (2016). Med...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1102,7 +1102,7 @@ Package marginnote Info: right page because not two side mode on input line 29.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 29.
 ! Misplaced alignment tab character &.
-l.29 ...2016}\textbf{\textbf{Caputi, T. L.}} L., &
+l.29 ...2016}\textbf{\textbf{Caputi, T. L.} L.}, &
                                                    Sabet, K. A. (2016). Comm...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1112,9 +1112,9 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Overfull \hbox (64.50229pt too wide) in paragraph at lines 18--30
-|[]\TU/LinLibertine_R.otf(0)/b/n/12 Caputi, T. L. \TU/LinLibertine_R.otf(0)/m/n
-/12 L. (2019). Medical Cannabis Use. Health Affairs, 38(5), 874874. doi:10.1377
+Overfull \hbox (65.3783pt too wide) in paragraph at lines 18--30
+|[]\TU/LinLibertine_R.otf(0)/b/n/12 Caputi, T. L. L. \TU/LinLibertine_R.otf(0)/
+m/n/12 (2019). Medical Cannabis Use. Health Affairs, 38(5), 874874. doi:10.1377
 /hlthaff.2019.00198
  []
 
@@ -1146,7 +1146,7 @@ Package marginnote Info: right page because not two side mode on input line 35.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 35.
 ! Misplaced alignment tab character &.
-l.35 ...f{Caputi, T. L.}} L., McWilliams, J. M., &
+l.35 ...f{Caputi, T. L.} L.}, McWilliams, J. M., &
                                                    Cook, B. L. (2021). Impac...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1161,7 +1161,7 @@ Package marginnote Info: right page because not two side mode on input line 36.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 36.
 ! Misplaced alignment tab character &.
-l.36 ...ze, M., \textbf{\textbf{Caputi, T. L.}}, &
+l.36 ... C., Dredze, M., \textbf{Caputi, T. L.}, &
                                                    Nobles, A. L. (2021). Sui...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1176,7 +1176,7 @@ Package marginnote Info: right page because not two side mode on input line 37.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 37.
 ! Misplaced alignment tab character &.
-l.37 ...., Dredze, M., Zhu, S.-H., Cohen, J. E., &
+l.37 ...}, Dredze, M., Zhu, S.-H., Cohen, J. E., &
                                                    Ayers, J. W. (2020). News...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1191,7 +1191,7 @@ Package marginnote Info: right page because not two side mode on input line 38.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 38.
 ! Misplaced alignment tab character &.
-l.38 ... L.}} L., Dredze, M., Kesselheim, A. S., &
+l.38 ... L.} L.}, Dredze, M., Kesselheim, A. S., &
                                                    Ayers, J. W. (2020). Inte...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1206,7 +1206,7 @@ Package marginnote Info: right page because not two side mode on input line 39.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 39.
 ! Misplaced alignment tab character &.
-l.39 .... L.}} L., Zhu, S.-H., Strathdee, S. A., &
+l.39 .... L.} L.}, Zhu, S.-H., Strathdee, S. A., &
                                                    Ayers, J. W. (2020). Resp...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1221,7 +1221,7 @@ Package marginnote Info: right page because not two side mode on input line 40.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 40.
 ! Misplaced alignment tab character &.
-l.40 ...i, T. L.}} L., Dredze, M., Smith, D. M., &
+l.40 ...i, T. L.} L.}, Dredze, M., Smith, D. M., &
                                                    Ayers, J. W. (2019). Tren...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1236,7 +1236,7 @@ Package marginnote Info: right page because not two side mode on input line 41.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 41.
 ! Misplaced alignment tab character &.
-l.41 ...textbf{Caputi, T. L.}} L., Allem, J.-P., &
+l.41 ...textbf{Caputi, T. L.} L.}, Allem, J.-P., &
                                                    Cohen, J. E. (2018). Next...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1251,7 +1251,7 @@ Package marginnote Info: right page because not two side mode on input line 42.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 42.
 ! Misplaced alignment tab character &.
-l.42 ...\textbf{Caputi, T. L.}} L., Nebeker, C., &
+l.42 ...\textbf{Caputi, T. L.} L.}, Nebeker, C., &
                                                    Dredze, M. (2018). Dont q...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
