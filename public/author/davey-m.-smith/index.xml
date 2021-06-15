@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Davey M. Smith | Theodore L. Caputi</title>
+    <link>https://theo.tcaputi.com/author/davey-m.-smith/</link>
+      <atom:link href="https://theo.tcaputi.com/author/davey-m.-smith/index.xml" rel="self" type="application/rss+xml" />
+    <description>Davey M. Smith</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://theo.tcaputi.com/images/icon_hu48ca03eb73ed8f12a0045fd42592c899_572285_512x512_fill_lanczos_center_2.png</url>
+      <title>Davey M. Smith</title>
+      <link>https://theo.tcaputi.com/author/davey-m.-smith/</link>
+    </image>
+    
+    <item>
+      <title>Monitoring HIV testing and pre-exposure prophylaxis information seeking by combining digital and traditional data</title>
+      <link>https://theo.tcaputi.com/publications/2021-hiv-searches/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://theo.tcaputi.com/publications/2021-hiv-searches/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trends in internet searches for cannabidiol (CBD) in the United States</title>
+      <link>https://theo.tcaputi.com/publications/2019-cbd-searches/</link>
+      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>https://theo.tcaputi.com/publications/2019-cbd-searches/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

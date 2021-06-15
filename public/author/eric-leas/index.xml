@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eric Leas | Theodore L. Caputi</title>
+    <link>https://theo.tcaputi.com/author/eric-leas/</link>
+      <atom:link href="https://theo.tcaputi.com/author/eric-leas/index.xml" rel="self" type="application/rss+xml" />
+    <description>Eric Leas</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://theo.tcaputi.com/images/icon_hu48ca03eb73ed8f12a0045fd42592c899_572285_512x512_fill_lanczos_center_2.png</url>
+      <title>Eric Leas</title>
+      <link>https://theo.tcaputi.com/author/eric-leas/</link>
+    </image>
+    
+    <item>
+      <title>They’re heating up: Search query data reveals significant public interest in heat-not-burn tobacco products</title>
+      <link>https://theo.tcaputi.com/publications/2017-hnb-searches/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>https://theo.tcaputi.com/publications/2017-hnb-searches/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

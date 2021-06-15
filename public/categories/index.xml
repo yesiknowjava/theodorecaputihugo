@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories | Theodore L. Caputi</title>
+    <link>https://theo.tcaputi.com/categories/</link>
+      <atom:link href="https://theo.tcaputi.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <description>Categories</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://theo.tcaputi.com/images/icon_hu48ca03eb73ed8f12a0045fd42592c899_572285_512x512_fill_lanczos_center_2.png</url>
+      <title>Categories</title>
+      <link>https://theo.tcaputi.com/categories/</link>
+    </image>
+    
+  </channel>
+</rss>
