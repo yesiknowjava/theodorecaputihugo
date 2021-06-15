@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd markdown_generator 
 python3 doi.py
 cd ..
@@ -11,7 +13,6 @@ xelatex -interaction=nonstopmode TheodoreCaputiShortCV.tex
 sleep 5
 cp TheodoreCaputiShortCV.pdf ../static/files/
 cd ..
-
 
 sleep 10
 hugo

@@ -12,5 +12,5 @@ git push
 
 cd ..
 git add .
-git commit -m "repo: $commit"
+git commit -m "submodule: $commit"
 git push
