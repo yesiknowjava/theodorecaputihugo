@@ -258,7 +258,7 @@ for i, r in tqdm(df.iterrows()):
             'paper_url': f"https://www.theodorecaputi.com/files/{r['pdfurl']}.pdf",
             'excerpt': '',
             'paperurlslug': r['pdfurl'],
-            'bibtex': bibtex,
+            # 'bibtex': bibtex,
             # 'abstract': doi2abstract(doi),
             'url_pdf': r['paperurl'],
             'abstract': r['abstract'],
@@ -509,10 +509,12 @@ for row, item in enumerate(articles):
         with open(index_filename, 'w') as f:
             f.write(md)
 
-    bib_filename = f"{dir_name}/cite.bib"
-    if not os.path.isfile(bib_filename) or overwrite:
-        with open(bib_filename, 'w') as f:
-            f.write(item['bibtex'])
+
+    if 'bibtex' in item:
+        bib_filename = f"{dir_name}/cite.bib"
+        if not os.path.isfile(bib_filename) or overwrite:
+            with open(bib_filename, 'w') as f:
+                f.write(item['bibtex'])
     
 
     print(f"WRITING {index_filename}")
