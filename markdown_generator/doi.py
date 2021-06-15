@@ -468,7 +468,18 @@ for row, item in enumerate(articles):
     md += '\nvenue: "{}"'.format(item['venue'])
     md += '\npublishDate: "2017-01-01T00:00:00Z"'
     md += '\npublication_types: ["2"]'
-    md += '\nabstract: "{}"'.format(item['abstract'].replace("\n", "<br>"))
+
+    abstract = item['abstract']
+    num_words = len(abstract.split())
+    num_breaks = abstract.count("\n")
+
+    if num_words > 50 and num_breaks / num_words >= 0.05:
+        abstract = abstract.replace("\n", "<br>")
+    else:
+        print("ABSTRACT HAS BREAKS IN IT")
+        print(abstract)
+
+    md += '\nabstract: "{}"'.format(abstract)
     md += '\nsummary: "{}"'.format(item['citation'])
     md += '\ntags: \nfeatured: {}\nlinks:\n- name: Paper Link'.format(featured)
     md += '\n  url: "{}"'.format(item['url_pdf'])

@@ -14,7 +14,7 @@ tags:
 featured: false
 links:
 - name: Paper Link
-  url: "https://www.dfaf.org/wp-content/uploads/2018/11/Vol-9-Issue-1.pdf"
+  url: "https://archive.is/CUkqN"
 url_pdf: "/files/JGDPP-2015.pdf"
 image:
   focal_point: ""
