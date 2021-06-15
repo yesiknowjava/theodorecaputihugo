@@ -1,0 +1,304 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsfonts,eurosym,geometry,ulem,graphicx,caption,color,setspace,sectsty,comment,footmisc,caption,natbib,pdflscape,subfigure,array,hyperref}
+
+\normalem
+
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}{Proposition}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\newtheorem{hyp}{Hypothesis}
+\newtheorem{subhyp}{Hypothesis}[hyp]
+\renewcommand{\thesubhyp}{\thehyp\alph{subhyp}}
+
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+
+\geometry{left=1.0in,right=1.0in,top=1.0in,bottom=1.0in}
+
+
+\usepackage{booktabs} % For better looking tables
+\usepackage{dcolumn} % Align on the decimal point of numbers in tabular columns
+     \newcolumntype{d}[1]{D{.}{.}{#1}}
+\usepackage{threeparttable} % For better formatting of table notes
+\usepackage[colorlinks,%
+  citecolor=black,
+  filecolor=black,%
+  linkcolor=black,%
+  urlcolor= black]{hyperref} % for linking between references, figures, TOC, etc in the pdf document
+% \setlength{\parindent}{0pt}
+
+\let\estinput=\input % define a new input command so that we can still flatten the document
+
+\newcommand{\estwide}[3]{
+\vspace{.75ex}{
+\textsymbols
+\begin{tabular*}
+{\textwidth}{@{\hskip\tabcolsep\extracolsep\fill}l*{#2}{#3}}
+\toprule
+\estinput{#1}
+\bottomrule
+\addlinespace[.75ex]
+\end{tabular*}
+}
+}
+
+\newcommand{\estauto}[3]{
+\vspace{.75ex}{
+\textsymbols
+\begin{tabular}{l*{#2}{#3}}
+\toprule
+\estinput{#1}
+\bottomrule
+\addlinespace[.75ex]
+\end{tabular}
+}
+}
+
+\newcommand{\specialcell}[2][c]{%
+\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}
+}
+\newcommand{\sym}[1]{\rlap{#1}}
+
+\newcommand{\maketitlepage}{
+  \begin{titlepage}
+  \title{Medicaid Exposure in Youth and Young Adult Health}
+  \author{Theodore L. Caputi\thanks{University of York, York, United Kingdom, tlc527@york.ac.uk}}
+  \date{\today}
+  \maketitle
+  \begin{abstract}
+  \noindent In the late 1980's, several steps were taken to expand Medicaid coverage for pregnant women and infant children. Beginning in April 1987, the federal government allowed states, on a voluntary basis, to expand Medicaid eligibility to pregnant women and infant children whose families' incomes fell under the federal poverty line. By July 1990, the federal government required states to offer Medicaid to this population. Using longitudinal data from the Panel Survey on Income Dynamics, I exploit the heterogeneity of when these states expanded Medicaid coverage to low-income pregnant women and infant children, as well as the magnitude of their expansions, in a difference-in-difference model to estimate the effect of a child's access to Medicaid in utero and early childhood (conception to 1 year old) on several health indicators measured in young adulthood (age 18 to 38). I find that increased access to Medicaid in youth significantly improved health in young adulthood.\\
+  \vspace{0in}\\
+  \noindent\textbf{Keywords:} Medicaid, prenatal, neonatal, metabolic syndrome, health\\
+  \vspace{0in}\\
+  \noindent\textbf{JEL Codes:} I13, I18\\
+
+  \bigskip
+  \end{abstract}
+  \setcounter{page}{0}
+  \thispagestyle{empty}
+  \end{titlepage}
+  \pagebreak \newpage
+}
+
+\newcommand{\shorttitle}{
+  \title{Medicaid Exposure in Youth and Young Adult Health}
+  \subtitle{\href{https://www.TheodoreCaputi.com/files/youthexpdiff.pdf}{Click here for updated copy.}}
+  \date{\today}
+  \maketitle
+}
+
+
+\begin{document}
+
+\shorttitle
+\doublespacing
+
+\section{Introduction} \label{sec:introduction}
+
+\section{Literature Review} \label{sec:literature}
+
+\section{Methods} \label{sec:methods}
+
+\subsection{Data} \label{sec:data}
+
+My analytical strategy largely follows that of \citet{hoynesLongRunImpactsChildhood2016}, who exploited county-level heterogeneity in the introduction of the Food Stamps program between 1962 and 1975 to study the effects of access to Food Stamps in youth on several economic and health outcomes in adulthood. I use publicly available data from the Panel Survey on Income Dynamics (PSID), a longitudinal study that began surveying members of a representative sample of approximately 5,000 American households in 1968 and has tracked those respondents and their descendents up until 2017.
+
+Using the PSID, I track individuals who were born up to 10 years before or after their states expanded eligibility to Medicaid, including their demographics, state of residence at birth, family circumstances at birth (or early childhood) and their health in young adulthood, from birth to 2017. Specifically, for each individual, I extract from the survey wave closest to that individual's birth (henceforth ``at birth''): whether the individual is male, whether he is non-white, his birth order to his mother, whether his mother is single, the education level of the head of his household, the size of his family, his family's total income, and his state of residence.  Following \citet{hoynesLongRunImpactsChildhood2016}, I compute a ratio of the individual's family income at birth to the federal poverty guidelines set forth by \citet{usbureauoflaborstatisticsFamilyPovertyStatus2015}, accounting for the individual's family size at birth.
+
+I create an index of exposure to Medicaid expansion (henceforth ``Medicaid Exposure Index'') by multiplying the proportion of the individual's young life (from conception to age 1) that occurred after Medicaid expansion with the percentage change of eligibility requirements in the individual's state. An individual born 1 or more years before their state expanded Medicaid would have a Medicaid Exposure Index score of 0 (equation \ref{eq:exampleindex0}), and an individual conceived after Medicaid expansion in a state that doubled its eligibility (e.g., from 50\% to 100\%) would have a a Medicaid Exposure Index score of 1 (equation \ref{eq:exampleindex1}). These scores are calculated based upon an individual's birth date and state of residence at birth along with data on Medicaid expansions provided by \citet{torresExpandingMedicaidCoverage1989} (Table \ref{tab:expdates}).
+
+
+\begin{table}[h]
+\centering
+\caption{Medicaid Expansions} \label{tab:expdates}
+\begin{threeparttable}
+  \footnotesize
+  \input{expdates.tex}
+\end{threeparttable}
+\end{table}
+
+
+\begin{equation}
+  \label{eq:exampleindex0}
+  \frac{0}{12+9} \times \frac{100\%-30\%}{30\%} = 0.00
+\end{equation}
+
+\begin{equation}
+  \label{eq:exampleindex1}
+  \frac{12+9}{12+9} \times \frac{100\%-50\%}{50\%} = 1.00
+\end{equation}
+
+As an illustrative example, an individual that was born 2 months (i.e., conceived 11 months) before Medicaid was expanded in a state where Medicaid eligibility was expanded from 30\% to 100\% would have an index score of 1.56 (equation \ref{eq:exampleindex}):
+
+
+\begin{equation}
+  \label{eq:exampleindex}
+  \frac{(12+9)-(2 + 9)}{12+9} \times \frac{100\%-30\%}{30\%} = 1.56
+\end{equation}
+
+
+The PSID began asking the head of household and their spouse about their overall health in 1984, their weight in 1986, their height in 1999, and whether they had been diagnosed with certain health conditions (heart disease, heart attack, hypertension, and diabetes) in 1999. Following \citet{hoynesLongRunImpactsChildhood2016}, I create two main outcome measures: whether the individual rates their health as excellent or very good (relative to good, fair, or poor) each survey wave from 1984 and an index of metabolic syndrome every survey wave from 1999. I compute the index of metabolic syndrome by computing the Z-Score\footnote{I compute the Z-Score by taking the difference between the individual's score and the sample mean and divide by the sample standard deviation, deriving the sample mean and standard deviation from those born more than 8 years before their state expanded Medicaid.} for each individual for each of 5 conditions (heart disease, heart attack, hypertension, and obesity [i.e., body mass index over 30]). For each year that the individual responds to the survey, I take the mean of these Z-scores as their metabolic syndrome index score.
+
+I restrict my analysis to individuals born up to 10 years before or after their state's Medicaid expansion. Following \citet{hoynesLongRunImpactsChildhood2016}, I restrict my analysis to health outcomes collected after the individual turned 18 and focus my analysis on a ``high impact sample'' of disadvantaged families, i.e., those who, at birth, belonged to households headed by someone with less than a high school education. The data is summarized in Table \ref{tab:summstats}.
+
+
+\input{summstats.tex}
+
+
+\subsection{Analytical Strategy} \label{sec:analysis}
+
+I assess the effect of exposure to Medicaid expansion in youth on health outcomes in young adulthood through a difference-in-difference design. I estimate:
+
+\begin{equation}
+  \label{eq:dd}
+  y_{isbt} = \alpha + \delta\textrm{MedicaidIndex}_{sb}+X_{isbt}\beta+\eta_s+\lambda_b+\gamma_t+\theta t + \epsilon_{isbt}
+\end{equation}
+
+where $i$ indexes the individual, $s$ indexes the state of birth, $b$ indexes the birth year (cohort), and $t$ indexes the survey year. $y_{isbt}$ is the individual's health outcome (either whether the individual is in ``excellent'' or ``very good'' health or the individual's metabolic syndrome index score) in a given survey year. $\delta$ is the parameter of interest, corresponding to an individual's Medicaid Exposure Index score. $\eta_s$ refers to a state fixed effect, $\lambda_b$ to a birth year fixed effect, and $\gamma_t$ to a survey year fixed effect. $\theta t$ refers to a state specific linear survey year trend. $X_{isbt}$ is a matrix of potential confounders. Some confounders, including whether the individual received education beyond high school, the individual's age, the individual's age squared, and whether the individual is married, vary by survey year. Other confounders, such as whether the individual is male, whether the individual is white, the size of the family that they were born into, the individual's birth order (to his mother), whether the individual was born to a single mother, and the individual's income-to-federal-poverty-line ratio at birth, do not vary by survey year. All models are estimated using PSID sample (longitudinal) weights, and errors are clustered by state of residence at birth.
+
+
+\clearpage
+\section{Results} \label{sec:result}
+
+
+I find that Medicaid Exposure is associated with improved overall health and decreased metabolic syndrome symptoms in young adulthood. Among those in the high impact sample, a 1-unit (1.17 standard deviation) increase in the Medicaid Exposure Index is associated with a 13.2\% higher probability (0.264 standard deviations) of reporting excellent or very good health (p<0.05) and a 0.122-unit (0.34 standard deviation) decrease in the Metabolic Syndrom Index (p<0.01) (Table \ref{tab:his}). In contrast, the Medicaid Exposure Index is not associated with a significant change in either overall health or the Metabolic Syndrome Index for individuals not in the high impact sample (Table \ref{tab:nonhis}).
+
+
+% \begin{table}[h]
+% \centering
+% \caption{Summary Statistics} \label{tab:summstats}
+% \begin{threeparttable}
+%   \footnotesize
+%   \input{summstats.tex}
+% \end{threeparttable}
+% \end{table}
+
+% \begin{table}[h]
+% \caption{Summary Statistics} \label{tab:summstats}
+% \begin{threeparttable}
+%   \footnotesize
+%
+% \end{threeparttable}
+% \end{table}
+
+\begin{table}[h]
+\caption{Effect Among High Impact Sample} \label{tab:his}
+\begin{threeparttable}
+  \footnotesize
+\estwide{his.tex}{6}{c}
+\Fignote{Clustered standard errors are in parentheses. Significance levels: * 10\%, ** 5\%, *** 1\%}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[h]
+\caption{Effect on Metabolic Syndrome Among High Impact Sample} \label{tab:hismetasynd}
+\begin{threeparttable}
+  \footnotesize
+\estwide{hismetasynd.tex}{6}{c}
+\Fignote{Clustered standard errors are in parentheses. Significance levels: * 10\%, ** 5\%, *** 1\%}
+\end{threeparttable}
+\end{table}
+
+
+\begin{table}[h]
+\caption{Effect on High Impact Sample by Sex} \label{tab:hisbysex}
+\begin{threeparttable}
+  \footnotesize
+\estwide{hisbysex.tex}{6}{c}
+\Fignote{Clustered standard errors are in parentheses. Significance levels: * 10\%, ** 5\%, *** 1\%}
+\end{threeparttable}
+\end{table}
+
+
+\begin{table}[h]
+\caption{Effect Among Those Not in the High Impact Sample} \label{tab:nonhis}
+\begin{threeparttable}
+  \footnotesize
+\estwide{nonhis.tex}{6}{c}
+\Fignote{Clustered standard errors are in parentheses. Significance levels: * 10\%, ** 5\%, *** 1\%}
+\end{threeparttable}
+\end{table}
+
+
+\begin{table}[h]
+\caption{Effect on Metabolic Syndrome Among Those Not in High Impact Sample} \label{tab:nonhismetasynd}
+\begin{threeparttable}
+  \footnotesize
+\estwide{nonhismetasynd.tex}{6}{c}
+\Fignote{Clustered standard errors are in parentheses. Significance levels: * 10\%, ** 5\%, *** 1\%}
+\end{threeparttable}
+\end{table}
+
+
+
+% \begin{table}[h]
+% \caption{Effect on Metabolic Syndrome Among Those Not in High Impact Sample} \label{tab:tripdifmetasynd}
+% \begin{threeparttable}
+%   \footnotesize
+% \estwide{tripdifmetasynd.tex}{6}{c}
+% \Fignote{Clustered standard errors are in parentheses. Significance levels: * 10\%, ** 5\%, *** 1\%}
+% \end{threeparttable}
+% \end{table}
+
+
+\clearpage
+\section{Discussion} \label{sec:discussion}
+
+\clearpage
+\section{Conclusion} \label{sec:conclusion}
+
+
+
+\clearpage
+\singlespacing
+\setlength\bibsep{0pt}
+\bibliographystyle{aea}
+\bibliography{refs}
+
+
+
+\clearpage
+\onehalfspacing
+\section*{Tables} \label{sec:tab}
+\addcontentsline{toc}{section}{Tables}
+
+
+
+\clearpage
+
+\section*{Figures} \label{sec:fig}
+\addcontentsline{toc}{section}{Figures}
+
+%\begin{figure}[hp]
+%  \centering
+%  \includegraphics[width=.6\textwidth]{../fig/placeholder.pdf}
+%  \caption{Placeholder}
+%  \label{fig:placeholder}
+%\end{figure}
+
+
+\clearpage
+
+\section*{Appendix A. Placeholder} \label{sec:appendixa}
+\addcontentsline{toc}{section}{Appendix A}
+
+
+
+\end{document}

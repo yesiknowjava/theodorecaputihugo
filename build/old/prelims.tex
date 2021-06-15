@@ -1,0 +1,635 @@
+\documentclass[11pt]{article}
+\usepackage{setspace}
+\doublespacing
+\usepackage{sectsty}
+% \usepackage{graphicx}
+
+% \usepackage{amsmath}
+\usepackage{amsmath,amssymb}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\usepackage{grffile}
+\usepackage{lscape}
+\usepackage{caption}
+
+\usepackage{natbib}
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+
+\usepackage[final]{graphicx} %Loading the package
+% \graphicspath{{"C:/Users/tcapu/Google Drive/PublicHealthStudies/moving-docs/analyze/output/"}} %Setting the graphicspath
+
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+}
+\subtitle{\href{https://www.TheodoreCaputi.com/files/prelims.pdf}{Click here for the latest version.}}
+
+
+\newcommand{\mc}{\textrm{,}}
+\newcommand{\ROOTPATH}[]{C:/Users/tcapu/Google Drive/PublicHealthStudies/moving-docs/analyze/output}
+
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\title{GP Movers and Changes in Quality: Preliminary Results\footnote{These results are preliminary.}}
+\author{Theodore Caputi}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+\section{Introduction}
+General Practitioners (GPs) form the cornerstone of the United Kingdom's National Health Service (NHS). GP movement is a potentially important and understudied feature of the GP labor supply. GP movement has become more common in the past several years (Figures \ref{Moves_2000_2014} and \ref{Join_Left_2000_2014}), though it is unknown whether and how GP movement may affect quality of care. GP moves may decrease quality of care by disrupting relationships built between patients and GPs. On the other hand, GP movement could fuel an exchange of ideas and practices. I will assess the effect of GP movement on GP practice quality outcomes.
+
+
+\begin{figure}[htp]
+\centering
+\caption{GP Moves by Year}
+\includegraphics{../figures/Moves_2000_2014.png}\\
+
+\caption*{\footnotesize This figure shows GP moves by year from 2000 to 2014. The arrows point in the direction of the mover. GPs who move from or to a postcode that cannot be geocoded are omitted.}
+\label{Moves_2000_2014}
+\end{figure}
+
+
+\begin{figure}[htp]
+\centering
+\caption{GP Moves by Year}
+\includegraphics{../figures/Join_2000_2014.png}\\
+\includegraphics{../figures/Left_2000_2014.png}\\
+
+\caption*{\footnotesize This figure shows GP moves by year from 2000 to 2014. Panel A shows where GPs have moved from using red points. Panel B shows where GPs have moved to using blue points. GPs who move from or to a postcode that cannot be geocoded are omitted.}
+\label{Join_Left_2000_2014}
+\end{figure}
+
+
+
+\section{Data}
+\subsection{NHS Quality and Outcomes Framework}
+The NHS provides a set of publicly available datasets\footnote{https://digital.nhs.uk/data-and-information/publications/statistical/quality-and-outcomes-framework-achievement-data} that describe each GP's achievement in terms of the Quality and Outcomes Framework for each year between 2004/2005 and 2012/2013. The data aggregates performance from April 1 of year $t$ to March 31 of year $t+1$, and so while there is overlap in the calendar years of the individual datasets, they refer to strictly different periods. For the datasets between 2006/2007 and 2011/2012, overall achievement scores are reported for five domains: Total, Patient Experience, Clinical, Organisational, and Additional Services.
+
+I combine these datasets so that I have panel data of Total, Patient Experience, Clinical, Organisational, and Additional Services quality for each GP practice for each period. I standardize each quality variable to the maximum for each year and domain and then scale the quality variables to 100. Consequently, each quality variable is comparable across years.
+
+
+\subsection{GP-by-Practice Tenure Data}
+The NHS also provides a publicly available dataset\footnote{https://digital.nhs.uk/services/organisation-data-service/data-downloads/gp-and-gp-practice-related-data} that describes each GP's tenure with each practice they've worked at, updated quarterly. Each row of this dataset contains an identifier for the GP, an identifier for the Practice, the date that the GP started working at that practice, and the date the GP stopped working at that practice (if applicable).
+
+\input{../tables/GP_to_Practice_Head.tex}
+
+From this dataset, it is possible to construct a dataset of GP moves. First, I filter the dataset by only taking those GPs with more than two rows -- these are GPs that have moved practices at least once in their careers. For each GP, I order the observations such that the GP's earliest appointment is first and their latest appointment is last. When a GP has moved more than once, i.e., they have three or more rows in the dataset, I duplicate all rows that are neither their first nor last appointment. This creates pairs of observations in the dataset, where the first row is where the GP started and the second is where the GP went. I assign each pair a unique identifier and then transform the data to describe each individual move, with data related to quality at the first practice ($p=1$) and the second practice ($p=2$). This includes variables describing when the GP entered her first practice, when she exited her first practice, when she entered her second practice , and when she exited her second practice (if applicable).
+
+
+I focus on movers who move within a single ``April to March'' time period. Because several moves occurred right at the March 31 to April 1 cutoff, I extended each time period by 5 days on either side. I then test whether the GP's date of leaving her first practice and the GP's date of entering her second practice both fall within each time period between April 1, 2006 and March 31, 2012. If so, I treat that period as the period of the move. I exclude moves that occur between two periods.
+
+Because practices with several moves may differ fundamentally from those with zero or one moves (e.g., high turnover) and because discerning an effect could be challenging when the treatment occurs more than once, I focus on practices that had only one GP move within my study period and exclude those practices with more than one entrant from further analysis.
+
+
+\subsection{Merging the Datasets}
+I first merge the quality panel data onto the movers data by the time period of the move and the mover's first practice. From this, I extract the quality metrics for the practice that each mover left during the period that they left. I will use this data to determine whether the mover came from a better (worse) practice in each quality domain.
+
+I then restrict the quality panel dataset to just those practices that had zero or one mover within the time period. I merge the movers dataset back onto the quality panel dataset by the mover's second practice. This panel dataset now contains, for each practice, the quality metrics for the mover's old practice and the date that the GP moved.
+
+
+\subsection{Construct Variables}
+
+Using this merged dataset, I construct several variables pertaining to the second GP practice ($p=2$) relative to the time period of the move ($t_0$) that will be useful for the analysis and data visualization.
+
+
+\begin{itemize}
+
+\item ``$\textrm{time\_to\_movement}_{p=2\textrm{, }t}$'' refers to the difference in time between the current period $t$ and the period where the mover entered $t_0$. For those practices with no movers, $t_0$ takes on a random value from 1 to 5.
+
+$$
+  \textrm{time\_to\_movement}_{t} = \begin{cases}
+  t - t_0 & \textrm{Practices with Movers} \\
+  t - \textrm{randint(1,5)} & \textrm{Practice had no movers} \\
+  \end{cases}
+$$
+
+
+
+\item ``$\textrm{post}_{t}$'' refers to the time that the mover influenced the practice. Following past work \citep{shover2019association}, it is defined such that it can take on values between $0$ and $1$ in time periods $t \geq t_0$ for practices that had movers. If the mover moves in midway through the period, post will equal the fraction of days the mover spent in that practice in that period after she arrived. Similarly, if the mover leaves the practice, post will equal the fraction of days the mover spent in that practice in that period before she left. In order to use the groups with no movers as a control, I create random interruptions.
+
+$$
+  \textrm{post}_{t} = \begin{cases}
+  0 & t < t_0 \textrm{ and Practice had Mover} \\
+  \frac{\textrm{Days at Incoming Practice}}{\textrm{Days in Period} t} & t \geq t_0 \textrm{ and Practice had Mover}\\
+  0 & t < \textrm{randint(1,5) and } \textrm{Practice had No Movers} \\
+  1 & t \geq \textrm{randint(1,5) and } \textrm{Practice had No Movers} \\
+  \end{cases}
+$$
+
+
+\item For each domain $d$, ``$\textrm{move}_{d}$'' takes on values depending upon whether the mover came from practice with better, worse, or the same quality scores during the time period of the move. The ``move'' variable is constant within practices (e.g., it doesn't change over time).
+
+$$
+\textrm{move}_{d} = \begin{cases}
+  \textrm{better} & \textrm{quality}_{d\textrm{, }t_0\textrm{, }p=1} > \textrm{quality}_{d\textrm{, }t_0\textrm{, }p=2} \\
+  \textrm{worse}  & \textrm{quality}_{d\textrm{, }t_0\textrm{, }p=1} < \textrm{quality}_{d\textrm{, }t_0\textrm{, }p=2} \\
+  \textrm{same}   & \textrm{quality}_{d\textrm{, }t_0\textrm{, }p=1} = \textrm{quality}_{d\textrm{, }t_0\textrm{, }p=2} \\
+  \textrm{no move}   & \textrm{Practice had no movers} \\
+  \end{cases}
+$$
+
+
+
+\item For each domain $d$, ``$\textrm{percent\_change}_{d}$'' is defined using the following formula:
+
+$$
+\textrm{percent\_change}_{d} = \frac{\textrm{quality}_{d\textrm{, }t_0\textrm{, }p=1} - \textrm{quality}_{d\textrm{, }t_0\textrm{, }p=2}}{\textrm{quality}_{d\textrm{, }t_0\textrm{, }p=2}} * 100\%
+$$
+
+Note that when $\textrm{percent\_change}_d > 0$, the mover came from a practice with higher scores in domain $d$, and when $\textrm{percent\_change}_d < 0$, the mover came from a practice with lower scores in domain $d$.
+
+
+\end{itemize}
+
+
+\section{Summary Statistics}
+
+
+\begin{landscape}
+\begin{table}[htp]
+\caption{Summary of GP Moves}
+  \begin{threeparttable}
+  \input{../tables/allmovessummary.tex}
+
+  \begin{tablenotes}
+  \footnotesize
+  \textbf{NOTE:}
+  \end{tablenotes}
+  \end{threeparttable}
+  \label{tab:allmovessummary}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+  \begin{table}[htp]
+  \caption{Summary of Moves in Terms of Domain-Specific QOF Scores}
+    \begin{threeparttable}
+    \input{../tables/movesummary.tex}
+
+    \begin{tablenotes}
+    \footnotesize
+    \textbf{NOTE:} This table summarises the moves that are included in the analytical sample, i.e., moves into practices that had only one entrant between April 2006 and March 2012. ``Period'' is the April 1 to March 30 year. ``To Better'' are those GPs who moved from a practice with lower scores to a practice with higher scores. ``To Worse'' are those GPs who moved from a practice with a higher score to a practice with a lower score. ``To Same'' are those GPs who moved from a practice with the same score as the practice they moved from. ``Mean Origin Score'' is the average domain-specific QOF score for the GP mover's original practice. ``Mean Destination Score'' is the average domain-specific QOF score for the GP mover's destination practice. ``Mean Difference'' is the difference between the mover's original practice QOF score and the mover's destination practice QOF score.
+    \end{tablenotes}
+    \end{threeparttable}
+    \label{tab:movesummary}
+  \end{table}
+\end{landscape}
+
+\section{Methods}
+
+I aim to estimate the Average Treatment Effect of a GP entrant on the a practice's Quality and Outcomes Framework achievement scores. That is, the parameter I intend to estimate is the difference in quality of the average practice if it had a GP move in and if it did not have a GP move in.
+
+\begin{equation} \label{eq:1}
+  Y = \frac{1}{N}\sum_{i=1}^{N}\sum_{t=0}^{T} \textrm{quality}_{i\textrm{,}t\textrm{,mover}=1} - \textrm{quality}_{i\textrm{,}t\textrm{,mover}=0}
+\end{equation}
+
+Unfortunately, each practice either had an entrant or it did not, and so it is impossible to observe quality from a practice where it both had and did not have a new entrant. Instead, I turn to causal estimation methods that attempt to estimate the expectation of these values as a counterfactual.
+
+
+\begin{equation} \label{eq:1}
+  \hat{Y} = \frac{1}{N}\sum_{i=1}^{N}\sum_{t=0}^{T} \mathbb{E}(\textrm{quality}_{i\textrm{,}t}} | \textrm{mover}=1) - \mathbb{E}(\textrm{quality}_{i\textrm{,}t} | \textrm{mover}=0)
+\end{equation}
+
+\subsection{Baseline Difference-in-Difference}
+
+I first compute a difference-in-difference model. In a simple two-group, two-period difference-in-difference design, the treatment group's outcome value before the treatment and the trend of the control group are used to estimate a counterfactual. Formulaically, a simple difference-in-difference design is estimated with the following regression:
+
+\begin{equation} \label{eq:1}
+  y_{i \mc t} = \beta_0 + \beta_1*\textrm{Period}_{t} + \beta_2*\textrm{1(Treated)}_{i} + \beta_2*\textrm{Period}_{ t}*\textrm{1(Treated)}_{i} + \epsilon_{i \mc t}
+\end{equation}
+
+where $\textrm{Period}_{i \mc t}$ takes the value $0$ before the intervention and $1$ after the intervention and $\textrm{1(Treated)}_{i}$ takes the value $0$ for all participants in the control group and $1$ for all participants in the treatment group.
+
+I extend the simple difference-in-difference model to use data from several periods and up to three treatment groups (i.e., GPs who moved from a worse practice to a better practice, GPs who moved from a better practice to a worse practice, and GPs who moved between two practices with the same quality score). The extension to multiple periods before and after the intervention make the model an interrupted time series analysis, including parameters for the initial intercept and slope and the post-interruption intercept and slope. I estimate the following regression model:
+
+\begin{align}
+\begin{split}\label{eq:BaselineITSA}
+$$
+\textrm{quality}_{i\textrm{,}t} ={}& \beta_0 + \beta_{1-3}*\textrm{move}_{i} + \beta_{4}*\textrm{post}_{i \mc t} +  \beta_5*\textrm{period}_{i \mc t} \\
+                                   & + \beta_{6-8}*\textrm{move}_{i}*\textrm{post}_{i \mc t} + \beta_{9-11}*\textrm{move}_{i}*\textrm{period}_{i \mc t} \\
+                                   & + \beta_{12}*\textrm{post}_{i \mc t}*\textrm{period}_{i \mc t} + \beta_{13-15}*\textrm{move}_{i}*\textrm{post}_{i \mc t} *\textrm{period}_{i \mc t} \\
+                                   & + \epsilon__{i \mc t}\\
+$$
+\end{split}
+\end{align}
+
+
+I extract the fitted values from this regression\footnote{For simplicity of the plots, I treat ``post'' as an indicator variable equal to $0$ if it is before the doctor moved in and $1$ if it is after the doctor moved.} and plot mean (expected) quality for each period before and after the GP movement (Figures 1 and 2).
+
+
+
+\begin{figure}[htp]
+\centering
+\caption{Difference in Difference Estimates}
+\includegraphics[width=0.7\textwidth]{../figures/DD_Total.pdf}\\
+\includegraphics[width=0.7\textwidth]{../figures/DD_Patexp.pdf}\\
+\includegraphics[width=0.7\textwidth]{../figures/DD_Clinical.pdf}\\
+
+
+
+\caption*{These figures represent the mean fitted values from the extended Difference-in-Difference (i.e., Interrupted Time Series) regression. The shaded region is the time period when the GP moved to the new practice. Note that the x-axis standardizes the interruption to 0. Consequently, values that are presented far from the move (i.e., near the edges) are based on a limited number of observations. For example, only practices where the move occurred in the last period would have an observation for -5 years, and only practices where the move occurred in the first period would have an observation for +5 years.}
+\label{fig:DD1}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\caption{Difference in Difference Estimates}
+\includegraphics[width=0.7\textwidth]{../figures/DD_Organisational.pdf}\\
+\includegraphics[width=0.7\textwidth]{../figures/DD_Addlserv.pdf}\\
+
+\caption*{These figures represent the mean fitted values from the extended Difference-in-Difference (i.e., Interrupted Time Series) regression. The shaded region is the time period when the GP moved to the new practice. Note that the x-axis standardizes the interruption to 0. Consequently, values that are presented far from the move (i.e., near the edges) are based on a limited number of observations. For example, only practices where the move occurred in the last period would have an observation for -5 years, and only practices where the move occurred in the first period would have an observation for +5 years.}
+\label{fig:DD2}
+\end{figure}
+
+
+An assumption of the interrupted time series analysis design is that, before the treatment, the trend of the control group is similar to that of the treatment group(s). I test this assumption using the estimates for $\beta_{9-11}$, which correspond to the differences in initial trends among the treatment and control groups. If the parallel trends assumption is true, we would expect the estimates of $\beta_{9-11}$ to be statistically insignificant.
+
+Unfortunately, this assumption is not met for several domains of quality (F-test, Table \ref{Naiive_DD_TotalOnly}). For example, Table 1 shows that the intercept and initial slope for the control group varies from those of the treatment groups in a model for total quality. This suggests that the trajectories of the treatment groups (new GP from worse quality practice, new GP from same quality practice, and new GP from better quality practice) were significantly difference from the trajectory of the control group (no new GP) before the intervention occurred. This can be indicative of unresolved confounding between the treatment and the outcome, and so estimates from the Difference-in-Difference regression are likely to be biased.
+
+% \begin{landscape}
+\input{../tables/Naiive_DD_TotalOnly.tex}
+% \end{landscape}
+
+\subsection{Panel Data and Multi-Level Modelling}
+
+The results from the baseline interrupted time series regression indicated that the group of practices that did not have a mover were an inadequate control for the treatment groups. In this case, the nested structure of the data provides a significant advantage, and I exploit this advantage using panel data and multi-level modelling.
+
+Each practice has multiple observations in the data, and practices with movers have both observations before the new GP joins the practice and after the new GP joins the practice. Therefore, I can estimate the impact of a new GP entrant within each individual practice and aggregate these practice-level parameter estimates to determine the average treatment effect. In this way, each practice with a mover acts as its own control.
+
+\subsubsection{Preferred Analysis}
+
+My preferred method of analysis is to use practice-level and period-level fixed effects (intercepts). Fixed effects essentially set a different intercept for each practice and period. Practice-level fixed effects account for both observed and unobserved time-invariant confounding with the practice. Period-level fixed effects account for both observed and unobserved practice-invariant confounding with the time period (i.e., ``April to March'' year).\footnote{Importantly, fixed effects approaches are unable to account for unknown time-varying confounding within the practice.} To implement this strategy, I compute the following regression:
+
+\begin{align}
+\begin{split}\label{PreferredAnalysis}
+$$
+\textrm{quality}_{jt} ={}& \beta_{1}*\textrm{move}_{j} + \beta_{2}*\textrm{post}_{jt} \\
+& + \beta_{3}*\textrm{move}_{j}*\textrm{post}_{jt} + \alpha_{j} + \lambda_{t} + \epsilon_{jt}\\
+$$
+\end{split}
+\end{align}
+
+In this model, $\alpha$ takes on a fixed value for each practice $j$ and $\lambda$ takes on a fixed value for each period $t$. Because the direction of the move is time invariant within each practice, the main effect for ``$\textrm{move}_j$'' is absorbed into the ``$\textrm{practice}_j$'' fixed effect. The estimate for $\beta_2$ corresponds to the common change after a move for all practices (or after a random date for those practices that had no movers). The paramater of interest is $\beta_3$, which corresponds to the estimate of the mean effect of a GP entrant from a better or worse practice.
+
+I compute the fixed effects model using the \verb|plm| package for R. To improve computational efficiency while reaching the same results, the \verb|plm| package computes the following regression, which demeans the ``$\textrm{quality}_{jt}$'' outcome variable by subtracting the average quality for practices $j$ and the average quality in periods $t$:
+
+\begin{equation}
+  \textrm{quality}_{jt} - \alpha_{\bar{j}} - \lambda_{\bar{t}} =  \beta_{1}*\textrm{move}_{j} + \beta_{2}*\textrm{post}_{jt} + \beta_{3}*\textrm{move}_{j}*\textrm{post}_{it} + \epsilon_{ijt}
+\end{equation}
+
+
+\begin{landscape}
+\input{../tables/Practice_Time_FE_MeanDiff.tex}
+\end{landscape}
+
+
+I find that having a GP enter from a worse practice significantly \emph{increases} clinical QOF scores and decreases organisational scores and that having a GP enter from a better practice significantly improves total, clinical, organisational, and additional services QOF domain scores (Table \ref{Practice_Time_FE_MeanDiff}). I extend these findings by adjusting for the magnitude of difference betweeen quality scores of the practice that the entering GP left and the quality scores of the practice that the GP entered. I compute the following regression:
+
+\begin{equation} \label{eq:1}
+\textrm{quality}_{i\textrm{,} j \mc t} = \beta_{1}*\textrm{post}_{i \mc j \mc t}*\textrm{percent\_change}_{j} + \alpha*\textrm{practice}_{j} + \lambda*\textrm{period}_{t} + \epsilon_{i \mc j \mc t}
+\end{equation}
+
+Because the ``percent\_change`` variable takes on positive values when a GP enters from a better practice and negative values when a GP enters from a worse practice, $\beta_1$ symmetrically estimates the impact of an entrant from a better or worse practice. Consequently, if the estimate of $\beta_1$ is positive, this indicates that practices' quality scores tend to move towards the quality score of their entering GP's previous practice.
+
+The parameter estimate for $\beta_1$ is statistically significant and positive for the total, clinical, organisational, and additional services domains (Table \ref{Both_FE_Pct_Change}). This indicates that, when GPs move, they tend to bring the quality of their new practice closer to that of their old practice. Further, accounting for the percentage change appears to have increased the fit of several of the models (F-test).
+
+\begin{landscape}
+\input{../tables/Both_FE_Pct_Change.tex}
+\end{landscape}
+
+\subsubsection{Only Practices with Movers}
+
+Practice population need is a potential within-practice, time-variant confounder. Practices may develop or resolve the need for more GPs over the course of the study period. Normally, I would adjust for practice population need by including variables related to the patient population and GP staff as confounders to the regression. For example, I may compute some sort of weighted average of patients registered to a GP practice and divide that by the number of GPs in the practice within each given year. Unfortunately, data on practice population\footnote{https://data.gov.uk/dataset/b85a1ced-22fd-4750-b6bc-b150a066d6ea/numbers-of-patients-registered-at-a-gp-practice-by-single-year-of-age} are not available for any dates in my study period. For this reason, assuming that all practices with movers have some level of unmet need for their practice, it might be reasonable to focus on a comparison between practices that had movers from better practices and practices that had movers from worse practices. In this way, practices with movers are treated as fundamentally different from practices that do not have movers.
+
+Therefore, I compute the same model over only those practices that had movers from better or worse practices.
+
+\begin{align}
+\begin{split}\label{eq2}
+$$
+\textrm{quality}_{i\textrm{,} j \mc t} ={}& \beta_{1}*\textrm{move}_{j} + \beta_{2}*\textrm{post}_{i \mc j \mc t} \\
+& + \beta_{3}*\textrm{move}_{j}*\textrm{post}_{i \mc j \mc t} + \alpha_{j} + \lambda_{t} + \epsilon_{i \mc j \mc t}\\
+$$
+\end{split}
+\end{align}
+
+When ``move'' is dichotomized to equal $0$ when the entering GP comes from a worse practice and $1$ when the entering GP comes from a better practice, the parameter estimate for $\beta_2$ corresponds to the causal impact of an entering GP from a worse practice and the parameter estimate for $\beta_2 + \beta_3$ corresponds to the causal impact of an entering GP from a better practice. Alternatively, consider that only those practices with movers are included in the analysis, and so this analysis only applies to practices with movers. Assuming that a practice will have an entering GP, then, the estimate for $\beta_3$ corresponds to the impact of that GP entering from a better practice relative to a worse practice.
+
+The impact of receiving a GP from a better practice (relative to receiving a GP from a worse practice) is statistically significant and positive for quality achievements scores in the total, clinical, organisational, and additional services domains (Table \ref{Both_FE}). These results support the hypothesis that the influx of high-quality GPs can improve a practice's quality. For example, these results suggest that, relative to having an entering GP from a worse practice, having a GP enter from a better practice would increase total quality by 1.114 points, clinical quality by 0.638 points, organisational quality by 2.093 points, and additional services quality by 0.751 points (recall that all quality metrics are scaled from 0 to 100). However, having a GP enter from a better practice \emph{reduces} patient experience scores by 1.268 points.
+
+\begin{landscape}
+\input{../tables/Both_FE.tex}
+\end{landscape}
+
+
+\subsubsection{Estimating Level and Slope Parameters}
+
+My preferred analysis provides mean estimates of an entrant GP from a better or worse practice. I decompose this analysis to estimate the level and slope shifts resulting from a GP entrant similar to equation (\ref{eq:BaselineITSA}). To estimate these parameters, I compute the following regression:
+
+\begin{align}
+\begin{split}\label{FE_ITSA}
+$$
+\textrm{quality}_{i \mc j \mc t} ={}& \beta_0 + \beta_{1-3}*\textrm{move}_{i} + \beta_{4}*\textrm{post}_{i \mc t} + \beta_5*\textrm{time}_{i \mc t} \\
+                                   & + \beta_{6-8}*\textrm{move}_{i}*\textrm{post}_{i \mc t} + \beta_{9-11}*\textrm{move}_{i}*\textrm{time}_{i \mc t} \\
+                                   & + \beta_{12}*\textrm{post}_{i \mc t}*\textrm{time}_{i \mc t} + \beta_{13-15}*\textrm{move}_{i}*\textrm{post}_{i \mc t} *\textrm{time}_{i \mc t} \\
+                                   & + + \alpha*\textrm{practice}_{j} + \lambda*\textrm{period}_{t}  \\
+                                   & + \epsilon_{i \mc j \mc t}\\
+$$
+\end{split}
+\end{align}
+
+Here, ``$\textrm{time}_t$'' refers to a linear time trend. In this model, in addition to using practice-level and year-level fixed effects to adjust for time-invariant and practice-invariant confounding (respectively), I also adjust for a linear time trend within each practice and estimate structural changes to that time trend before and after the GP move. Estimating these time trends can be useful (A) to better understand how the move is impacting quality and (B) to evaluate whether the effect of the GP move is diminishing or growing over time.
+
+
+\input{../tables/Practice_Time_FE_DD_TotalOnly.tex}
+
+These estimates illustrate how a mover affects a practice's QOF achievement scores. For example, in Table \ref{Practice_Time_FE_DD_TotalOnly}, the change in level resulting from a GP from a worse practice is statistically significant and negative; however, it appears that some of the damage is reversed in subsequent years, as the change in slope resulting from a GP from a worse practice is statistically significant and positive. I fail to find a either a level or slope effect of a GP moving from a better practice on total domain QOF achievement scores.
+
+% \begin{landscape}
+% \input{../tables/Practice_Time_FE_DD.tex}
+% \end{landscape}
+
+%
+\subsubsection{Random Effects Model}
+
+Fixed effects, like the practice-level and period-level fixed effects used in regression (\ref{PreferredAnalysis}) allow for a separately estimated paramter (in case of equation (\ref{PreferredAnalysis}), the time series intercept) for each group, thereby accounting for within-group confounding. Each fixed effect is estimated independently. Random effects, on the other hand, assume that the parameter estimates are sampled from a random (typically normal) distribution \citep{uclainstitutefordigitalresearchandeducationIntroductionGeneralizedLinear, rabe-heskethMultilevelLongitudinalModeling2008}. Consequently, random effects models allow for partial pooling of estimates between groups. For example, in the context of estimating the intercept parameter of the practice-level quality time series, a practice-level fixed effects approach would assume that each practice's intercept is completely independent from that of any other practice. A practice-level random effects approach would assume that, while there is variation between practices, the intercepts for each practice represent draws from an underlying distribution that applies to all practices.
+
+A practice-level random intercepts model (i.e., random effects used to estimate the practice-specific intercept parameter) can be computed from the following regression:
+
+\begin{equation}\label{RandomIntercepts}
+  \textrm{quality}_{jt} = \beta_{0j} + \beta_1*\textrm{post}_t + \beta_2*\textrm{move}_j + \beta_{3-4}*\textrm{post}_t*\textrm{move}_j + \lambda_t + \epsilon_{jt}
+\end{equation}
+
+Notice the subscript on $\beta_{0j}$. This indicates that $\beta_{0j}$ takes on a different value for each practice $j$. This can be described formulaically \citep{uclainstitutefordigitalresearchandeducationIntroductionGeneralizedLinear}:
+
+\begin{equation}\label{RandomInterceptsBeta}
+  \beta_{0j} =  \lambda_{00} + u_{0j}
+\end{equation}
+
+In this formulation, $\lambda_{00}$ is the mean estimate for the parameter and $u_{0j}$ is a practice-specific random effect centered at $0$.
+
+\subsubsection{Random Coefficients Model}
+
+Ultimately, the random effects regression in equation (\ref{RandomIntercepts}) models the time series intercept as a random variable centered around the mean intercept. In this way, the parameter estimate for the intercept is partially pooled across all practices (rather than determined within-practice, as in the fixed intercept model). I can extend this analysis by adding random effects for the slope, such that both the intercept and the slope of the time series are modelled as random variables centered around their respective means. When the intercept and slope are both treated as random variables, the model is sometimes referred to as a Random Coefficients Model.
+
+The Random Coefficients model can be computed from the following regression:
+
+\begin{align}
+\begin{split}\label{RandomCoefficientsITSA}
+$$
+\textrm{quality}_{j \mc t} ={}& \beta_{0 \mc j} + \beta_{1-3}*\textrm{move}_{j} + \beta_{4}*\textrm{post}_{j \mc t} + \beta_{5 \mc j}*\textrm{time}_{t} \\
+                                   & + \beta_{6-8}*\textrm{move}_{j}*\textrm{post}_{j \mc t} + \beta_{9-11 \mc j}*\textrm{move}_{j}*\textrm{time}_{t} \\
+                                   & + \beta_{12 \mc j}*\textrm{post}_{j \mc t}*\textrm{time}_{t} + \beta_{13-15 \mc j}*\textrm{move}_{j}*\textrm{post}_{j \mc t} *\textrm{time}_{t} \\
+                                   & + \lambda_{t} + \epsilon_{j \mc t}
+$$
+\end{split}
+\end{align}
+
+All parameter estimates related to the linear time trend ``$\textrm{time}_t$'' are treated as random variables that vary with practice $j$. These parameter estimates can be written formulaically:
+
+\begin{equation} \label{RandomCoefficientsITSABeta}
+\begin{split}
+  \beta_{0  \mc j}  & = \lambda_{0  \mc 0} + u_{0  \mc j}  \\
+  \beta_{5  \mc j}  & = \lambda_{5  \mc 0} + u_{5  \mc j}  \\
+  \beta_{9  \mc j}  & = \lambda_{9  \mc 0} + u_{9  \mc j}  \\
+  \beta_{10 \mc j}  & = \lambda_{10 \mc 0} + u_{10 \mc j}  \\
+  \beta_{11 \mc j}  & = \lambda_{11 \mc 0} + u_{11 \mc j}  \\
+  \beta_{12 \mc j}  & = \lambda_{12 \mc 0} + u_{12 \mc j}  \\
+  \beta_{13 \mc j}  & = \lambda_{13 \mc 0} + u_{13 \mc j}  \\
+  \beta_{14 \mc j}  & = \lambda_{14 \mc 0} + u_{14 \mc j}  \\
+  \beta_{15 \mc j}  & = \lambda_{15 \mc 0} + u_{15 \mc j}
+\end{split}
+\end{equation}
+
+
+\input{../tables/Practice_RE_Time_FE_TotalOnly.tex}
+
+
+The results of the Random Coefficients model suggest that, when modelling practice-level intercept and slope as random effects and period as a fixed effect, the effect of a GP from a better practice significantly and positively improves the practice's QOF Achievement score (Table \ref{Practice_RE_Time_FE_TotalOnly}). However, I fail to find evidence of an effect on total quality of a GP moving from a worse practice.
+
+
+
+\section{Discussion}
+
+Together, these results suggest that GP movers significantly impact the quality of their new practices on the total, clinical, organisational, and additional services domains. However, I fail to find evidence that GPs affect their new practice's patient experience scores. This makes some intuitive sense, as patient experience is highly reliant on the patient's relationship with the GP. Any move, whether from a good or bad practice, will interrupt these relationships. This may explain why, for example, the differential impact on patient experience of a GP moving from a better practice and a GP moving from a worse practice is small and insignificant.
+
+
+\section{Appendix 1: GP Movers and QOF Payments per Registered Patient}
+
+\subsection{Data}
+Since the 2013/2014 fiscal year (FY), the NHS has provided detailed, practice-level data on payments issued to GP practices\footnote{https://digital.nhs.uk/data-and-information/publications/statistical/nhs-payments-to-general-practice}. I merge these data with the data on GP-by-Practice tenure to construct a dataset of movers and QOF Payments data.
+
+The outcome variable I use for this analysis is the annual total QOF payments per registered patients. To derive this variable, I divide the total QOF payments value for each year by the number of registered patients, both within the practice-by-fiscal-year payment data.
+
+Unfortunately, the GP-by-Practice dataset only contains reliable data on GP tenure up until October 2016. Therefore, the only usable QOF payments data for this analysis come from the 2013/2014, 2014/2015, and 2015/2016 fiscal years. Because of the limited data, I restrict analysis to a specifically stylized dataset. I include only those practices that met the following criteria:
+
+\begin{itemize}
+  \item Practice had exactly one or zero movers between 2013/2014 and 2015/2016
+  \item Practice existed, received non-negative QOF payments, had a positive number of registered payments, and had a QOF payment per patient less than 50 GBP in all three fiscal years
+  \item Mover left their first practice and joined their second practice within the 2014/2015 fiscal year
+  \item Mover stayed at their second practice for the entire 2015/2016 fiscal year
+\end{itemize}
+
+\subsection{Methods}
+Similarly to the analysis using QOF Achievement Scores, I calculated several variables necessary for data analysis. Given the restrictions on the dataset (e.g., all practices had a single mover who entered during the 2014/2015 fiscal year and stayed at the practice for the entire 2015/2016 fiscal year), I assigned ``post'' to equal $1$ in fiscal year 2015/2016 and $0$ otherwise.
+
+I first use a model with practice-level and fiscal year-level fixed effects. I compute the following regression:
+
+\begin{equation}\label{CleanPayments_FE_Mean}
+  \textrm{QOF Payments}_{jt} = \beta_{1-2}*\textrm{move}_{j} + \beta_{3-4}*\textrm{post}_{t}*\textrm{move}_{jt} + \alpha_{t} + \lambda_{j} + \epsilon_{jt}
+\end{equation}
+
+As shown in Table \ref{CleanPayments_FE_Mean}, I fail to find evidence that having a GP enter from a better or worse practice affects QOF payments.
+
+% \clearpage
+\input{../tables/CleanPayments_FE_Mean.tex}
+% \clearpage
+
+Next, I computed a model with practice-level and fiscal year-level fixed effects with a linear time trend paramater. In this way, I allow for the linear time trend to vary among those practices with no moves, practices with an entrant GP from a worse practice, and practices with entrant GP from a better practice. Because I only have access to 1 year of data after the entrant GP, the parameter estimates still correspond to the mean effect of a GP entering from a better or worse practice.
+
+\begin{equation}\label{CleanPayments_FE_Decomposed}
+  \textrm{QOF Payments}_{jt} = \beta_{1-2}*\textrm{move}_{j} + \beta_{3-4}*\textrm{time}_{t}*\textrm{move}_{j} + \beta_{5-6}*\textrm{post}_{t}*\textrm{move}_{j} + \alpha_{t} + \lambda_{j} + \epsilon_{jt}
+\end{equation}
+
+As shown in Table \ref{CleanPayments_FE_Decomposed}, after accounting for the slope before the move, having a GP enter from a better practice significantly and positively increases QOF payments per patient (relative to practices with no moves). Having a GP enter from a better practice increases QOF payments per patient by 2.231 GBP. On the other hand, I fail to find evidence that having a GP enter from a worse practice affects QOF payments per practice.
+
+% \clearpage
+\input{../tables/CleanPayments_FE_Decomposed.tex}
+% \clearpage
+
+Finally, I compute a Random Coefficients model, treating the time series intercept and slope as random variables. Under this formulation, both the intercept and the slope vary between practices.
+
+% \clearpage
+\input{../tables/CleanPayments_RE.tex}
+% \clearpage
+
+Again, I find that having a GP enter from a better practice increases QOF payments per patinet by approximately 0.681 GBP, and I fail to find evidence that having a GP enter from a worse practice affects QOF payments per patient (Table \ref{CleanPayments_RE}).
+
+
+\section{Appendix 2: New GPs and ``Modernising Medical Careers''}
+
+\subsection{Background}
+
+In the early 2000s, advocates from the organisation ``Modernising Medical Careers'' lobbied the Postgraduate Medical Education and Training Board to change the way in which physicians in the UK were trained. In 2005, the UK formally adopted the plan, which includes a 2-year rotational training programme (the Foundation Programme) and extended typical GP training from 4 years to 5 years. Like the group that sponsored its adoption, the new graduate medical training scheme is referred to as ``Modernising Medical Careers''. Researchers have questioned whether the new program is more or less effective than the old system for preparing GPs for clinical practice.
+
+I use the GP-by-Practice tenure data and the GP Quality and Outcomes Framework achievement score data to discern how the entrant of a brand new GP (i.e., no previous GP contract) into a practice affects QOF Achievement scores. I then assess whether this effect has changed from the years 2006-2009, when new GPs were trained through old education system, and 2010-2012, when they were trained through the ``Modernising Medical Careers'' scheme.
+
+\subsection{Methods}
+I consider a GP to be a ``brand new'' GP if she (A) did not have any previous GP contract and (B) joined her first practice in April, August, or September (when new GPs typically begin work). I restrict the data to only those practices that (A) existed in all six ``April to March'' QOF periods and (B) had exactly 1 ``brand new'' GP between April 1, 2006 and March 30, 2012. Note that I code ``post'' to equal the number of days the brand new doctor spent with that practice within a given period.
+
+My initial hypothesis is that a brand new GP reduces quality in their entering practice. First, I test whether the mean quality achievement score increases or decreases with a brand new GP. I compute the following regression using practice-level and period-level fixed effects:
+
+\begin{equation}\label{NewGP_MeanEffect_FE}
+  \textrm{quality}_{jt} = \beta_{1}*\textrm{post}_{jt} + \alpha_{t} + \lambda_{j} + \epsilon_{jt}
+\end{equation}
+
+The parameter estimates suggest that, while a brand new GP may negatively affect QOF scores in certain domains, some domains see an increase and others see no effect (see Table \ref{NewGPs_Practice_Year_FE_MeanEffect}).
+
+\begin{landscape}
+\input{../tables/NewGPs_Practice_Year_FE_MeanEffect.tex}
+\end{landscape}
+
+
+The regression expressed in equation (\ref{NewGP_MeanEffect_FE}) estimates the mean effect of a brand new GP on quality over the several years he or she may last at the practice. In this way, it is a blunt tool to evaluate whether the shock of a new GP affects QOF scores. Consequently, I compute the following regression, which decomposes the mean estimate into a level and slope shift.
+
+\begin{equation}\label{NewGP_Decomposed_FE}
+  \textrm{quality}_{jt} = \beta_{1}*\textrm{post}_{jt} + \beta_{2}*\textrm{time}_{t} + \beta_{3}*\textrm{post}_{jt}*\textrm{time}_t + \alpha_{t} + \lambda_{j} + \epsilon_{jt}
+\end{equation}
+
+These results suggest more strongly that the shock of a new GP decreases QOF quality. As shown in Table \ref{NewGPs_Practice_Year_FE}, there is a statistically significant, downward level shift after the introduction of a brand new GP in the QOF domains of total and patient experience. There is also a significantly positive level shift in organisational quality. Changes in slope attenuate each of these level shifts over time.
+
+\begin{landscape}
+\input{../tables/NewGPs_Practice_Year_FE.tex}
+\end{landscape}
+
+
+Finally, I hope to assess how this effect has changed before versus after the introduction of the ``Modernising Medical Careers'' education scheme. To assess whether those GPs who started in years 2010-2012 had a differential impact on their practice's QOF scores from those GPs who started in years 2006-2009, I compute the following regression:
+
+\begin{align}
+\begin{split}\label{NewGP_Decomposed_Cohort}
+$$
+\textrm{quality}_{jt} = {} & \beta_{1}*\textrm{post}_{jt} + \beta_{2}*\textrm{time}_{t} + \beta{3}*\textrm{cohort}_{jt} + \\
+& \beta_4**\textrm{post}_{jt}*\textrm{time}_t + \beta_5*\textrm{post}_{jt}*\textrm{cohort}_{jt} + \beta_6*\textrm{time}_{t}*\textrm{cohort}_{jt} + \\
+& \beta_7*\textrm{post}_{jt}*\textrm{time}_t*\textrm{cohort}_{jt} + \alpha_{t} + \lambda_{j} + \epsilon_{jt}
+$$
+\end{split}
+\end{align}
+
+
+
+In regression (\ref{NewGP_Decomposed_Cohort}), ``cohort'' takes on a value of $0$ if the GP entered in years 2006-2009 and $1$ if she entered in years 2010-2012. The results suggest that entry shocks from the later cohort were significantly more negative than those from the earlier cohort in QOF domains total, patient experience, clinical, and additional services (Table \ref{NewGPs_Cohorts_Practice_Year_FE}). This may suggest that GPs who entered through the new educational system were less prepared than those who entered through the earlier system. Practices that accepted new GPs from the new cohort also had significantly greater slopes after the brand new GP entered for the total, patient experience, clinical, and additional services QOF domains. This may simply indicate that the new cohort practices had more room for improvement because of the severe shock of the brand new GP.
+
+\begin{landscape}
+\input{../tables/NewGPs_Cohorts_Practice_Year_FE.tex}
+\end{landscape}
+
+
+\section{Appendix 3: Further Extensions}
+The novel dataset developed for this project can be used to answer other policy-relevant questions. For example, by matching practices to Local Administrative Units using their postcodes, it should be possible to discern changes in the number of GPs over time at a local level (see Figure \ref{TotalDocsChange}).
+
+
+\begin{figure}[htp]
+  \centering
+  \caption{Percentage Change of Doctors by England/Wales Local Administrative Unit, \\2009/10 to 2014/15}
+  \includegraphics[width=\textwidth]{../figures/MapPctChangeGPs200910to201415.png}
+  \caption*{Note: These results are preliminary. Only those Local Administrative Units with an average of 5 or more GPs by month in 2009/2010 were included.}
+  \label{TotalDocsChange}
+\end{figure}
+
+
+\newpage
+\bibliographystyle{aea}
+\bibliography{refs}
+
+
+
+%
+% \begin{landscape}
+% \begin{figure}[htp]
+% \centering
+% \includegraphics[width=.3\textwidth]{../figures/DD_Total.pdf}\quad
+% \includegraphics[width=.3\textwidth]{../figures/DD_Total.pdf}\quad
+% \includegraphics[width=.3\textwidth]{../figures/DD_Total.pdf}
+%
+% \medskip
+%
+% \includegraphics[width=.3\textwidth]{../figures/DD_Total.pdf}\quad
+% \includegraphics[width=.3\textwidth]{../figures/DD_Total.pdf}
+%
+% \caption{Figure caption}
+% \label{pics:blablabla}
+% \end{figure}
+% \end{landscape}
+
+% \clearpage
+% \includegraphics{\ROOTPATH/figures/DD_Total.pdf}
+
+
+
+
+
+% \begin{center}
+%   \makebox{\includegraphics[width=\paperwidth]{\ROOTPATH/figures/DD_Total.pdf}}
+% \end{center}
+% \begin{equation} \label{eq1}
+% \begin{split}
+%
+% \textrm{quality}_{i\textrm{,}t} = & \\
+% & \beta_0 + \beta_1*\textrm{better}_{i\textrm{,}t} + \beta_2*\textrm{worse}_{i\textrm{,}t} + \beta_{3}*\textrm{same}_{i\textrm{,}t} +  \beta_4*\textrm{period}_{i\textrm{,}t} + \beta_5*\textrm{better}_{i\textrm{,}t}*\textrm{period}_{i\textrm{,}t} + \\
+% & \beta_{6}*\textrm{worse}_{i\textrm{,}t}*\textrm{period}_{i\textrm{,}t} + \beta_{7}*\textrm{same}_{i\textrm{,}t}*\textrm{period}_{i\textrm{,}t} + \beta_8*\textrm{post}_{i\textrm{,}t} + \beta_9*\textrm{better}_{i\textrm{,}t}*\textrm{post}_{i\textrm{,}t} + \\
+% & \beta_{10}*\textrm{worse}_{i\textrm{,}t}*\textrm{post}_{i\textrm{,}t} + \beta_{11}*\textrm{same}_{i\textrm{,}t}*\textrm{post}_{i\textrm{,}t} +  \beta_{12}*\textrm{period}_{i\textrm{,}t}*\textrm{post}_{i\textrm{,}t} +  \beta_{13}*\textrm{better}_{i\textrm{,}t}*\textrm{period}_{i\textrm{,}t}*\textrm{post}_{i\textrm{,}t} + \\
+% & \beta_{14}*\textrm{worse}_{i\textrm{,}t}*\textrm{period}_{i\textrm{,}t}*\textrm{post}_{i\textrm{,}t} + \beta_{15}*\textrm{same}_{i\textrm{,}t}*\textrm{period}_{i\textrm{,}t}*\textrm{post}_{i\textrm{,}t}\\
+%
+% \end{split}
+% \end{equation}
+% $$
+
+%
+% \section{Results}
+%
+%
+% \pagebreak
+%
+% % Optional TOC
+% % \tableofcontents
+% % \pagebreak
+%
+% %--Paper--
+%
+% \section{Section 1}
+%
+% Lorem Impsum
+%
+%
+% \pagebreak
+% \section{Section 2}
+% Lorem Ipsum \\
+%
+% %--/Paper--
+%
+\end{document}
