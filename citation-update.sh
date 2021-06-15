@@ -15,7 +15,7 @@ cp TheodoreCaputiShortCV.pdf ../static/files/
 cd ..
 
 sleep 10
-hugo
+hugo --cleanDestinationDir
 
 rm public/assets/css/main.scss
 cd public

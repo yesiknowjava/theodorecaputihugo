@@ -156,7 +156,7 @@ df = pd.read_csv("publications.csv", encoding='utf8')
 df = df[df.title.notnull()]
 df['paperurl'] = [x.split("?")[0] for x in df['paperurl']]
 df['paperurl'] = [x.split("#")[0] for x in df['paperurl']]
-df.to_csv("publications.csv", encoding='utf8')
+df.to_csv("publications.csv", encoding='utf8', index = False)
 
 print(df.head())
 print(df.tail())

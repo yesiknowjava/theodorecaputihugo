@@ -2,7 +2,7 @@
 
 read -p 'Commit Message: ' commit
 
-hugo
+hugo --cleanDestinationDir
 
 rm public/assets/css/main.scss
 cd public
