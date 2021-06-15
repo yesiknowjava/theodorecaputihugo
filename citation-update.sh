@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 cd markdown_generator 
 python3 doi.py
 cd ..
@@ -14,8 +16,11 @@ sleep 5
 cp TheodoreCaputiShortCV.pdf ../static/files/
 cd ..
 
-sleep 10
+sleep 5
 hugo --cleanDestinationDir
+
+git rm --cached public
+git submodule add -b master --force  https://github.com/tlcaputi/tlcaputi.github.io.git public
 
 rm public/assets/css/main.scss
 cd public
