@@ -293,7 +293,7 @@ def latexmaker(tag, content):
 #     db.add_entry(entry)
 
 
-with open("../static/files/pubs.tex", "w") as texfile, open("../static/files/pubs.bib", "w") as bibfile:
+with open("../build/pubs.tex", "w") as texfile, open("../build/pubs.bib", "w") as bibfile:
     tex = ""
     bib = ""
 

@@ -2,14 +2,16 @@ cd markdown_generator
 python3 doi.py
 cd ..
 
-cd static/files
+cd build
 xelatex -interaction=nonstopmode TheodoreCaputiShortCV.tex
 sleep 5
 xelatex -interaction=nonstopmode TheodoreCaputiShortCV.tex
 sleep 5
 xelatex -interaction=nonstopmode TheodoreCaputiShortCV.tex
+sleep 5
+cp TheodoreCaputiShortCV.pdf ../static/files/
 cd ..
-cd ..
+
 
 sleep 10
 hugo

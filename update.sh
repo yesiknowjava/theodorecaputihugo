@@ -1,12 +1,16 @@
+#!/bin/bash
+
+read -p 'Commit Message: ' commit
+
 hugo
 
 rm public/assets/css/main.scss
 cd public
 git add .
-git commit -m "update site"
+git commit -m "site: $commit"
 git push
 
 cd ..
 git add .
-git commit -m "update submodule"
+git commit -m "repo: $commit"
 git push
