@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.8.2)  15 JUN 2021 14:09
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.8.2)  15 JUN 2021 15:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -828,8 +828,12 @@ Package marginnote Info: Margin note 1.25 is on absolute page 2 on input line 4
 .
 Package marginnote Info: right page because not two side mode on input line 4.
 Package marginnote Info: xpos seems to be 79.49632pt on input line 4.
+Package marginnote Info: Margin note 1.26 is on absolute page 2 on input line 5
+.
+Package marginnote Info: right page because not two side mode on input line 5.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 5.
 ! Misplaced alignment tab character &.
-l.4 ...}, Ayers, J. W., Dredze, M., Suplina, N., &
+l.5 ...}, Ayers, J. W., Dredze, M., Suplina, N., &
                                                    Burd-Sharps, S. (2020). C...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -838,12 +842,12 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 1.26 is on absolute page 2 on input line 5
+Package marginnote Info: Margin note 1.27 is on absolute page 2 on input line 6
 .
-Package marginnote Info: right page because not two side mode on input line 5.
-Package marginnote Info: xpos seems to be 79.49632pt on input line 5.
+Package marginnote Info: right page because not two side mode on input line 6.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 6.
 ! Misplaced alignment tab character &.
-l.5 ...textbf{Caputi, T. L.} L.}, Nobles, A. L., &
+l.6 ...textbf{Caputi, T. L.} L.}, Nobles, A. L., &
                                                    Ayers, J. W. (2019). Inte...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -853,34 +857,20 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! You can't use `macro parameter character #' in horizontal mode.
-l.5 ...ssault, Reporting, and Training Since the #
+l.6 ...ssault, Reporting, and Training Since the #
                                                   MeToo Movement. JAMA Inter...
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-Package marginnote Info: Margin note 1.27 is on absolute page 2 on input line 6
-.
-Package marginnote Info: right page because not two side mode on input line 6.
-Package marginnote Info: xpos seems to be 79.49632pt on input line 6.
-! Misplaced alignment tab character &.
-l.6 ... L.} L.}, Smith, L. R., Strathdee, S. A., &
-                                                   Ayers, J. W. (2018). Subs...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
 Package marginnote Info: Margin note 1.28 is on absolute page 2 on input line 7
 .
 Package marginnote Info: right page because not two side mode on input line 7.
 Package marginnote Info: xpos seems to be 79.49632pt on input line 7.
 ! Misplaced alignment tab character &.
-l.7 ...{2018}\textbf{\textbf{Caputi, T. L.} L.}, &
-                                                   Humphreys, K. (2018). Med...
+l.7 ... L.} L.}, Smith, L. R., Strathdee, S. A., &
+                                                   Ayers, J. W. (2018). Subs...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -892,13 +882,9 @@ Package marginnote Info: Margin note 1.29 is on absolute page 2 on input line 8
 .
 Package marginnote Info: right page because not two side mode on input line 8.
 Package marginnote Info: xpos seems to be 79.49632pt on input line 8.
-Package marginnote Info: Margin note 1.30 is on absolute page 2 on input line 9
-.
-Package marginnote Info: right page because not two side mode on input line 9.
-Package marginnote Info: xpos seems to be 79.49632pt on input line 9.
 ! Misplaced alignment tab character &.
-l.9 ...uti, T. L.} L.}, Leas, E. C., Dredze, M., &
-                                                   Ayers, J. W. (2018). Onli...
+l.8 ...{2018}\textbf{\textbf{Caputi, T. L.} L.}, &
+                                                   Humphreys, K. (2018). Med...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -906,14 +892,18 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
+Package marginnote Info: Margin note 1.30 is on absolute page 2 on input line 9
+.
+Package marginnote Info: right page because not two side mode on input line 9.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 9.
 Package marginnote Info: Margin note 1.31 is on absolute page 2 on input line 1
 0.
 Package marginnote Info: right page because not two side mode on input line 10.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 10.
 ! Misplaced alignment tab character &.
-l.10 ...f{\textbf{Caputi, T. L.} L.}, Smith, D., &
-                                                   Ayers, J. W. (2017). Suic...
+l.10 ...ti, T. L.} L.}, Leas, E. C., Dredze, M., &
+                                                   Ayers, J. W. (2018). Onli...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -927,8 +917,8 @@ Package marginnote Info: right page because not two side mode on input line 11.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 11.
 ! Misplaced alignment tab character &.
-l.11 ...L.}, Leas, E., Dredze, M., Cohen, J. E., &
-                                                   Ayers, J. W. (2017). They...
+l.11 ...f{\textbf{Caputi, T. L.} L.}, Smith, D., &
+                                                   Ayers, J. W. (2017). Suic...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -942,8 +932,8 @@ Package marginnote Info: right page because not two side mode on input line 12.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 12.
 ! Misplaced alignment tab character &.
-l.12 ...ect Spikes in Time Series Data. Nicotine &
-                                                   Tobacco Research, 20(6), ...
+l.12 ...L.}, Leas, E., Dredze, M., Cohen, J. E., &
+                                                   Ayers, J. W. (2017). They...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -956,13 +946,28 @@ Package marginnote Info: Margin note 1.34 is on absolute page 2 on input line 1
 Package marginnote Info: right page because not two side mode on input line 13.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 13.
+! Misplaced alignment tab character &.
+l.13 ...ect Spikes in Time Series Data. Nicotine &
+                                                   Tobacco Research, 20(6), ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
 Package marginnote Info: Margin note 1.35 is on absolute page 3 on input line 1
 4.
 Package marginnote Info: right page because not two side mode on input line 14.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 14.
+Package marginnote Info: Margin note 1.36 is on absolute page 3 on input line 1
+5.
+Package marginnote Info: right page because not two side mode on input line 15.
+
+Package marginnote Info: xpos seems to be 79.49632pt on input line 15.
 ! Misplaced alignment tab character &.
-l.14 ...2016}\textbf{\textbf{Caputi, T. L.} L.}, &
+l.15 ...2016}\textbf{\textbf{Caputi, T. L.} L.}, &
                                                    Thomas McLellan, A. (2016...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -971,48 +976,48 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 1.36 is on absolute page 3 on input line 1
-5.
-Package marginnote Info: right page because not two side mode on input line 15.
-
-Package marginnote Info: xpos seems to be 79.49632pt on input line 15.
 Package marginnote Info: Margin note 1.37 is on absolute page 3 on input line 1
 6.
 Package marginnote Info: right page because not two side mode on input line 16.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 16.
+Package marginnote Info: Margin note 1.38 is on absolute page 3 on input line 1
+7.
+Package marginnote Info: right page because not two side mode on input line 17.
 
-Overfull \hbox (134.71463pt too wide) in paragraph at lines 1--17
+Package marginnote Info: xpos seems to be 79.49632pt on input line 17.
+
+Overfull \hbox (134.71463pt too wide) in paragraph at lines 1--18
 \TU/LinLibertine_R.otf(0)/m/n/12 Gay, Lesbian, Bisexual, and Questioning Adoles
 cents. JAMA Pediatrics, 174(8), 791. doi:10.1001/jamapediatrics.2019.6291
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--17
+Underfull \hbox (badness 10000) in paragraph at lines 1--18
 
  []
 
 [1
 
 ] [2]
-Package marginnote Info: Margin note 3.1 is on absolute page 3 on input line 19
-.
-Package marginnote Info: right page because not two side mode on input line 19.
-
-Package marginnote Info: xpos seems to be 79.49632pt on input line 19.
-Package marginnote Info: Margin note 3.2 is on absolute page 3 on input line 20
+Package marginnote Info: Margin note 3.1 is on absolute page 3 on input line 20
 .
 Package marginnote Info: right page because not two side mode on input line 20.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 20.
-Package marginnote Info: Margin note 3.3 is on absolute page 3 on input line 21
+Package marginnote Info: Margin note 3.2 is on absolute page 3 on input line 21
 .
 Package marginnote Info: right page because not two side mode on input line 21.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 21.
+Package marginnote Info: Margin note 3.3 is on absolute page 3 on input line 22
+.
+Package marginnote Info: right page because not two side mode on input line 22.
+
+Package marginnote Info: xpos seems to be 79.49632pt on input line 22.
 
 ! Misplaced alignment tab character &.
-l.21 ... W., \textbf{\textbf{Caputi, T. L.} L.}, &
+l.22 ... W., \textbf{\textbf{Caputi, T. L.} L.}, &
                                                    Leas, E. C. (2019). The N...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1021,23 +1026,23 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 3.4 is on absolute page 3 on input line 22
-.
-Package marginnote Info: right page because not two side mode on input line 22.
-
-Package marginnote Info: xpos seems to be 79.49632pt on input line 22.
-Package marginnote Info: Margin note 3.5 is on absolute page 3 on input line 23
+Package marginnote Info: Margin note 3.4 is on absolute page 3 on input line 23
 .
 Package marginnote Info: right page because not two side mode on input line 23.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 23.
-Package marginnote Info: Margin note 3.6 is on absolute page 3 on input line 24
+Package marginnote Info: Margin note 3.5 is on absolute page 3 on input line 24
 .
 Package marginnote Info: right page because not two side mode on input line 24.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 24.
+Package marginnote Info: Margin note 3.6 is on absolute page 3 on input line 25
+.
+Package marginnote Info: right page because not two side mode on input line 25.
+
+Package marginnote Info: xpos seems to be 79.49632pt on input line 25.
 ! Misplaced alignment tab character &.
-l.24 ...2018}\textbf{\textbf{Caputi, T. L.} L.}, &
+l.25 ...2018}\textbf{\textbf{Caputi, T. L.} L.}, &
                                                    Sabet, K. A. (2018). Popu...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1046,18 +1051,18 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 3.7 is on absolute page 3 on input line 25
-.
-Package marginnote Info: right page because not two side mode on input line 25.
-
-Package marginnote Info: xpos seems to be 79.49632pt on input line 25.
-Package marginnote Info: Margin note 3.8 is on absolute page 3 on input line 26
+Package marginnote Info: Margin note 3.7 is on absolute page 3 on input line 26
 .
 Package marginnote Info: right page because not two side mode on input line 26.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 26.
+Package marginnote Info: Margin note 3.8 is on absolute page 3 on input line 27
+.
+Package marginnote Info: right page because not two side mode on input line 27.
+
+Package marginnote Info: xpos seems to be 79.49632pt on input line 27.
 ! Misplaced alignment tab character &.
-l.26 ...2017}\textbf{\textbf{Caputi, T. L.} L.}, &
+l.27 ...2017}\textbf{\textbf{Caputi, T. L.} L.}, &
                                                    McLellan, A. T. (2017). R...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1067,7 +1072,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.26 ... T. (2017). Response to Comment by Hecht &
+l.27 ... T. (2017). Response to Comment by Hecht &
                                                    Miller-Day on Truth and D...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1076,13 +1081,13 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 3.9 is on absolute page 3 on input line 27
+Package marginnote Info: Margin note 3.9 is on absolute page 3 on input line 28
 .
-Package marginnote Info: right page because not two side mode on input line 27.
+Package marginnote Info: right page because not two side mode on input line 28.
 
-Package marginnote Info: xpos seems to be 79.49632pt on input line 27.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 28.
 ! Misplaced alignment tab character &.
-l.27 ...2016}\textbf{\textbf{Caputi, T. L.} L.}, &
+l.28 ...2016}\textbf{\textbf{Caputi, T. L.} L.}, &
                                                    Humphreys, K. (2016). Med...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1092,17 +1097,17 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 Package marginnote Info: Margin note 3.10 is on absolute page 3 on input line 2
-8.
-Package marginnote Info: right page because not two side mode on input line 28.
-
-Package marginnote Info: xpos seems to be 79.49632pt on input line 28.
-Package marginnote Info: Margin note 3.11 is on absolute page 3 on input line 2
 9.
 Package marginnote Info: right page because not two side mode on input line 29.
 
 Package marginnote Info: xpos seems to be 79.49632pt on input line 29.
+Package marginnote Info: Margin note 3.11 is on absolute page 4 on input line 3
+0.
+Package marginnote Info: right page because not two side mode on input line 30.
+
+Package marginnote Info: xpos seems to be 79.49632pt on input line 30.
 ! Misplaced alignment tab character &.
-l.29 ...2016}\textbf{\textbf{Caputi, T. L.} L.}, &
+l.30 ...2016}\textbf{\textbf{Caputi, T. L.} L.}, &
                                                    Sabet, K. A. (2016). Comm...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1112,41 +1117,46 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Overfull \hbox (65.3783pt too wide) in paragraph at lines 18--30
+Overfull \hbox (65.3783pt too wide) in paragraph at lines 19--31
 |[]\TU/LinLibertine_R.otf(0)/b/n/12 Caputi, T. L. L. \TU/LinLibertine_R.otf(0)/
 m/n/12 (2019). Medical Cannabis Use. Health Affairs, 38(5), 874874. doi:10.1377
 /hlthaff.2019.00198
  []
 
 
-Overfull \hbox (23.42761pt too wide) in paragraph at lines 18--30
+Overfull \hbox (23.42761pt too wide) in paragraph at lines 19--31
 \TU/LinLibertine_R.otf(0)/m/n/12 tion/Prevention. Journal of Psychoactive Drugs
 , 48(3), 227229. doi:10.1080/02791072.2016.1197989
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--30
+Underfull \hbox (badness 10000) in paragraph at lines 19--31
 
  []
 
 [3]
-Package marginnote Info: Margin note 4.1 is on absolute page 4 on input line 32
+Package marginnote Info: Margin note 4.1 is on absolute page 4 on input line 33
 .
-Package marginnote Info: right page because not two side mode on input line 32.
+Package marginnote Info: right page because not two side mode on input line 33.
 
-Package marginnote Info: xpos seems to be 79.49632pt on input line 32.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 33.
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--33
+Underfull \hbox (badness 10000) in paragraph at lines 32--34
 
  []
 
-Package marginnote Info: Margin note 4.2 is on absolute page 4 on input line 35
+Package marginnote Info: Margin note 4.2 is on absolute page 4 on input line 36
 .
-Package marginnote Info: right page because not two side mode on input line 35.
+Package marginnote Info: right page because not two side mode on input line 36.
 
-Package marginnote Info: xpos seems to be 79.49632pt on input line 35.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 36.
+Package marginnote Info: Margin note 4.3 is on absolute page 4 on input line 37
+.
+Package marginnote Info: right page because not two side mode on input line 37.
+
+Package marginnote Info: xpos seems to be 79.49632pt on input line 37.
 ! Misplaced alignment tab character &.
-l.35 ...f{Caputi, T. L.} L.}, McWilliams, J. M., &
+l.37 ...f{Caputi, T. L.} L.}, McWilliams, J. M., &
                                                    Cook, B. L. (2021). Impac...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1155,13 +1165,13 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 4.3 is on absolute page 4 on input line 36
+Package marginnote Info: Margin note 4.4 is on absolute page 4 on input line 38
 .
-Package marginnote Info: right page because not two side mode on input line 36.
+Package marginnote Info: right page because not two side mode on input line 38.
 
-Package marginnote Info: xpos seems to be 79.49632pt on input line 36.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 38.
 ! Misplaced alignment tab character &.
-l.36 ... C., Dredze, M., \textbf{Caputi, T. L.}, &
+l.38 ... C., Dredze, M., \textbf{Caputi, T. L.}, &
                                                    Nobles, A. L. (2021). Sui...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1170,13 +1180,13 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 4.4 is on absolute page 4 on input line 37
+Package marginnote Info: Margin note 4.5 is on absolute page 4 on input line 39
 .
-Package marginnote Info: right page because not two side mode on input line 37.
+Package marginnote Info: right page because not two side mode on input line 39.
 
-Package marginnote Info: xpos seems to be 79.49632pt on input line 37.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 39.
 ! Misplaced alignment tab character &.
-l.37 ...}, Dredze, M., Zhu, S.-H., Cohen, J. E., &
+l.39 ...}, Dredze, M., Zhu, S.-H., Cohen, J. E., &
                                                    Ayers, J. W. (2020). News...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1185,13 +1195,13 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 4.5 is on absolute page 4 on input line 38
+Package marginnote Info: Margin note 4.6 is on absolute page 4 on input line 40
 .
-Package marginnote Info: right page because not two side mode on input line 38.
+Package marginnote Info: right page because not two side mode on input line 40.
 
-Package marginnote Info: xpos seems to be 79.49632pt on input line 38.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 40.
 ! Misplaced alignment tab character &.
-l.38 ... L.} L.}, Dredze, M., Kesselheim, A. S., &
+l.40 ... L.} L.}, Dredze, M., Kesselheim, A. S., &
                                                    Ayers, J. W. (2020). Inte...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1200,13 +1210,13 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 4.6 is on absolute page 4 on input line 39
+Package marginnote Info: Margin note 4.7 is on absolute page 4 on input line 41
 .
-Package marginnote Info: right page because not two side mode on input line 39.
+Package marginnote Info: right page because not two side mode on input line 41.
 
-Package marginnote Info: xpos seems to be 79.49632pt on input line 39.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 41.
 ! Misplaced alignment tab character &.
-l.39 .... L.} L.}, Zhu, S.-H., Strathdee, S. A., &
+l.41 .... L.} L.}, Zhu, S.-H., Strathdee, S. A., &
                                                    Ayers, J. W. (2020). Resp...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1215,13 +1225,13 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 4.7 is on absolute page 4 on input line 40
+Package marginnote Info: Margin note 4.8 is on absolute page 4 on input line 42
 .
-Package marginnote Info: right page because not two side mode on input line 40.
+Package marginnote Info: right page because not two side mode on input line 42.
 
-Package marginnote Info: xpos seems to be 79.49632pt on input line 40.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 42.
 ! Misplaced alignment tab character &.
-l.40 ...i, T. L.} L.}, Dredze, M., Smith, D. M., &
+l.42 ...i, T. L.} L.}, Dredze, M., Smith, D. M., &
                                                    Ayers, J. W. (2019). Tren...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1230,13 +1240,13 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 4.8 is on absolute page 4 on input line 41
+Package marginnote Info: Margin note 4.9 is on absolute page 4 on input line 43
 .
-Package marginnote Info: right page because not two side mode on input line 41.
+Package marginnote Info: right page because not two side mode on input line 43.
 
-Package marginnote Info: xpos seems to be 79.49632pt on input line 41.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 43.
 ! Misplaced alignment tab character &.
-l.41 ...textbf{Caputi, T. L.} L.}, Allem, J.-P., &
+l.43 ...textbf{Caputi, T. L.} L.}, Allem, J.-P., &
                                                    Cohen, J. E. (2018). Next...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1245,13 +1255,13 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 4.9 is on absolute page 4 on input line 42
-.
-Package marginnote Info: right page because not two side mode on input line 42.
+Package marginnote Info: Margin note 4.10 is on absolute page 5 on input line 4
+4.
+Package marginnote Info: right page because not two side mode on input line 44.
 
-Package marginnote Info: xpos seems to be 79.49632pt on input line 42.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 44.
 ! Misplaced alignment tab character &.
-l.42 ...\textbf{Caputi, T. L.} L.}, Nebeker, C., &
+l.44 ...\textbf{Caputi, T. L.} L.}, Nebeker, C., &
                                                    Dredze, M. (2018). Dont q...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1260,13 +1270,13 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 4.10 is on absolute page 4 on input line 4
-3.
-Package marginnote Info: right page because not two side mode on input line 43.
+Package marginnote Info: Margin note 4.11 is on absolute page 5 on input line 4
+5.
+Package marginnote Info: right page because not two side mode on input line 45.
 
-Package marginnote Info: xpos seems to be 79.49632pt on input line 43.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 45.
 ! Misplaced alignment tab character &.
-l.43 ...redze, M., Althouse, B. M., Noar, S. M., &
+l.45 ...redze, M., Althouse, B. M., Noar, S. M., &
                                                    Ayers, J. W. (2017). The ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1276,13 +1286,13 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Overfull \hbox (29.78358pt too wide) in paragraph at lines 34--44
+Overfull \hbox (29.78358pt too wide) in paragraph at lines 35--46
 \TU/LinLibertine_R.otf(0)/m/n/12 substance use services by eligibility and race
 /ethnicity. Health Services Research. doi:10.1111/1475-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--44
+Underfull \hbox (badness 10000) in paragraph at lines 35--46
 
  []
 
@@ -1351,22 +1361,22 @@ Package marginnote Info: Margin note 5.11 is on absolute page 5 on input line 4
 Package marginnote Info: right page because not two side mode on input line 415
 .
 Package marginnote Info: xpos seems to be 79.49632pt on input line 415.
-Package marginnote Info: Margin note 5.12 is on absolute page 5 on input line 4
+Package marginnote Info: Margin note 5.12 is on absolute page 6 on input line 4
 16.
 Package marginnote Info: right page because not two side mode on input line 416
 .
 Package marginnote Info: xpos seems to be 79.49632pt on input line 416.
-Package marginnote Info: Margin note 5.13 is on absolute page 5 on input line 4
+Package marginnote Info: Margin note 5.13 is on absolute page 6 on input line 4
 17.
 Package marginnote Info: right page because not two side mode on input line 417
 .
 Package marginnote Info: xpos seems to be 79.49632pt on input line 417.
-Package marginnote Info: Margin note 5.14 is on absolute page 5 on input line 4
+Package marginnote Info: Margin note 5.14 is on absolute page 6 on input line 4
 18.
 Package marginnote Info: right page because not two side mode on input line 418
 .
 Package marginnote Info: xpos seems to be 79.49632pt on input line 418.
-Package marginnote Info: Margin note 5.15 is on absolute page 5 on input line 4
+Package marginnote Info: Margin note 5.15 is on absolute page 6 on input line 4
 19.
 Package marginnote Info: right page because not two side mode on input line 419
 .
@@ -1462,27 +1472,27 @@ Package marginnote Info: Margin note 6.7 is on absolute page 6 on input line 51
 Package marginnote Info: right page because not two side mode on input line 514
 .
 Package marginnote Info: xpos seems to be 79.49632pt on input line 514.
-Package marginnote Info: Margin note 6.8 is on absolute page 6 on input line 52
+Package marginnote Info: Margin note 6.8 is on absolute page 7 on input line 52
 1.
 Package marginnote Info: right page because not two side mode on input line 521
 .
 Package marginnote Info: xpos seems to be 79.49632pt on input line 521.
-Package marginnote Info: Margin note 6.9 is on absolute page 6 on input line 52
+Package marginnote Info: Margin note 6.9 is on absolute page 7 on input line 52
 2.
 Package marginnote Info: right page because not two side mode on input line 522
 .
 Package marginnote Info: xpos seems to be 79.49632pt on input line 522.
-Package marginnote Info: Margin note 6.10 is on absolute page 6 on input line 5
+Package marginnote Info: Margin note 6.10 is on absolute page 7 on input line 5
 23.
 Package marginnote Info: right page because not two side mode on input line 523
 .
 Package marginnote Info: xpos seems to be 79.49632pt on input line 523.
-Package marginnote Info: Margin note 6.11 is on absolute page 6 on input line 5
+Package marginnote Info: Margin note 6.11 is on absolute page 7 on input line 5
 24.
 Package marginnote Info: right page because not two side mode on input line 524
 .
 Package marginnote Info: xpos seems to be 79.49632pt on input line 524.
-Package marginnote Info: Margin note 6.12 is on absolute page 6 on input line 5
+Package marginnote Info: Margin note 6.12 is on absolute page 7 on input line 5
 25.
 Package marginnote Info: right page because not two side mode on input line 525
 .
@@ -1492,13 +1502,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 513--526
 
  []
 
-
+[6]
 Overfull \hbox (8.50496pt too wide) in paragraph at lines 528--529
 \TU/LinLibertine_R.otf(0)/b/n/12 Ad Hoc Reviewer\TU/LinLibertine_R.otf(0)/m/n/1
 2 : Addiction; Addictive Behaviors; American Journal of Preventive Medicine;
  []
 
-[6]
 ! Extra }, or forgotten \endgroup.
 l.615 }
        
@@ -1519,10 +1528,10 @@ Package rerunfilecheck Info: File `TheodoreCaputiShortCV.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 621.
  ) 
 Here is how much of TeX's memory you used:
- 15963 strings out of 479819
- 291542 string characters out of 5895847
- 609107 words of memory out of 5000000
- 32874 multiletter control sequences out of 15000+600000
+ 15965 strings out of 479819
+ 291566 string characters out of 5895847
+ 610139 words of memory out of 5000000
+ 32876 multiletter control sequences out of 15000+600000
  537843 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,9n,101p,609b,472s stack positions out of 5000i,500n,10000p,200000b,80000s

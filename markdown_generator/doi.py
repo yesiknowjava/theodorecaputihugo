@@ -319,8 +319,11 @@ with open("../build/pubs.tex", "w") as texfile, open("../build/pubs.bib", "w") a
             tex += latexmaker("years", article['year'])
             # tex += latexmaker("bibentry", article['ID'])
             latex_citation = article['citation']
+            pprint(article)
+            print(latex_citation)
             latex_citation = latex_citation.replace("Caputi, T. L.", "\\textbf{Caputi, T. L.}")
             latex_citation = latex_citation.replace("Caputi, T.", "\\textbf{Caputi, T. L.}")
+            latex_citation = latex_citation.replace("Caputi, T. L. L.", "Caputi, T. L.")
 
             tex += latex_citation
             tex += " ["
@@ -329,6 +332,8 @@ with open("../build/pubs.tex", "w") as texfile, open("../build/pubs.bib", "w") a
             tex += latexmaker("href", article['paper_url']) + "{PDF}"
             tex += "] \\\\[.2cm]"
             tex += "\n"
+
+
 
             bib += article['bibtex']
             bib += "\n\n"
