@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+# set -e
 
 # cd markdown_generator 
 # python3 doi.py
