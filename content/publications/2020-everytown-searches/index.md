@@ -7,7 +7,7 @@ authors:
 - "John W. Ayers"
 - "Mark Dredze"
 - "Nicholas Suplina"
-date: "2020-07-01T00:00:00Z"
+date: "2020-02-01T00:00:00Z"
 doi: "nan"
 venue: "Everytown Research"
 publishDate: "2017-01-01T00:00:00Z"

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.8.2)  15 JUN 2021 15:29
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.8.2)  15 JUN 2021 15:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -828,12 +828,8 @@ Package marginnote Info: Margin note 1.25 is on absolute page 2 on input line 4
 .
 Package marginnote Info: right page because not two side mode on input line 4.
 Package marginnote Info: xpos seems to be 79.49632pt on input line 4.
-Package marginnote Info: Margin note 1.26 is on absolute page 2 on input line 5
-.
-Package marginnote Info: right page because not two side mode on input line 5.
-Package marginnote Info: xpos seems to be 79.49632pt on input line 5.
 ! Misplaced alignment tab character &.
-l.5 ...}, Ayers, J. W., Dredze, M., Suplina, N., &
+l.4 ...}, Ayers, J. W., Dredze, M., Suplina, N., &
                                                    Burd-Sharps, S. (2020). C...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -842,6 +838,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
+Package marginnote Info: Margin note 1.26 is on absolute page 2 on input line 5
+.
+Package marginnote Info: right page because not two side mode on input line 5.
+Package marginnote Info: xpos seems to be 79.49632pt on input line 5.
 Package marginnote Info: Margin note 1.27 is on absolute page 2 on input line 6
 .
 Package marginnote Info: right page because not two side mode on input line 6.

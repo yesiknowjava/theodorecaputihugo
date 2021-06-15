@@ -156,7 +156,9 @@ df = pd.read_csv("publications.csv", encoding='utf8')
 df = df[df.title.notnull()]
 df['paperurl'] = [x.split("?")[0] for x in df['paperurl']]
 df['paperurl'] = [x.split("#")[0] for x in df['paperurl']]
-df.to_csv("publications.csv", encoding='utf8', index = False)
+cols = "doi,title,abstract,paperurl,slug,pdfurl,type,journal,month,year,volume,issue,author,citation".split(",")
+df[cols].to_csv("publications.csv", encoding='utf8', index = False)
+df[cols].to_csv("publications_noenc.csv", index = False)
 
 print(df.head())
 print(df.tail())
