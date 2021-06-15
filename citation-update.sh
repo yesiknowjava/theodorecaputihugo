@@ -2,21 +2,21 @@
 
 # set -e
 
-# cd markdown_generator 
-# python3 doi.py
-# cd ..
+cd markdown_generator 
+python3 doi.py
+cd ..
 
 cd build
 xelatex -interaction=nonstopmode TheodoreCaputiShortCV.tex
-sleep 5
+sleep 2
 xelatex -interaction=nonstopmode TheodoreCaputiShortCV.tex
-sleep 5
+sleep 2
 xelatex -interaction=nonstopmode TheodoreCaputiShortCV.tex
-sleep 5
+sleep 2
 cp TheodoreCaputiShortCV.pdf ../static/files/
 cd ..
 
-sleep 5
+sleep 2
 hugo 
 
 # git rm --cached public
