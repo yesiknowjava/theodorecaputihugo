@@ -2,9 +2,9 @@
 
 set -e
 
-cd markdown_generator 
-python3 doi.py
-cd ..
+# cd markdown_generator 
+# python3 doi.py
+# cd ..
 
 cd build
 xelatex -interaction=nonstopmode TheodoreCaputiShortCV.tex
@@ -17,10 +17,10 @@ cp TheodoreCaputiShortCV.pdf ../static/files/
 cd ..
 
 sleep 5
-hugo --cleanDestinationDir
+hugo 
 
-git rm --cached public
-git submodule add -b master --force  https://github.com/tlcaputi/tlcaputi.github.io.git public
+# git rm --cached public
+# git submodule add -b master --force  https://github.com/tlcaputi/tlcaputi.github.io.git public
 
 rm public/assets/css/main.scss
 cd public
