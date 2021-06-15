@@ -472,12 +472,15 @@ for row, item in enumerate(articles):
     abstract = item['abstract']
     num_words = len(abstract.split())
     num_breaks = abstract.count("\n")
+    words_per_break = num_breaks / num_words
 
-    if num_words > 50 and num_breaks / num_words >= 0.05:
-        abstract = abstract.replace("\n", "<br>")
-    else:
-        print("ABSTRACT HAS BREAKS IN IT")
+    if num_words > 50 and words_per_break >= 0.07:
+        print("ABSTRACT HAS LOTS OF BREAKS IN IT {}".format(words_per_break))
         print(abstract)
+        abstract = abstract.replace("\n", "")
+    else:
+        abstract = abstract.replace("\n", "<br>")
+
 
     md += '\nabstract: "{}"'.format(abstract)
     md += '\nsummary: "{}"'.format(item['citation'])
