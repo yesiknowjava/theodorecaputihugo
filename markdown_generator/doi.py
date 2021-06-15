@@ -333,10 +333,9 @@ with open("../build/pubs.tex", "w") as texfile, open("../build/pubs.bib", "w") a
             tex += "] \\\\[.2cm]"
             tex += "\n"
 
-
-
-            bib += article['bibtex']
-            bib += "\n\n"
+            if 'bibtex' in article:
+                bib += article['bibtex']
+                bib += "\n\n"
 
         tex += "\n"
 
@@ -477,9 +476,9 @@ for row, item in enumerate(articles):
     if num_words > 50 and words_per_break >= 0.07:
         print("ABSTRACT HAS LOTS OF BREAKS IN IT {}".format(words_per_break))
         print(abstract)
-        abstract = abstract.replace("\n", "")
+        abstract = abstract.replace("\n", " ").replace("  ", " ").strip()
     else:
-        abstract = abstract.replace("\n", "<br>")
+        abstract = abstract.replace("\n", "<br>").replace("  ", " ").strip()
 
 
     md += '\nabstract: "{}"'.format(abstract)
