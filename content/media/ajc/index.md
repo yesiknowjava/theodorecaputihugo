@@ -3,7 +3,7 @@ date: '2017-12-20T00:00:00Z'
 external_link: https://web.archive.org/web/20210616050033/https://www.ajc.com/news/world/gay-teens-four-times-more-likely-attempt-suicide-survey-finds/4N5PHGcLQOZMAzpqZZNLjJ/
 image:
   focal_point: Smart
-original_link: https://www.ajc.com/news/world/gay-teens-four-times-more-likely-attempt-suicide-survey-finds/4N5PHGcLQOZMAzpqZZNLjJ/
+original_link: https://web.archive.org/web/20210616050033/https://www.ajc.com/news/world/gay-teens-four-times-more-likely-attempt-suicide-survey-finds/4N5PHGcLQOZMAzpqZZNLjJ/
 summary: 'After analyzing the results, they found that lesbian, gay, bisexual and
   questioning teens were more than four times as likely to attempt suicide. Furthermore,
   40 percent of LGBQ youth said they seriously considered suicide and 35 percent of

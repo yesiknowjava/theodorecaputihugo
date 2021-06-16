@@ -1,12 +1,11 @@
 ---
-title: Gay, lesbian and bisexual high...
-summary: Adolescents considered sexual minorities are more vulnerable to suicidal behaviors than their heterosexual ...
-# tags:
-# - Demo
-date: "2016-04-27T00:00:00Z"
-# Optional external URL for project (replaces project detail page).
-external_link: https://www.sciencenews.org/article/gay-lesbian-and-bisexual-teens-report-tragically-high-suicide-risk
+date: '2017-12-19T00:00:00Z'
+external_link: https://web.archive.org/web/20210616042422/https://www.sciencenews.org/article/gay-lesbian-and-bisexual-teens-report-tragically-high-suicide-risk
 image:
-  # caption: Photo by Toa Heftiba on Unsplash
   focal_point: Smart
+original_link: https://www.sciencenews.org/article/gay-lesbian-and-bisexual-teens-report-tragically-high-suicide-risk
+summary: VULNERABLE KIDS Teens who identify as gay, lesbian, bisexual or questioning
+  are at a higher risk of suicidal behavior, according to a study based on a nationwide
+  survey of high school students from 2015.
+title: Gay, lesbian and bisexual high schoolers report 'tragically high' suicide risk
 ---
