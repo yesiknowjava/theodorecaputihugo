@@ -1,17 +1,13 @@
 ---
-date: '2019-10-23T00:00:00Z'
-external_link: https://web.archive.org/web/20210616170406/https://abcnews.go.com/Health/google-searches-cbd-expected-hit-record-high-year/story?id=66448514
+title: Everyone is asking Google about CBD...
+summary: Cannabidiol, the popular hemp plant derivative marketed as a cure-all for just about any condition, has...
+# tags:
+# - Demo
+date: "2016-04-27T00:00:00Z"
+
+# Optional external URL for project (replaces project detail page).
+external_link: https://abcnews.go.com/Health/google-searches-cbd-expected-hit-record-high-year/story?id=66448514
 image:
+  # caption: Photo by Toa Heftiba on Unsplash
   focal_point: Smart
-original_link: https://abcnews.go.com/Health/google-searches-cbd-expected-hit-record-high-year/story?id=66448514
-summary: Searches for CBD spiked this year as awareness of the product grew. Following
-  a decade of stable Google searches for CBD, or cannabidiol, the number of searches
-  for those terms spiked 126% between 2016 and 2018, and 160% between 2017 and 2018,
-  according to the study. Those searches are expected to be up another 118% this year,
-  with 6.4 million CBD Google searches logged in April alone, the most current month
-  for which data is available. Nationwide, searches for CBD outstripped queries for
-  other popular health topics, like veganism, vaccination and marijuana. "When people
-  are allowed to market CBD by saying anything, is it surprising that demand for it
-  is so high?"
-title: Google searches for CBD expected to hit record high this year
 ---

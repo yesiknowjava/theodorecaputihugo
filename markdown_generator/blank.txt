@@ -1,4 +1,2 @@
 fortune
 fortune
-fortune
-fortune

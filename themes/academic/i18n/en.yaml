@@ -185,6 +185,12 @@
 
 # Project details
 
+- id: original_link
+  translation: Original Link
+
+- id: archived_link
+  translation: Archived Link
+
 - id: open_project_site
   translation: Go to Site
 
