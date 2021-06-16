@@ -4,7 +4,7 @@ widget = "pages" #"portfolio"  # See https://sourcethemes.com/academic/docs/page
 headless = false  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 65  # Order that this section will appear.
-paginate = true
+paginate = false
 
 title = "Media"
 subtitle = ""

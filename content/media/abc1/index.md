@@ -1,9 +1,9 @@
 ---
 date: '2017-05-18T00:00:00Z'
-external_link: https://web.archive.org/web/20210616050009/https://abcnews.go.com/Health/charlie-sheen-effect-doubled-hiv-test-sales-announced/story?id=47486953
+external_link: https://web.archive.org/save/https://web.archive.org/web/20210616050009/https://abcnews.go.com/Health/charlie-sheen-effect-doubled-hiv-test-sales-announced/story?id=47486953
 image:
   focal_point: Smart
-original_link: https://abcnews.go.com/Health/charlie-sheen-effect-doubled-hiv-test-sales-announced/story?id=47486953
+original_link: https://web.archive.org/web/20210616050009/https://abcnews.go.com/Health/charlie-sheen-effect-doubled-hiv-test-sales-announced/story?id=47486953
 summary: According to the study update, what it called the "Charlie Sheen effect"
   had a big impact on HIV testing in the U.S., with sales of at-home testing nearly
   doubling the week of his announcement. They found that the week after Sheen announced

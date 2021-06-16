@@ -1,9 +1,9 @@
 ---
 date: '2020-02-05T00:00:00Z'
-external_link: https://web.archive.org/web/20210616045518/https://www.medscape.com/viewarticle/924840?src=rss
+external_link: https://web.archive.org/save/https://web.archive.org/web/20210616045518/https://www.medscape.com/viewarticle/924840?src=rss
 image:
   focal_point: Smart
-original_link: https://www.medscape.com/viewarticle/924840?src=rss
+original_link: https://web.archive.org/web/20210616045518/https://www.medscape.com/viewarticle/924840?src=rss
 summary: However, a team of California researchers says these virtual assistants have
   the the potential to help individuals fight addiction -- but they're not there yet.
   Investigators examined some of today's most popular intelligent virtual assistants
