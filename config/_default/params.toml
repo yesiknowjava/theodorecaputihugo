@@ -98,7 +98,7 @@ phone = "+1 (267) 312 - 8471"
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
-address = {street = "The Morris and Sophie Chang Building (E52-300), 50 Memorial Drive", city = "Cambridge", region = "CA", postcode = "Mass. 02139", country = "United Kingdom", country_code = "UK"}
+address = {street = "The Morris and Sophie Chang Building (E52-300), 50 Memorial Drive", city = "Cambridge", region = "MA", postcode = "02139", country = "United States", country_code = "US"}
 
 # Geographic coordinatesatitude = "37.4275", longitude = "-122.1697"}
 

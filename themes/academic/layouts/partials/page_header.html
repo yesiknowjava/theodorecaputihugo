@@ -11,6 +11,8 @@
     {{ $title = i18n "talks" }}
   {{ else if eq .Type "publications" }}
     {{ $title = i18n "publications" }}
+  {{ else if eq .Type "media" }}
+    {{ $title = i18n "media" }}
   {{end}}
 {{end}}
 

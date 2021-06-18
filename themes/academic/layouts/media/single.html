@@ -6,9 +6,9 @@
 
   <div class="article-container">
 
-    {{ if .Params.article }}
-    <h3>{{ i18n "article" }}</h3>
-    <p class="pub-abstract">{{ .Params.article | safeHTML }}</p>
+    {{ if .Params.outline_html }}
+    <h3>{{ i18n "outline_html" }}</h3>
+    <p class="pub-abstract">{{ .Params.outline_html | safeHTML }}</p>
     {{ end }}
 
     <div class="row">

@@ -133,15 +133,14 @@
 </a>
 {{ end }}
 
-{{ with $page.Params.original_link }}
-<a class="btn btn-outline-primary my-1 mr-1{{ if $is_list }} btn-sm{{end}}" href="{{ . }}"
-  target="_blank" rel="noopener">
+{{ with $page.Params.original_url }}
+<a class="btn btn-outline-primary my-1 mr-1{{ if $is_list }} btn-sm{{end}}" href="{{ . }}" target="_blank" rel="noopener">
   Original Link
 </a>
 {{ end }}
-{{ with $page.Params.archived_link }}
-<a class="btn btn-outline-primary my-1 mr-1{{ if $is_list }} btn-sm{{end}}" href="{{ . }}" target="_blank"
-  rel="noopener">
+
+{{ with $page.Params.archived_url }}
+<a class="btn btn-outline-primary my-1 mr-1{{ if $is_list }} btn-sm{{end}}" href="{{ . }}" target="_blank" rel="noopener">
   Archived Link
 </a>
 {{ end }}

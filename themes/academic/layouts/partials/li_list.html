@@ -18,6 +18,9 @@
 {{ else if eq $item.Type "publications" }}
   {{ $show_authors = true }}
   {{ $show_buttons = true }}
+{{ else if eq $item.Type "media" }}
+  {{ $show_authors = true }}
+  {{ $show_buttons = true }}
 {{ else if eq $item.Type "project" }}
   {{ $icon_pack = "fas" }}
   {{ $icon = "fa-project-diagram" }}

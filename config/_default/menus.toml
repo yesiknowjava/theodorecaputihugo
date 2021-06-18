@@ -20,8 +20,14 @@
 #   weight = 30
 
 [[main]]
+  name = "Home"
+  url = "#"
+  weight = 10
+
+
+[[main]]
   name = "Publications"
-  url = "#featured"
+  url = "publications/"
   weight = 40
 
 # Link to a PDF of your resume/CV from the menu.
@@ -45,12 +51,18 @@
 [[main]]
    name = "CV"
    url = "cv/"
-   weight = 60
+   weight = 70
 
 [[main]]
-  name = "News"
-  url = "news/"
-  weight = 70
+   name = "Media"
+   url = "media/"
+   weight = 65
+
+
+# [[main]]
+#   name = "News"
+#   url = "news/"
+#   weight = 70
 
 [[main]]
   name = "Contact"

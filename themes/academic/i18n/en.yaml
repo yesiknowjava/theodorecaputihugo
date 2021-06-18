@@ -113,6 +113,10 @@
 - id: more_talks
   translation: See all talks
 
+- id: more_media
+  translation: See all media
+
+
 - id: more_publications
   translation: See all publications
 
@@ -191,10 +195,20 @@
 - id: archived_link
   translation: Archived Link
 
+- id: original_url
+  translation: Original Link
+
+- id: archived_url
+  translation: Archived Link
+
+
 - id: open_project_site
   translation: Go to Site
 
 # Content types for default archive page titles and search results
+
+- id: media
+  translation: Media
 
 - id: posts
   translation: Posts

@@ -7,6 +7,11 @@ import json
 from pprint import pprint
 import random
 import datetime
+import time
+import justext
+from fake_useragent import UserAgent
+import random
+ua = UserAgent()
 
 # >> > 
 # >> > s.extract()
@@ -43,23 +48,24 @@ def get_frontmatter(fn):
 # random.shuffle(dirs)
 
 def get_outline(url):
+    u = ua.random
     headers = {
-        'authority': 'www.google.com',
-        'sec-ch-ua': '^\\^',
-        'accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
-        'sec-ch-ua-mobile': '?0',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36',
-        'origin': 'https://outline.com',
-        'sec-fetch-site': 'cross-site',
-        'sec-fetch-mode': 'no-cors',
-        'sec-fetch-dest': 'image',
-        'referer': 'https://outline.com/',
-        'accept-language': 'en-US,en;q=0.9',
+        # 'authority': 'www.google.com',
+        # 'sec-ch-ua': '^\\^',
+        # 'accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+        # 'sec-ch-ua-mobile': '?0',
+        # 'origin': 'https://outline.com',
+        # 'sec-fetch-site': 'cross-site',
+        # 'sec-fetch-mode': 'no-cors',
+        # 'sec-fetch-dest': 'image',
+        # 'referer': 'https://outline.com/',
+        # 'accept-language': 'en-US,en;q=0.9',
         # 'cookie': '__Secure-3PSID=-gfRMYlxpJ5Yzwol2HYPFy_l-IuUEtuHZglxgLFdutQVyoOzus6jUaAmAhIjSLZFbb8o4A.; __Secure-3PAPISID=0c8-gcRtKJme6a5p/AFo5G1QawYgPC_pZ0; NID=217=GbpY7JMnzA5VwmxYySKx4ECH_hi5ImvInaGx0rqQgRWeciwNFe8L-7qJTNx1HyNRO71Sf1NhJTOu6qHKPCgqNnWDyCnUyhIPxb0hxSOjF9iuRLvVlXXzewM-GDz8GFoTFvi7npRtTF4L_tjMP6Xkno2b9VyLw1MVy4N2xyBQN7n3CJM4FSGJ7-6oE4a0SVvb9aQs1AmjyggHxANDOH44UJTX3uKHCsF5T6Pp1LxFVOvSXC4iVSIrR5HwK0xpE1GYKSUHALuyLUrlPwmFz1zVBvqzCvISGzzGFkLEknF_vMgRmPjq6N76aChLUob4wDXA2XA33LwMx8D7uO3NjIM; 1P_JAR=2021-06-16-19; __Secure-3PSIDCC=AJi4QfF8mymEV0OP0tXNoGcwJMS14NKfq0hHkjDIN-eRZW9L_B90wNAAwUqpCXjLTkbRI8cdqr8E',
         # 'x-client-data': 'CJK2yQEIprbJAQjBtskBCKmdygEI0qDKAQigoMsBCMCgywEI3PLLAQi0+MsB',
-        'Referer': 'https://outline.com/css/outline.css?v=1.0.1',
-        'Origin': 'https://outline.com',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36',
+        # 'Referer': 'https://outline.com/css/outline.css?v=1.0.1',
+        # 'Origin': 'https://outline.com',
+        'user-agent': u,
+        'User-Agent': u,
     }
 
     # pprint(headers)
@@ -70,6 +76,11 @@ def get_outline(url):
     # pprint(params)
     response = requests.get('https://api.outline.com/v3/parse_article', headers=headers, params=params)
     # pprint(response)
+
+    if response.status_code == 429:
+        print(f"PROBLEM [{response.status_code}]: {url}")
+        pprint(response.json())
+
     if response.status_code != 200:
         print(f"PROBLEM [{response.status_code}]: {url}")
         # pprint(r.__dict__)
@@ -82,12 +93,27 @@ def get_outline(url):
     return None
 
 
+sl = justext.get_stoplist("English")
+r = requests.Session()
+def get_outline2(url, sl = sl, r = r):
+    try:
+        timeout_secs = 10
+        u = ua.random
+        r.headers = {'user-agent': u}
+        page = r.get(url, verify=True, timeout=timeout_secs)
+        paragraphs = justext.justext(page.content, sl)
+        text = "<br><br>".join([x.text for x in paragraphs if not x.is_boilerplate or len(x.text.split()) > 5])
+        return text
+    except Exception as e:
+        print(f"OUTLINE ERROR {str(e)}")
+        return None
+
+
 with open("media.jsonl", "a") as f, open("missing.txt", "a") as f2:
     for dir in tqdm(dirs):
         try:
 
             fn = "../content/media/{}/index.md".format(dir)
-
             with open(fn, "r") as f4:
                 if f4.read() == "":
                     with open("blank.txt", "a") as f5:
@@ -106,6 +132,7 @@ with open("media.jsonl", "a") as f, open("missing.txt", "a") as f2:
             # print("CP3")
             if 'external_link' in out:
                 external_link = out['external_link']
+                post['original_lnk'] = external_link
                 del post['external_link']
             else:
                 external_link = out['original_link']
@@ -118,24 +145,27 @@ with open("media.jsonl", "a") as f, open("missing.txt", "a") as f2:
             out['request_url'] = url
 
             overwrite = True
+            if 'archived_url' in post:
+                if not overwrite:
+                    if "https://web.archive.org/" in external_link and "are you a robot" not in out['title'].lower():
+                        f.write(json.dumps(out))
+                        f.write("\n")
+                        continue
 
-            if not overwrite:
-                if "https://web.archive.org/" in external_link and "are you a robot" not in out['title'].lower():
-                    f.write(json.dumps(out))
-                    f.write("\n")
+                print(dir)
+                print(f"ATTEMPTING : {url} ({external_link})")
+                r = requests.get(url, timeout=1000, allow_redirects=True)
+
+                if r.status_code != 200:
+                    print(f"WEB ARCHIVE ERROR: {r.status_code}")
+                    f2.write(dir)
+                    f2.write("\n")
                     continue
 
-            print(dir)
-            print(f"ATTEMPTING : {url} ({external_link})")
-            r = requests.get(url, timeout=1000, allow_redirects=True)
+                out['request_response_url'] = r.__dict__['url']
+                post['archived_link'] = out['request_response_url']
+                post['original_link'] = external_link
 
-            if r.status_code != 200:
-                print(f"WEB ARCHIVE ERROR: {r.status_code}")
-                f2.write(dir)
-                f2.write("\n")
-                continue
-
-            out['request_response_url'] = r.__dict__['url']
 
             # print("NEWSPAPER")
             n = newspaper(external_link)
@@ -160,13 +190,22 @@ with open("media.jsonl", "a") as f, open("missing.txt", "a") as f2:
                 dt =  out['summary_dict']['date_publish'][:10] + "T00:00:00Z"
                 post['date'] = dt
             # post['external_link'] = out['request_response_url']
-            post['archived_link'] = out['request_response_url']
-            post['original_link'] = external_link
 
             # print("CPX")
 
             outline = None
-            # outline = get_outline(external_link)
+            # tries = 0
+            # while tries <= 10:
+            #     tries +=1
+            #     try:
+            #         outline = get_outline2(external_link)
+            #         if not outline:
+            #             print("OUTLINE SUCCESS!")
+            #             break
+            #     except:
+            #         time.sleep(5 + min(10, 2**tries) + random.random())
+            #         pass
+
             # print(outline)
             if isinstance(outline, str):
                 post['article'] = outline

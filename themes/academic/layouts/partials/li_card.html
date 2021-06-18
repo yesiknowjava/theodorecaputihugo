@@ -7,6 +7,8 @@
   {{ $show_buttons = true }}
 {{ else if eq $item.Type "publications" }}
   {{ $show_buttons = true }}
+{{ else if eq $item.Type "media" }}
+  {{ $show_buttons = true }}
 {{ end }}
 
 {{/* Get summary. */}}

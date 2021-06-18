@@ -49,13 +49,24 @@
       <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>
     </h3>
 
-    {{ with $summary }}
-    <a href="{{ $item.RelPermalink }}" class="summary-link">
-      <div class="article-style">
-        {{.}}
-      </div>
-    </a>
+
+    {{ if in $item "/publications/" }}
+      {{ with $summary }}
+      <a href="{{ $item.RelPermalink }}" class="summary-link">
+        <div class="article-style">
+          {{.}}
+        </div>
+      </a>
+      {{ end }}
+    
+    {{ else if eq $item.Type "media" }}
+      <a href="{{ $item.RelPermalink }}" class="summary-link">
+        <div class="article-style">
+          {{ $item.Params.summary }}
+        </div>
+      </a>
     {{ end }}
+
 
     <div class="stream-meta article-metadata">
 
