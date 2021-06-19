@@ -52,7 +52,7 @@ links_theo:
 
 - icon: "fa fa-fw fa-envelope-square"
   text: "Email"
-  link: "tcaputi@gmail.com"
+  link: "mailto:tcaputi@gmail.com"
 
 - icon: "fab fa-twitter-square small-icon"
   text: "Twitter"
