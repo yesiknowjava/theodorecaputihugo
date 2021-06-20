@@ -19,10 +19,10 @@
 #   url = "#projects"
 #   weight = 30
 
-# [[main]]
-#   name = "Home"
-#   url = "#"
-#   weight = 10
+[[main]]
+  name = "Home"
+  url = "#"
+  weight = 10
 
 
 [[main]]
