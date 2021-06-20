@@ -22,7 +22,7 @@
 [[main]]
   name = "Home"
   url = "#"
-  weight = 15
+  weight = 10
 
 
 [[main]]
